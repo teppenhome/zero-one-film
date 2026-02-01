@@ -1,0 +1,121 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+
+.blog {
+  padding-top: v.$spacing-80;
+  padding-bottom: v.$spacing-80;
+}
+
+.blog__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$spacing-32;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @include m.mq(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include m.mq(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.blog__item {
+  margin: 0;
+}
+
+.blog-card {
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.blog-card__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-card__thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s;
+  }
+
+  .blog-card:hover & img {
+    transform: scale(1.05);
+  }
+}
+
+.blog-card__title {
+  margin: v.$spacing-16 v.$spacing-16 v.$spacing-8;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: v.$color-text;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blog-card__date {
+  display: inline-block;
+  margin: 0 v.$spacing-16 v.$spacing-8;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.blog-card__category {
+  display: inline-block;
+  margin: 0 v.$spacing-16 v.$spacing-16;
+  padding: v.$spacing-4 v.$spacing-16;
+  font-size: 0.95
+  rem;
+  font-weight: 500;
+  color: v.$color-text;
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0);
+}
+
+.blog__footer {
+  margin-top: v.$spacing-48;
+  text-align: center;
+}
+
+.blog__view-all {
+  display: inline-block;
+  padding: v.$spacing-16 v.$spacing-32;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: v.$color-text;
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+
+  &:hover {
+    background: v.$color-text;
+    border-color: v.$color-text;
+    color: #fff;
+  }
+}

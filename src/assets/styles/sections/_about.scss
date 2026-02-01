@@ -1,0 +1,187 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+
+.about {
+  padding-top: v.$spacing-80;
+  position: relative;
+  overflow: hidden;
+}
+
+.about .container {
+  max-width: 980px;
+  position: relative;
+}
+
+.about__bgtext {
+  position: absolute;
+  top: -130px;
+  left: 50%;
+  margin: 0;
+  font-size: clamp(80px, 12vw, 240px);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+
+  opacity: 0;
+  transform: translateX(-50%) translateX(120px);
+  transition:
+    transform 1.2s ease-out,
+    opacity 0.8s ease-out;
+}
+
+.about.is-visible .about__bgtext {
+  opacity: 1;
+  transform: translateX(-50%) translateX(0);
+}
+
+/* 動画：上段で中央に */
+.about__video {
+  display: flex;
+  justify-content: center;
+  margin-top: v.$spacing-80;
+  margin-bottom: v.$spacing-40;
+}
+
+.about__video-inner {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #000;
+  width: min(760px, 100%);
+}
+
+.about__video-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__video-embed {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.about__play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.about__play-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.about__play-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  border-left: 16px solid #fff;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+/* 下段：中央テキスト、右CTA */
+.about__bottom {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: end;
+  gap: v.$spacing-24;
+
+  max-width: 700px;
+  margin-inline: auto;
+
+  @include m.mq(md) {
+    gap: v.$spacing-40;
+  }
+}
+
+/* テキスト：左右中央 */
+.about__text {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: v.$color-text;
+
+  @include m.mq(md) {
+    font-size: 1rem;
+  }
+}
+
+/* CTA：右寄せ */
+.about__cta {
+  justify-self: end;
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: v.$color-text;
+  text-decoration: none;
+  white-space: nowrap;
+  padding-bottom: 10px;  
+}
+
+.arrow {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 1px;
+  margin: 0;
+  margin-right: -60px;
+  background-color: #000000;
+}
+
+.arrow::before,
+.arrow::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 2px);
+  right: 0;
+  width: 10px;
+  height: 1px;
+  border-radius: 9999px;
+  background-color: #000000;
+  transform-origin: calc(100% - 2px) 50%;
+}
+
+.arrow::after {
+  top: calc(50% + 1px);
+}
+
+.arrow::before {
+  transform: rotate(45deg);
+}
+
+.arrow::after {
+  transform: rotate(-45deg);
+}
+
+/* SP：縦並び（テキスト中央 / CTA右） */
+@media (max-width: 767px) {
+  .about__bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .about__cta {
+    justify-self: end;
+    width: 100%;
+    margin-top: v.$spacing-16;
+  }
+}

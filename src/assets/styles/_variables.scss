@@ -1,0 +1,40 @@
+// Spacing scale (SP first, rem)
+$spacing-4: 0.25rem;
+$spacing-8: 0.5rem;
+$spacing-16: 1rem;
+$spacing-24: 1.5rem;
+$spacing-32: 2rem;
+$spacing-40: 2.5rem;
+$spacing-48: 3rem;
+$spacing-64: 4rem;
+$spacing-80: 5rem;
+$spacing-96: 6rem;
+
+// Container
+$container-max: 1200px;
+$container-padding: $spacing-24;
+
+// Z-index
+$z-dropdown: 150;
+$z-header: 100;
+$z-modal: 200;
+
+// Breakpoints (SP first)
+$breakpoints: (
+  sm: 600px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+);
+
+// Color (仮)
+$color-bg: #fff;
+$color-text: #333;
+
+// Font (仮)
+$font-sans: sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.6;
+
+// Section padding (後で調整しやすい)
+$section-padding-y: $spacing-64;

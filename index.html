@@ -1,0 +1,1002 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZERO ONE FILM</title>
+  </head>
+  <body>
+    <header id="header" class="global-header">
+      <div class="container">
+        <a href="/" class="global-header__logo">
+          <img src="/img/logo_white.png" alt="ZERO ONE FILM" />
+        </a>
+
+        <!-- PC用ナビ -->
+        <nav class="global-nav" aria-label="Primary">
+          <ul class="global-nav__list">
+            <li class="global-nav__item"><a href="#services" class="global-nav__link">Service</a></li>
+            <li class="global-nav__item"><a href="#works" class="global-nav__link">Works</a></li>
+            <li class="global-nav__item"><a href="#philosophy" class="global-nav__link">Company</a></li>
+            <li class="global-nav__item"><a href="#blog" class="global-nav__link">Blog</a></li>
+            <li class="global-nav__item"><a href="#contact" class="global-nav__link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- SP用ハンバーガー -->
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="nav-toggle__lines" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- SP用ドロワー（header外に配置でfixedが正しく効く） -->
+    <div class="drawer" id="mobile-menu" hidden>
+      <button class="drawer__backdrop" type="button" aria-label="メニューを閉じる"></button>
+
+      <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="モバイルメニュー">
+        <div class="drawer__head">
+          <span class="drawer__title">MENU</span>
+          <button class="drawer__close" type="button" aria-label="閉じる">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+
+        <nav class="drawer__nav" aria-label="Mobile">
+          <a href="#services" class="drawer__link">Service</a>
+          <a href="#works" class="drawer__link">Works</a>
+          <a href="#philosophy" class="drawer__link">Company</a>
+          <a href="#blog" class="drawer__link">Blog</a>
+          <a href="#contact" class="drawer__link">Contact</a>
+        </nav>
+      </div>
+    </div>
+
+    <main>
+      <section id="hero" class="hero">
+        <div class="hero__media" aria-hidden="true">
+          <iframe
+            class="hero__bg"
+            src="https://player.vimeo.com/video/1160430245?background=1&autoplay=1&loop=1&muted=1&autopause=0&badge=0"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            title="Hero Movie"
+          ></iframe>
+        </div>
+
+        <div class="container">
+          <div class="hero__inner">
+            <header>
+              <h1 class="hero__title">
+                ZERO EXISTS<br />
+                <span class="hero__title-line">TO MAKE ONE</span>
+              </h1>
+              <p class="hero__subtitle">Welcome to Zero One Film</p>
+            </header>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="container">
+          <p class="about__bgtext" aria-hidden="true">ZERO ONE FILM</p>
+          <div class="about__video">
+            <div class="about__video-inner js-video"
+                data-vimeo-id="1160430245"
+                data-vimeo-title="ZERO ONE FILM showreel">
+
+              <img src="/img/about_video.webp" alt="" class="about__video-thumb" />
+
+              <button type="button" class="about__play" aria-label="動画を再生">
+                <span class="about__play-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="about__bottom">
+            <p class="about__text">
+              課題の本質を見極め、映像・写真・縦型SNS動画・デザイン・3Dモデリングで、伝わる表現へ。
+            </p>
+
+            <a href="/contact/" class="about__cta">
+              制作のご相談はこちら
+              <span class="arrow"></span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="services">
+
+        <div class="container">
+          <header class="section-head">
+            <div class="section-head__top">
+              <div class="section-head__label">
+                <p class="section-head__eyebrow">What We Do</p>
+              </div>
+              <p class="section-head__no" aria-hidden="true">01</p>
+            </div>
+            <h2 class="section-head__title content">SERVICE</h2>
+            <p class="section-head__jp">・サービス</p>
+          </header>
+          <ul class="services__grid">
+            <li class="services__item js-reveal">
+              <article class="service-card service-card--film">
+                <div class="service-card__bg" aria-hidden="true"></div>
+
+                <div class="service-card__inner">
+                  <div class="service-card__icon">
+                    <img src="/img/video_icon.webp" alt="" />
+                  </div>
+
+                  <p class="service-card__eyebrow">VIDEO PRODUCTION</p>
+                  <h3 class="service-card__title">映像制作</h3>
+
+                  <p class="service-card__lead">”想像に、イノチを吹き込む”<br>目的に直結する「使える映像」を。</p>
+                  <p class="service-card__desc">
+                    ただカッコいいだけではなく、企業の課題解決や成果につながる構成・演出をご提案。企画から納品まで一気通貫で対応します。
+                  </p>
+
+                  <ul class="service-card__tags">
+                    <li><a href="#" class="tag">企業プロモーション</a></li>
+                    <li><a href="#" class="tag">インタビュー</a></li>
+                    <li><a href="#" class="tag">ウェディング</a></li>
+                    <li><a href="#" class="tag">PR動画</a></li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+            <li class="services__item js-reveal">
+              <article class="service-card service-card--photo">
+                <div class="service-card__bg" aria-hidden="true"></div>
+
+                <div class="service-card__inner">
+                  <div class="service-card__icon">
+                    <img src="/img/camera_icon.webp" alt="" />
+                  </div>
+
+                  <p class="service-card__eyebrow">PHOTOGRAPHY</p>
+                  <h3 class="service-card__title">写真撮影</h3>
+
+                  <p class="service-card__lead">“一瞬に、物語を”<br>次のカットが想像できる一枚。</p>
+                  <p class="service-card__desc">
+                    Web・SNS・広告に最適化。映像制作で培った構図とライティング技術で、その場の温度感ごと切り取ります。
+                  </p>
+
+                  <ul class="service-card__tags">
+                    <li><a href="#" class="tag">Web用スチル</a></li>
+                    <li><a href="#" class="tag">広告写真</a></li>
+                    <li><a href="#" class="tag">商品撮影</a></li>
+                    <li><a href="#" class="tag">店舗撮影</a></li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+            <li class="services__item js-reveal">
+              <article class="service-card service-card--sns">
+                <div class="service-card__bg" aria-hidden="true"></div>
+
+                <div class="service-card__inner">
+                  <div class="service-card__icon">
+                    <img src="/img/phone_icon.webp" alt="" />
+                  </div>
+
+                  <p class="service-card__eyebrow">SNS MARKETING</p>
+                  <h3 class="service-card__title">SNS縦型映像</h3>
+
+                  <p class="service-card__lead">
+                    SNSで“見られる・伝わる”<br>縦型特化の設計と運用。
+                  </p>
+                  <p class="service-card__desc">
+                    コンセプト設計から撮影・編集まで。スマホでの視聴体験を前提とした、拡散力の高い縦型動画を制作します。
+                  </p>
+
+                  <ul class="service-card__tags">
+                    <li><a href="#" class="tag">TikTok / Reels</a></li>
+                    <li><a href="#" class="tag">コンセプト設計</a></li>
+                    <li><a href="#" class="tag">運用サポート</a></li>
+                    <li><a href="#" class="tag">縦型広告</a></li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+            <li class="services__item js-reveal">
+              <article class="service-card service-card--design">
+                <div class="service-card__bg" aria-hidden="true"></div>
+
+                <div class="service-card__inner">
+                  <div class="service-card__icon">
+                    <img src="/img/design_icon.webp" alt="" />
+                  </div>
+
+                  <p class="service-card__eyebrow">DESIGN</p>
+                  <h3 class="service-card__title">デザイン</h3>
+
+                  <p class="service-card__lead">
+                    デザインだけができる世界を<br>デザインする。
+                  </p>
+                  <p class="service-card__desc">
+                    ブランドの世界観を崩さず、見た目だけでなく「分かりやすさ・使いやすさ」まで設計して、次のアクションにつながる表現に仕上げます。
+                  </p>
+
+                  <ul class="service-card__tags">
+                    <li><a href="#" class="tag">ロゴ</a></li>
+                    <li><a href="#" class="tag">POP</a></li>
+                    <li><a href="#" class="tag">リーフレット</a></li>
+                    <li><a href="#" class="tag">名刺 etc...</a></li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+            <li class="services__item js-reveal">
+              <article class="service-card service-card--modeling">
+                <div class="service-card__bg" aria-hidden="true"></div>
+
+                <div class="service-card__inner">
+                  <div class="service-card__icon">
+                    <img src="/img/d_icon.webp" alt="" />
+                  </div>
+
+                  <p class="service-card__eyebrow">3D MODELING</p>
+                  <h3 class="service-card__title">3Dモデリング</h3>
+
+                  <p class="service-card__lead">
+                    イメージを、<br>カタチで伝えるテクノロジー。
+                  </p>
+                  <p class="service-card__desc">
+                    商品・空間・キャラクターなどを3Dで可視化し、映像・Web・SNSに展開できる素材として制作します。
+                  </p>
+
+                  <ul class="service-card__tags">
+                    <li><a href="#" class="tag">商品３D</a></li>
+                    <li><a href="#" class="tag">空間CG</a></li>
+                    <li><a href="#" class="tag">キャラクター</a></li>
+                    <li><a href="#" class="tag">SNS用素材</a></li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+            <li class="services__item js-reveal">
+              <article class="service-card service-card--contact">
+                <div class="service-card__bg" aria-hidden="true"></div>
+
+                <div class="service-card__inner">
+                  <div class="service-card__icon">
+                    <img src="/img/icon_mail.png" alt="" />
+                  </div>
+
+                  <p class="service-card__eyebrow">PROJECT CONSULTATION</p>
+                  <h3 class="service-card__title">ご相談・お見積もり</h3>
+
+                  <p class="service-card__lead">
+                    企画が固まっていなくても<br />問題ありません。
+                  </p>
+
+                  <p class="service-card__desc">
+                    目的やご予算、納期感を伺いながら最適なプランをご提案します。まずはお気軽にご相談ください。
+                  </p>
+
+                  <a class="service-card__cta" href="/contact/">
+                    CONTACT FORM <span aria-hidden="true">→</span>
+                  </a>
+
+                  <p class="service-card__note">お見積もり・ご相談は無料です</p>
+                </div>
+              </article>
+            </li>
+
+          </ul>
+        </div>
+      </section>
+
+      <section id="strength" class="strength">
+        <div class="container">
+          <header class="section-head">
+            <div class="section-head__top">
+              <div class="section-head__label">
+                <p class="section-head__eyebrow">Why Choose Us</p>
+              </div>
+              <p class="section-head__no" aria-hidden="true">02</p>
+            </div>
+            <h2 class="section-head__title content">STRENGTH</h2>
+            <p class="section-head__jp">・選ばれる理由</p>
+          </header>
+          <ul class="strength__grid">
+            <li class="strength__item js-reveal">
+              <article class="strength-card">
+                <div class="strength-card__thumb">
+                  <img src="/img/strength01.webp" alt="" />
+                  <p class="strength-card__no" aria-hidden="true">#01</p>
+                </div>
+
+                <h3 class="strength-card__title">動画制作を軸とした<br>確かな制作力</h3>
+                <p class="strength-card__desc">
+                  企業プロモーションからドキュメンタリーまで。映像制作のプロとして、高品質なアウトプットをお約束します。
+                </p>
+              </article>
+            </li>
+            <li class="strength__item js-reveal">
+              <article class="strength-card">
+                <div class="strength-card__thumb">
+                  <img src="/img/strength02.webp" alt="" />
+                  <p class="strength-card__no" aria-hidden="true">#02</p>
+                </div>
+
+                <h3 class="strength-card__title">写真撮影まで含めた<br>ビジュアル統一の実現力</h3>
+                <p class="strength-card__desc">
+                  映像だけでなくスチール撮影も対応。Webやパンフレット等、トーン＆マナーの揃ったクリエイティブを提供します。
+                </p>
+              </article>
+            </li>
+            <li class="strength__item js-reveal">
+              <article class="strength-card">
+                <div class="strength-card__thumb">
+                  <img src="/img/strength03.webp" alt="" />
+                  <p class="strength-card__no" aria-hidden="true">#03</p>
+                </div>
+
+                <h3 class="strength-card__title">縦型映像を中心にした<br>SNS展開まで対応</h3>
+                <p class="strength-card__desc">
+                  TikTokやReelsなど、スマホ視聴を前提とした「見られる・伝わる」縦型動画の設計から運用までサポート。
+                </p>
+              </article>
+            </li>
+            <li class="strength__item js-reveal">
+              <article class="strength-card">
+                <div class="strength-card__thumb">
+                  <img src="/img/strength04.webp" alt="" />
+                  <p class="strength-card__no" aria-hidden="true">#04</p>
+                </div>
+
+                <h3 class="strength-card__title">企画から撮影・編集まで<br>一気通貫</h3>
+                <p class="strength-card__desc">
+                  外注を挟まず社内で完結させることで、認識のズレを防ぎ、スピーディーかつ意図通りの制作を実現します。
+                </p>
+              </article>
+            </li>
+            <li class="strength__item js-reveal">
+              <article class="strength-card">
+                <div class="strength-card__thumb">
+                  <img src="/img/strength05.webp" altROSEROSE/>
+                  <p class="strength-card__no" aria-hidden="true">#05</p>
+                </div>
+
+                <h3 class="strength-card__title">少人数精鋭による<br>柔軟で丁寧な対応</h3>
+                <p class="strength-card__desc">
+                  「制作会社」であり「コンサルタント」。顔の見える距離感で、お客様の課題に寄り添い伴走します。
+                </p>
+              </article>
+            </li>
+            <li class="strength__item js-reveal">
+              <article class="strength-card">
+                <div class="strength-card__thumb">
+                  <img src="/img/strength06.webp" alt="" />
+                  <p class="strength-card__no" aria-hidden="true">#06</p>
+                </div>
+
+                <h3 class="strength-card__title">手法ありきではなく<br>解決ありきの提案</h3>
+                <p class="strength-card__desc">
+                  映像か、写真か、SNSか。課題の本質を見極め、最も効果的なクリエイティブ手法をご提案します。
+                </p>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="process" class="process">
+        <div class="container">
+          <header class="section-head">
+            <div class="section-head__top">
+              <div class="section-head__label">
+                <p class="section-head__eyebrow">WORK FLOW</p>
+              </div>
+              <p class="section-head__no" aria-hidden="true">03</p>
+            </div>
+            <h2 class="section-head__title content">PROCESS</h2>
+            <p class="section-head__jp">・制作の流れ</p>
+          </header>
+
+          <ol class="process__list">
+            <li class="process__item">
+              <article class="process-step js-reveal js-reveal--right">
+                <div class="process-step__icon" aria-hidden="true">
+                  <img
+                    src="/img/icon_mail.png"
+                    alt=""
+                    class="process-step__img"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="process-step__body">
+                  <h3 class="process-step__title">
+                    <span class="process-step__num">01.</span> お問い合わせ
+                  </h3>
+                  <p class="process-step__desc">
+                    Webフォームまたはお電話にてご連絡ください。企画が固まっていなくても問題ありません。
+                  </p>
+                </div>
+              </article>
+            </li>
+
+            <li class="process__item">
+              <article class="process-step js-reveal js-reveal--right">
+                <div class="process-step__icon" aria-hidden="true">
+                  <img
+                    src="/img/icon_hearing.png"
+                    alt=""
+                    class="process-step__img"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="process-step__body">
+                  <h3 class="process-step__title">
+                    <span class="process-step__num">02.</span> ヒアリング
+                  </h3>
+                  <p class="process-step__desc">
+                    課題・目的・ターゲット・予算などを丁寧にヒアリングし、制作の方向性を定めます。
+                  </p>
+                </div>
+              </article>
+            </li>
+
+            <li class="process__item">
+              <article class="process-step js-reveal js-reveal--right">
+                <div class="process-step__icon" aria-hidden="true">
+                  <img
+                    src="/img/design_icon.webp"
+                    alt=""
+                    class="process-step__img"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="process-step__body">
+                  <h3 class="process-step__title">
+                    <span class="process-step__num">03.</span> 企画・構成設計
+                  </h3>
+                  <p class="process-step__desc">
+                    課題解決のためのコンセプトを立案し、構成案や絵コンテを作成してご提案します。
+                  </p>
+                </div>
+              </article>
+            </li>
+
+            <li class="process__item">
+              <article class="process-step js-reveal js-reveal--right">
+                <div class="process-step__icon" aria-hidden="true">
+                  <img
+                    src="/img/video_icon.webp"
+                    alt=""
+                    class="process-step__img"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="process-step__body">
+                  <h3 class="process-step__title">
+                    <span class="process-step__num">04.</span> 撮影
+                  </h3>
+                  <p class="process-step__desc">
+                    プロの機材と技術で、必要な素材を正確かつ効率的に撮影。現場の空気感も大切にします。
+                  </p>
+                </div>
+              </article>
+            </li>
+
+            <li class="process__item">
+              <article class="process-step js-reveal js-reveal--right">
+                <div class="process-step__icon" aria-hidden="true">
+                  <img
+                    src="/img/icon_edit.png"
+                    alt=""
+                    class="process-step__img"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="process-step__body">
+                  <h3 class="process-step__title">
+                    <span class="process-step__num">05.</span> 編集・仕上げ
+                  </h3>
+                  <p class="process-step__desc">
+                    カット編集、テロップ、BGM、カラーグレーディングを行い、伝わる映像へ仕上げます。
+                  </p>
+                </div>
+              </article>
+            </li>
+
+            <li class="process__item">
+              <article class="process-step js-reveal js-reveal--right">
+                <div class="process-step__icon" aria-hidden="true">
+                  <img
+                    src="/img/icon_box.png"
+                    alt=""
+                    class="process-step__img"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="process-step__body">
+                  <h3 class="process-step__title">
+                    <span class="process-step__num">06.</span> 納品・活用
+                  </h3>
+                  <p class="process-step__desc">
+                    データ納品後、SNSやWebでの効果的な活用方法までサポート。「使われる」を目指します。
+                  </p>
+                </div>
+              </article>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="works" class="works">
+        <div class="container">
+          <header class="section-head">
+            <div class="section-head__top">
+              <div class="section-head__label">
+                <p class="section-head__eyebrow">Portfolio</p>
+              </div>
+              <p class="section-head__no" aria-hidden="true">04</p>
+            </div>
+            <h2 class="section-head__title content">WORKS</h2>
+            <p class="section-head__jp">・制作実績</p>
+          </header>
+          <ul class="works__grid">
+            <li class="works__item js-reveal">
+              <article class="work-card">
+                <a href="#" class="work-card__link">
+                  <div class="work-card__thumb">
+                    <img src="/img/works/work01.webp" alt="" />
+                  </div>
+
+                  <h3 class="work-card__title">大手ショッピングモール</h3>
+
+                  <div class="work-card__tags" aria-label="categories">
+                    <span class="work-card__tag is-solid">VIDEO</span>
+                    <span class="work-card__tag is-outline">PROMOTION</span>
+                  </div>
+
+                  <p class="work-card__meta">店舗内PR動画 / サイネージ</p>
+                </a>
+              </article>
+            </li>
+            <li class="works__item js-reveal">
+              <article class="work-card">
+                <a href="#" class="work-card__link">
+                  <div class="work-card__thumb">
+                    <img src="/img/works/work05.webp" alt="" />
+                  </div>
+
+                  <h3 class="work-card__title">大手コンビニチェーン</h3>
+
+                  <div class="work-card__tags" aria-label="categories">
+                    <span class="work-card__tag is-solid">VIDEO</span>
+                    <span class="work-card__tag is-outline">PROMOTION</span>
+                  </div>
+
+                  <p class="work-card__meta">新商品紹介PR動画</p>
+                </a>
+              </article>
+            </li>
+            <li class="works__item js-reveal">
+              <article class="work-card">
+                <a href="#" class="work-card__link">
+                  <div class="work-card__thumb">
+                    <img src="/img/works/work04.webp" alt="" />
+                  </div>
+
+                  <h3 class="work-card__title">東京キャッチボールクラブ</h3>
+
+                  <div class="work-card__tags" aria-label="categories">
+                    <span class="work-card__tag is-solid">VIDEO</span>
+                    <span class="work-card__tag is-outline">EVENT & SERVICE</span>
+                  </div>
+
+                  <p class="work-card__meta">店舗内PR動画 / サイネージ</p>
+                </a>
+              </article>
+            </li>
+            <li class="works__item js-reveal">
+              <article class="work-card">
+                <a href="#" class="work-card__link">
+                  <div class="work-card__thumb">
+                    <img src="/img/works/work06.webp" alt="" />
+                  </div>
+
+                  <h3 class="work-card__title">大手ゲームソフト</h3>
+
+                  <div class="work-card__tags" aria-label="categories">
+                    <span class="work-card__tag is-solid">VIDEO</span>
+                    <span class="work-card__tag is-outline">EVENT & SERVICE</span>
+                  </div>
+
+                  <p class="work-card__meta">開発者インタビュー動画</p>
+                </a>
+              </article>
+            </li>
+            <li class="works__item js-reveal">
+              <article class="work-card">
+                <a href="#" class="work-card__link">
+                  <div class="work-card__thumb">
+                    <img src="/img/works/work03.webp" alt="" />
+                  </div>
+
+                  <h3 class="work-card__title">THE DOG salon</h3>
+
+                  <div class="work-card__tags" aria-label="categories">
+                    <span class="work-card__tag is-solid">PHOTO</span>
+                    <span class="work-card__tag is-outline">PHOTO & OTHERS</span>
+                  </div>
+
+                  <p class="work-card__meta">Webサイト用スチル撮影</p>
+                </a>
+              </article>
+            </li>
+            <li class="works__item js-reveal">
+              <article class="work-card">
+                <a href="#" class="work-card__link">
+                  <div class="work-card__thumb">
+                    <img src="/img/works/work02.webp" alt="" />
+                  </div>
+
+                  <h3 class="work-card__title">いちご農園</h3>
+
+                  <div class="work-card__tags" aria-label="categories">
+                    <span class="work-card__tag is-solid">PHOTO</span>
+                    <span class="work-card__tag is-outline">PHOTO & OTHERS</span>
+                  </div>
+
+                  <p class="work-card__meta">Webサイト用スチル撮影</p>
+                </a>
+              </article>
+            </li>
+          </ul>
+          <div class="works__footer">
+            <a href="#" class="works__view-all">VIEW ALL</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="philosophy" class="philosophy">
+        <div class="container">
+          <span class="philosophy__bg philosophy__bg--top" aria-hidden="true"></span>
+          <span class="philosophy__bg philosophy__bg--bottom" aria-hidden="true"></span>
+
+          <header class="section-head">
+            <div class="section-head__top">
+              <div class="section-head__label">
+                <p class="section-head__eyebrow">Our Philosophy</p>
+              </div>
+              <p class="section-head__no" aria-hidden="true">05</p>
+            </div>
+            <h2 class="section-head__title content">ABOUT US</h2>
+            <p class="section-head__jp">・私たちが大切にしていること</p>
+          </header>
+          <ul class="philosophy__grid">
+            <li class="philosophy__item philosophy__item--mission js-reveal js-reveal--right">
+              <article class="philosophy-card">
+                <h3 class="philosophy-card__heading">Mission</h3>
+                <p class="philosophy-card__lead">映像を通して、<br>伝えるべき価値を<br>正しく届ける。</p>
+                <p class="philosophy-card__text">
+                  企画意図を理解し、映像制作のプロとして、<br>最後まで責任を持って制作します。
+                </p>
+              </article>
+            </li>
+
+            <li class="philosophy__item philosophy__item--vision js-reveal js-reveal--right">
+              <article class="philosophy-card">
+                <h3 class="philosophy-card__heading">Vision</h3>
+                <p class="philosophy-card__lead">信頼され、<br>長く選ばれる<br>映像制作パートナーへ。</p>
+                <p class="philosophy-card__text">
+                  映像・写真・SNSを通して、企業やブランドの魅力を<br>継続的に伝えられる存在を目指します。
+                </p>
+              </article>
+            </li>
+
+            <li class="philosophy__item philosophy__item--value philosophy__item--value js-reveal js-reveal--right">
+              <article class="philosophy-card">
+                <h3 class="philosophy-card__heading">Value</h3>
+                <ul class="philosophy-card__list">
+                  <li>丁寧なヒアリングを大切にする</li>
+                  <li>目的に沿った表現を設計する</li>
+                  <li>企画から納品まで一貫して対応する</li>
+                  <li>クオリティに妥協しない</li>
+                  <li>プロとして知識と技術を磨き続ける</li>
+                </ul>
+              </article>
+            </li>
+          </ul>
+          <p class="philosophy__closing js-reveal js-reveal--right">ZERO exists to make <span class="philosophy__closing-blue">ONE.</span></p>
+
+        </div>
+      </section>
+
+      <section id="blog" class="blog">
+        <div class="container">
+          <header class="section-head">
+            <div class="section-head__top">
+              <div class="section-head__label">
+                <p class="section-head__eyebrow">Studio Blog</p>
+              </div>
+              <p class="section-head__no" aria-hidden="true">06</p>
+            </div>
+            <h2 class="section-head__title content">BLOG</h2>
+            <p class="section-head__jp">・ブログ</p>
+          </header>
+          <ul class="blog__grid">
+            <li class="blog__item js-reveal">
+              <article class="blog-card">
+                <a href="#" class="blog-card__link">
+                  <div class="blog-card__thumb">
+                    <img src="/img/blog/blog06.webp" alt="" />
+                  </div>
+
+                  <h3 class="blog-card__title">SNS動画はなぜ“縦型”が重要なのか？｜企業動画の考え方</h3>
+
+                  <div class="blog-card__meta">
+                    <time class="blog-card__date" datetime="2024-01-01">2024.01.01</time>
+                    <span class="blog-card__category">Tips</span>
+                  </div>
+                </a>
+              </article>
+            </li>
+            <li class="blog__item js-reveal">
+              <article class="blog-card">
+                <a href="#" class="blog-card__link">
+                  <div class="blog-card__thumb">
+                    <img src="/img/blog/blog03.webp" alt="" />
+                  </div>
+
+                  <h3 class="blog-card__title">映像のクオリティは「企画」で決まる｜私たちの制作プロセスについて</h3>
+
+                  <div class="blog-card__meta">
+                    <time class="blog-card__date" datetime="2024-01-01">2024.01.01</time>
+                    <span class="blog-card__category">ブログ</span>
+                  </div>
+                </a>
+              </article>
+            </li>
+            <li class="blog__item js-reveal">
+              <article class="blog-card">
+                <a href="#" class="blog-card__link">
+                  <div class="blog-card__thumb">
+                    <img src="/img/blog/blog04.webp" alt="" />
+                  </div>
+
+                  <h3 class="blog-card__title">映像制作に関する取り組みがメディアに掲載されました</h3>
+
+                  <div class="blog-card__meta">
+                    <time class="blog-card__date" datetime="2024-01-01">2024.01.01</time>
+                    <span class="blog-card__category">メディア</span>
+                  </div>
+                </a>
+              </article>
+            </li>
+          </ul>
+          <div class="blog__footer">
+            <a href="#" class="blog__view-all">VIEW ALL</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="news" class="news">
+        <div class="container">
+          <header class="section-head">
+            <div class="section-head__top">
+              <div class="section-head__label">
+                <p class="section-head__eyebrow">Update</p>
+              </div>
+              <p class="section-head__no" aria-hidden="true">07</p>
+            </div>
+            <h2 class="section-head__title content">NEWS</h2>
+            <p class="section-head__jp">・新着情報</p>
+          </header>
+          <ul class="news__list js-reveal">
+            <li class="news__item">
+              <a href="#" class="news-item">
+                <div class="news-item__thumb">
+                  <img src="/img/blog/blog08.webp" alt="" />
+                </div>
+
+                <div class="news-item__body">
+                  <time class="news-item__date" datetime="2026-02-15">2026.02.15</time>
+                  <h3 class="news-item__title">
+                    サイトをリニューアルしました｜映像制作・写真・SNS動画のご相談について
+                  </h3>
+                </div>
+              </a>
+            </li>
+
+            <li class="news__item">
+              <a href="#" class="news-item">
+                <div class="news-item__thumb">
+                  <img src="/img/blog/blog02.webp" alt="" />
+                </div>
+
+                <div class="news-item__body">
+                  <time class="news-item__date" datetime="2026-02-15">2026.02.15</time>
+                  <h3 class="news-item__title">企業プロモーション映像を公開しました。</h3>
+                </div>
+              </a>
+            </li>
+
+            <li class="news__item">
+              <a href="#" class="news-item">
+                <div class="news-item__thumb">
+                  <img src="/img/blog/blog07.webp" alt="" />
+                </div>
+
+                <div class="news-item__body">
+                  <time class="news-item__date" datetime="2026-02-15">2026.02.15</time>
+                  <h3 class="news-item__title">夏季休業のお知らせ</h3>
+                </div>
+              </a>
+            </li>
+          </ul>
+
+          <div class="blog__footer">
+            <a href="#" class="blog__view-all">VIEW ALL</a>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="gallery" class="gallery">
+        <div class="container">
+          <div class="gallery__header">ZERO ONE FILM</div>
+        </div>
+
+        <div class="gallery__marquee" aria-label="Gallery">
+          <!-- 上段：右へ流す（見た目は右方向） -->
+          <div class="gallery__row gallery__row--top">
+            <ul class="gallery__track">
+              <!-- 1セット目 -->
+              <li class="gallery__item"><img src="/img/gallery/gallery01.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery02.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery03.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery04.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery05.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery06.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery07.webp" alt="" class="gallery__img"></li>
+
+              <!-- 2セット目（同じ内容をコピペで複製） -->
+              <li class="gallery__item"><img src="/img/gallery/gallery01.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery02.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery03.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery04.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery05.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery06.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery07.webp" alt="" class="gallery__img"></li>
+            </ul>
+          </div>
+
+          <!-- 下段：左へ流す -->
+          <div class="gallery__row gallery__row--bottom">
+            <ul class="gallery__track">
+              <!-- 1セット目 -->
+              <li class="gallery__item"><img src="/img/gallery/gallery08.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery09.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery10.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery11.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery12.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery13.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery14.webp" alt="" class="gallery__img"></li>
+
+              <!-- 2セット目（複製） -->
+              <li class="gallery__item"><img src="/img/gallery/gallery08.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery09.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery10.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery11.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery12.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery13.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item"><img src="/img/gallery/gallery14.webp" alt="" class="gallery__img"></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact is-dark">
+        <div class="container">
+          <header class="section-head">
+            <div class="section-head__top">
+              <div class="section-head__label">
+                <p class="section-head__eyebrow">Contact Form</p>
+              </div>
+              <p class="section-head__no" aria-hidden="true">08</p>
+            </div>
+            <h2 class="section-head__title content">CONTACT</h2>
+            <p class="section-head__jp">・お問い合わせ</p>
+          </header>
+
+          <div class="contact__body">
+            <h3 class="contact__catch">
+              想像に、<br />
+              イノチを吹き込む
+            </h3>
+
+            <p class="contact__text">
+              あなたの想いを、PR動画という形に。<br />
+              企画が固まっていなくても問題ありません。<br />
+              まずはお気軽にご相談ください。
+            </p>
+
+            <a class="contact__cta" href="/contact/">
+              <span class="contact__ctaText">CONTACT FORM</span>
+              <span class="contact__ctaArrow" aria-hidden="true">→</span>
+            </a>
+
+            <p class="contact__note">お見積もり・ご相談は無料です</p>
+
+            <a class="contact__toTop" href="#top" aria-label="ページ上部へ">
+              <span class="contact__toTopIcon" aria-hidden="true"></span>
+              <span class="contact__toTopText">to top</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <nav class="site-footer__nav" aria-label="フッターナビ">
+          <ul class="site-footer__list">
+            <li><a class="site-footer__link" href="/">Top</a></li>
+            <li><a class="site-footer__link" href="/#service">Service</a></li>
+            <li><a class="site-footer__link" href="/#works">Works</a></li>
+            <li><a class="site-footer__link" href="/#price">Price</a></li>
+            <li><a class="site-footer__link" href="/#company">Company</a></li>
+            <li><a class="site-footer__link" href="/#contact">Contact</a></li>
+          </ul>
+
+          <ul class="site-footer__list">
+            <li><a class="site-footer__link" href="/blog/">Blog</a></li>
+            <li><a class="site-footer__link" href="/news/">News</a></li>
+          </ul>
+        </nav>
+
+        <div class="site-footer__divider" aria-hidden="true"></div>
+
+        <div class="site-footer__brand">
+          <a class="site-footer__logo" href="/" aria-label="ZERO ONE FILM">
+            <img src="/img/logo_white.png" alt="ZERO ONE FILM" />
+          </a>
+
+          <address class="site-footer__meta">
+            <p>神奈川県横浜市港北区新吉田町-16-42</p>
+            <p class="site-footer__tel">
+              <span>Tel</span> <a href="tel:00000000000">000-000-0000</a>
+            </p>
+          </address>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+    <script type="module">
+      import { TypeShuffle } from '/src/js/modules/textShuffle.js';
+
+      const textElements = document.querySelectorAll('.content');
+      textElements.forEach((textElement) => {
+        const ts = new TypeShuffle(textElement);
+
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              ts.trigger('fx6');
+              io.unobserve(entry.target);
+            });
+          },
+          { rootMargin: '0px 0px -10% 0px', threshold: 0.2 }
+        );
+        io.observe(textElement);
+      });
+    </script>
+
+  </body>
+</html>

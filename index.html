@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
@@ -16,11 +16,21 @@
         <!-- PC用ナビ -->
         <nav class="global-nav" aria-label="Primary">
           <ul class="global-nav__list">
-            <li class="global-nav__item"><a href="#services" class="global-nav__link">Service</a></li>
-            <li class="global-nav__item"><a href="#works" class="global-nav__link">Works</a></li>
-            <li class="global-nav__item"><a href="/company.html" class="global-nav__link">Company</a></li>
-            <li class="global-nav__item"><a href="#blog" class="global-nav__link">Blog</a></li>
-            <li class="global-nav__item"><a href="#contact" class="global-nav__link">Contact</a></li>
+            <li class="global-nav__item">
+              <a href="#services" class="global-nav__link">Service</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="#works" class="global-nav__link">Works</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="company.html" class="global-nav__link">Company</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="#blog" class="global-nav__link">Blog</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="#contact" class="global-nav__link">Contact</a>
+            </li>
           </ul>
         </nav>
 
@@ -39,9 +49,18 @@
 
     <!-- SP用ドロワー（header外に配置でfixedが正しく効く） -->
     <div class="drawer" id="mobile-menu" hidden>
-      <button class="drawer__backdrop" type="button" aria-label="メニューを閉じる"></button>
+      <button
+        class="drawer__backdrop"
+        type="button"
+        aria-label="メニューを閉じる"
+      ></button>
 
-      <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="モバイルメニュー">
+      <div
+        class="drawer__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-label="モバイルメニュー"
+      >
         <div class="drawer__head">
           <span class="drawer__title">MENU</span>
           <button class="drawer__close" type="button" aria-label="閉じる">
@@ -52,7 +71,7 @@
         <nav class="drawer__nav" aria-label="Mobile">
           <a href="#services" class="drawer__link">Service</a>
           <a href="#works" class="drawer__link">Works</a>
-          <a href="/company.html" class="drawer__link">Company</a>
+          <a href="company.html" class="drawer__link">Company</a>
           <a href="#blog" class="drawer__link">Blog</a>
           <a href="#contact" class="drawer__link">Contact</a>
         </nav>
@@ -61,7 +80,13 @@
 
     <main>
       <section id="hero" class="hero">
-        <div class="loader" id="hero-loader" role="status" aria-live="polite" aria-label="動画を読み込み中">
+        <div
+          class="loader"
+          id="hero-loader"
+          role="status"
+          aria-live="polite"
+          aria-label="動画を読み込み中"
+        >
           <span class="loader__text" id="loaderText">Loading...</span>
         </div>
         <div class="hero__media" aria-hidden="true">
@@ -91,11 +116,16 @@
         <div class="container">
           <p class="about__bgtext" aria-hidden="true">ZERO ONE FILM</p>
           <div class="about__video">
-            <div class="about__video-inner js-video"
-                data-vimeo-id="1160430245"
-                data-vimeo-title="ZERO ONE FILM showreel">
-
-              <img src="/img/about_video.webp" alt="" class="about__video-thumb" />
+            <div
+              class="about__video-inner js-video"
+              data-vimeo-id="1160430245"
+              data-vimeo-title="ZERO ONE FILM showreel"
+            >
+              <img
+                src="/img/about_video.webp"
+                alt=""
+                class="about__video-thumb"
+              />
 
               <button type="button" class="about__play" aria-label="動画を再生">
                 <span class="about__play-icon" aria-hidden="true"></span>
@@ -117,7 +147,6 @@
       </section>
 
       <section id="services" class="services">
-
         <div class="container">
           <header class="section-head">
             <div class="section-head__top">
@@ -142,7 +171,9 @@
                   <p class="service-card__eyebrow">VIDEO PRODUCTION</p>
                   <h3 class="service-card__title">映像制作</h3>
 
-                  <p class="service-card__lead">”想像に、イノチを吹き込む”<br>目的に直結する「使える映像」を。</p>
+                  <p class="service-card__lead">
+                    ”想像に、イノチを吹き込む”<br />目的に直結する「使える映像」を。
+                  </p>
                   <p class="service-card__desc">
                     ただカッコいいだけではなく、企業の課題解決や成果につながる構成・演出をご提案。企画から納品まで一気通貫で対応します。
                   </p>
@@ -168,7 +199,9 @@
                   <p class="service-card__eyebrow">PHOTOGRAPHY</p>
                   <h3 class="service-card__title">写真撮影</h3>
 
-                  <p class="service-card__lead">“一瞬に、物語を”<br>次のカットが想像できる一枚。</p>
+                  <p class="service-card__lead">
+                    “一瞬に、物語を”<br />次のカットが想像できる一枚。
+                  </p>
                   <p class="service-card__desc">
                     Web・SNS・広告に最適化。映像制作で培った構図とライティング技術で、その場の温度感ごと切り取ります。
                   </p>
@@ -195,7 +228,7 @@
                   <h3 class="service-card__title">SNS縦型映像</h3>
 
                   <p class="service-card__lead">
-                    SNSで“見られる・伝わる”<br>縦型特化の設計と運用。
+                    SNSで“見られる・伝わる”<br />縦型特化の設計と運用。
                   </p>
                   <p class="service-card__desc">
                     コンセプト設計から撮影・編集まで。スマホでの視聴体験を前提とした、拡散力の高い縦型動画を制作します。
@@ -223,7 +256,7 @@
                   <h3 class="service-card__title">デザイン</h3>
 
                   <p class="service-card__lead">
-                    デザインだけができる世界を<br>デザインする。
+                    デザインだけができる世界を<br />デザインする。
                   </p>
                   <p class="service-card__desc">
                     ブランドの世界観を崩さず、見た目だけでなく「分かりやすさ・使いやすさ」まで設計して、次のアクションにつながる表現に仕上げます。
@@ -251,7 +284,7 @@
                   <h3 class="service-card__title">3Dモデリング</h3>
 
                   <p class="service-card__lead">
-                    イメージを、<br>カタチで伝えるテクノロジー。
+                    イメージを、<br />カタチで伝えるテクノロジー。
                   </p>
                   <p class="service-card__desc">
                     商品・空間・キャラクターなどを3Dで可視化し、映像・Web・SNSに展開できる素材として制作します。
@@ -294,7 +327,6 @@
                 </div>
               </article>
             </li>
-
           </ul>
         </div>
       </section>
@@ -319,7 +351,9 @@
                   <p class="strength-card__no" aria-hidden="true">#01</p>
                 </div>
 
-                <h3 class="strength-card__title">動画制作を軸とした<br>確かな制作力</h3>
+                <h3 class="strength-card__title">
+                  動画制作を軸とした<br />確かな制作力
+                </h3>
                 <p class="strength-card__desc">
                   企業プロモーションからドキュメンタリーまで。映像制作のプロとして、高品質なアウトプットをお約束します。
                 </p>
@@ -332,7 +366,9 @@
                   <p class="strength-card__no" aria-hidden="true">#02</p>
                 </div>
 
-                <h3 class="strength-card__title">写真撮影まで含めた<br>ビジュアル統一の実現力</h3>
+                <h3 class="strength-card__title">
+                  写真撮影まで含めた<br />ビジュアル統一の実現力
+                </h3>
                 <p class="strength-card__desc">
                   映像だけでなくスチール撮影も対応。Webやパンフレット等、トーン＆マナーの揃ったクリエイティブを提供します。
                 </p>
@@ -345,7 +381,9 @@
                   <p class="strength-card__no" aria-hidden="true">#03</p>
                 </div>
 
-                <h3 class="strength-card__title">縦型映像を中心にした<br>SNS展開まで対応</h3>
+                <h3 class="strength-card__title">
+                  縦型映像を中心にした<br />SNS展開まで対応
+                </h3>
                 <p class="strength-card__desc">
                   TikTokやReelsなど、スマホ視聴を前提とした「見られる・伝わる」縦型動画の設計から運用までサポート。
                 </p>
@@ -358,7 +396,9 @@
                   <p class="strength-card__no" aria-hidden="true">#04</p>
                 </div>
 
-                <h3 class="strength-card__title">企画から撮影・編集まで<br>一気通貫</h3>
+                <h3 class="strength-card__title">
+                  企画から撮影・編集まで<br />一気通貫
+                </h3>
                 <p class="strength-card__desc">
                   外注を挟まず社内で完結させることで、認識のズレを防ぎ、スピーディーかつ意図通りの制作を実現します。
                 </p>
@@ -367,11 +407,13 @@
             <li class="strength__item js-reveal">
               <article class="strength-card">
                 <div class="strength-card__thumb">
-                  <img src="/img/strength05.webp" altROSEROSE/>
+                  <img src="/img/strength05.webp" altROSEROSE />
                   <p class="strength-card__no" aria-hidden="true">#05</p>
                 </div>
 
-                <h3 class="strength-card__title">少人数精鋭による<br>柔軟で丁寧な対応</h3>
+                <h3 class="strength-card__title">
+                  少人数精鋭による<br />柔軟で丁寧な対応
+                </h3>
                 <p class="strength-card__desc">
                   「制作会社」であり「コンサルタント」。顔の見える距離感で、お客様の課題に寄り添い伴走します。
                 </p>
@@ -384,7 +426,9 @@
                   <p class="strength-card__no" aria-hidden="true">#06</p>
                 </div>
 
-                <h3 class="strength-card__title">手法ありきではなく<br>解決ありきの提案</h3>
+                <h3 class="strength-card__title">
+                  手法ありきではなく<br />解決ありきの提案
+                </h3>
                 <p class="strength-card__desc">
                   映像か、写真か、SNSか。課題の本質を見極め、最も効果的なクリエイティブ手法をご提案します。
                 </p>
@@ -597,7 +641,9 @@
 
                   <div class="work-card__tags" aria-label="categories">
                     <span class="work-card__tag is-solid">VIDEO</span>
-                    <span class="work-card__tag is-outline">EVENT & SERVICE</span>
+                    <span class="work-card__tag is-outline"
+                      >EVENT & SERVICE</span
+                    >
                   </div>
 
                   <p class="work-card__meta">店舗内PR動画 / サイネージ</p>
@@ -615,7 +661,9 @@
 
                   <div class="work-card__tags" aria-label="categories">
                     <span class="work-card__tag is-solid">VIDEO</span>
-                    <span class="work-card__tag is-outline">EVENT & SERVICE</span>
+                    <span class="work-card__tag is-outline"
+                      >EVENT & SERVICE</span
+                    >
                   </div>
 
                   <p class="work-card__meta">開発者インタビュー動画</p>
@@ -633,7 +681,9 @@
 
                   <div class="work-card__tags" aria-label="categories">
                     <span class="work-card__tag is-solid">PHOTO</span>
-                    <span class="work-card__tag is-outline">PHOTO & OTHERS</span>
+                    <span class="work-card__tag is-outline"
+                      >PHOTO & OTHERS</span
+                    >
                   </div>
 
                   <p class="work-card__meta">Webサイト用スチル撮影</p>
@@ -651,7 +701,9 @@
 
                   <div class="work-card__tags" aria-label="categories">
                     <span class="work-card__tag is-solid">PHOTO</span>
-                    <span class="work-card__tag is-outline">PHOTO & OTHERS</span>
+                    <span class="work-card__tag is-outline"
+                      >PHOTO & OTHERS</span
+                    >
                   </div>
 
                   <p class="work-card__meta">Webサイト用スチル撮影</p>
@@ -667,8 +719,16 @@
 
       <section id="philosophy" class="philosophy">
         <div class="container">
-          <span class="philosophy__bg philosophy__bg--top" data-speed="30" aria-hidden="true"></span>
-          <span class="philosophy__bg philosophy__bg--bottom" data-speed="30" aria-hidden="true"></span>
+          <span
+            class="philosophy__bg philosophy__bg--top"
+            data-speed="30"
+            aria-hidden="true"
+          ></span>
+          <span
+            class="philosophy__bg philosophy__bg--bottom"
+            data-speed="30"
+            aria-hidden="true"
+          ></span>
 
           <header class="section-head">
             <div class="section-head__top">
@@ -681,27 +741,37 @@
             <p class="section-head__jp">・私たちが大切にしていること</p>
           </header>
           <ul class="philosophy__grid">
-            <li class="philosophy__item philosophy__item--mission js-reveal js-reveal--right">
+            <li
+              class="philosophy__item philosophy__item--mission js-reveal js-reveal--right"
+            >
               <article class="philosophy-card">
                 <h3 class="philosophy-card__heading">Mission</h3>
-                <p class="philosophy-card__lead">映像を通して、<br>伝えるべき価値を<br>正しく届ける。</p>
+                <p class="philosophy-card__lead">
+                  映像を通して、<br />伝えるべき価値を<br />正しく届ける。
+                </p>
                 <p class="philosophy-card__text">
-                  企画意図を理解し、映像制作のプロとして、<br>最後まで責任を持って制作します。
+                  企画意図を理解し、映像制作のプロとして、<br />最後まで責任を持って制作します。
                 </p>
               </article>
             </li>
 
-            <li class="philosophy__item philosophy__item--vision js-reveal js-reveal--right">
+            <li
+              class="philosophy__item philosophy__item--vision js-reveal js-reveal--right"
+            >
               <article class="philosophy-card">
                 <h3 class="philosophy-card__heading">Vision</h3>
-                <p class="philosophy-card__lead">信頼され、<br>長く選ばれる<br>映像制作パートナーへ。</p>
+                <p class="philosophy-card__lead">
+                  信頼され、<br />長く選ばれる<br />映像制作パートナーへ。
+                </p>
                 <p class="philosophy-card__text">
-                  映像・写真・SNSを通して、企業やブランドの魅力を<br>継続的に伝えられる存在を目指します。
+                  映像・写真・SNSを通して、企業やブランドの魅力を<br />継続的に伝えられる存在を目指します。
                 </p>
               </article>
             </li>
 
-            <li class="philosophy__item philosophy__item--value philosophy__item--value js-reveal js-reveal--right">
+            <li
+              class="philosophy__item philosophy__item--value philosophy__item--value js-reveal js-reveal--right"
+            >
               <article class="philosophy-card">
                 <h3 class="philosophy-card__heading">Value</h3>
                 <ul class="philosophy-card__list">
@@ -714,8 +784,10 @@
               </article>
             </li>
           </ul>
-          <p class="philosophy__closing js-reveal js-reveal--right">ZERO exists to make <span class="philosophy__closing-blue">ONE.</span></p>
-
+          <p class="philosophy__closing js-reveal js-reveal--right">
+            ZERO exists to make
+            <span class="philosophy__closing-blue">ONE.</span>
+          </p>
         </div>
       </section>
 
@@ -739,10 +811,14 @@
                     <img src="/img/blog/blog06.webp" alt="" />
                   </div>
 
-                  <h3 class="blog-card__title">SNS動画はなぜ“縦型”が重要なのか？｜企業動画の考え方</h3>
+                  <h3 class="blog-card__title">
+                    SNS動画はなぜ“縦型”が重要なのか？｜企業動画の考え方
+                  </h3>
 
                   <div class="blog-card__meta">
-                    <time class="blog-card__date" datetime="2024-01-01">2024.01.01</time>
+                    <time class="blog-card__date" datetime="2024-01-01"
+                      >2024.01.01</time
+                    >
                     <span class="blog-card__category">Tips</span>
                   </div>
                 </a>
@@ -755,10 +831,14 @@
                     <img src="/img/blog/blog03.webp" alt="" />
                   </div>
 
-                  <h3 class="blog-card__title">映像のクオリティは「企画」で決まる｜私たちの制作プロセスについて</h3>
+                  <h3 class="blog-card__title">
+                    映像のクオリティは「企画」で決まる｜私たちの制作プロセスについて
+                  </h3>
 
                   <div class="blog-card__meta">
-                    <time class="blog-card__date" datetime="2024-01-01">2024.01.01</time>
+                    <time class="blog-card__date" datetime="2024-01-01"
+                      >2024.01.01</time
+                    >
                     <span class="blog-card__category">ブログ</span>
                   </div>
                 </a>
@@ -771,10 +851,14 @@
                     <img src="/img/blog/blog04.webp" alt="" />
                   </div>
 
-                  <h3 class="blog-card__title">映像制作に関する取り組みがメディアに掲載されました</h3>
+                  <h3 class="blog-card__title">
+                    映像制作に関する取り組みがメディアに掲載されました
+                  </h3>
 
                   <div class="blog-card__meta">
-                    <time class="blog-card__date" datetime="2024-01-01">2024.01.01</time>
+                    <time class="blog-card__date" datetime="2024-01-01"
+                      >2024.01.01</time
+                    >
                     <span class="blog-card__category">メディア</span>
                   </div>
                 </a>
@@ -807,7 +891,9 @@
                 </div>
 
                 <div class="news-item__body">
-                  <time class="news-item__date" datetime="2026-02-15">2026.02.15</time>
+                  <time class="news-item__date" datetime="2026-02-15"
+                    >2026.02.15</time
+                  >
                   <h3 class="news-item__title">
                     サイトをリニューアルしました｜映像制作・写真・SNS動画のご相談について
                   </h3>
@@ -822,8 +908,12 @@
                 </div>
 
                 <div class="news-item__body">
-                  <time class="news-item__date" datetime="2026-02-15">2026.02.15</time>
-                  <h3 class="news-item__title">企業プロモーション映像を公開しました。</h3>
+                  <time class="news-item__date" datetime="2026-02-15"
+                    >2026.02.15</time
+                  >
+                  <h3 class="news-item__title">
+                    企業プロモーション映像を公開しました。
+                  </h3>
                 </div>
               </a>
             </li>
@@ -835,7 +925,9 @@
                 </div>
 
                 <div class="news-item__body">
-                  <time class="news-item__date" datetime="2026-02-15">2026.02.15</time>
+                  <time class="news-item__date" datetime="2026-02-15"
+                    >2026.02.15</time
+                  >
                   <h3 class="news-item__title">夏季休業のお知らせ</h3>
                 </div>
               </a>
@@ -845,7 +937,6 @@
           <div class="blog__footer">
             <a href="#" class="blog__view-all">VIEW ALL</a>
           </div>
-
         </div>
       </section>
 
@@ -859,22 +950,106 @@
           <div class="gallery__row gallery__row--top">
             <ul class="gallery__track">
               <!-- 1セット目 -->
-              <li class="gallery__item"><img src="/img/gallery/gallery01.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery02.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery03.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery04.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery05.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery06.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery07.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery01.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery02.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery03.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery04.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery05.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery06.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery07.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
 
               <!-- 2セット目（同じ内容をコピペで複製） -->
-              <li class="gallery__item"><img src="/img/gallery/gallery01.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery02.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery03.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery04.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery05.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery06.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery07.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery01.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery02.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery03.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery04.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery05.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery06.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery07.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
             </ul>
           </div>
 
@@ -882,22 +1057,106 @@
           <div class="gallery__row gallery__row--bottom">
             <ul class="gallery__track">
               <!-- 1セット目 -->
-              <li class="gallery__item"><img src="/img/gallery/gallery08.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery09.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery10.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery11.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery12.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery13.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery14.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery08.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery09.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery10.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery11.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery12.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery13.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery14.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
 
               <!-- 2セット目（複製） -->
-              <li class="gallery__item"><img src="/img/gallery/gallery08.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery09.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery10.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery11.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery12.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery13.webp" alt="" class="gallery__img"></li>
-              <li class="gallery__item"><img src="/img/gallery/gallery14.webp" alt="" class="gallery__img"></li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery08.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery09.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery10.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery11.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery12.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery13.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
+              <li class="gallery__item">
+                <img
+                  src="/img/gallery/gallery14.webp"
+                  alt=""
+                  class="gallery__img"
+                />
+              </li>
             </ul>
           </div>
         </div>
@@ -981,9 +1240,9 @@
 
     <script type="module" src="/src/main.js"></script>
     <script type="module">
-      import { TypeShuffle } from '/src/js/modules/textShuffle.js';
+      import { TypeShuffle } from "/src/js/modules/textShuffle.js";
 
-      const textElements = document.querySelectorAll('.content');
+      const textElements = document.querySelectorAll(".content");
       textElements.forEach((textElement) => {
         const ts = new TypeShuffle(textElement);
 
@@ -991,15 +1250,14 @@
           (entries) => {
             entries.forEach((entry) => {
               if (!entry.isIntersecting) return;
-              ts.trigger('fx6');
+              ts.trigger("fx6");
               io.unobserve(entry.target);
             });
           },
-          { rootMargin: '0px 0px -10% 0px', threshold: 0.2 }
+          { rootMargin: "0px 0px -10% 0px", threshold: 0.2 }
         );
         io.observe(textElement);
       });
     </script>
-
   </body>
 </html>

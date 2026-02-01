@@ -10,6 +10,7 @@ import { initAboutVideo } from "./js/modules/aboutVideo";
 import { initVideoPlayer } from "./js/modules/videoPlayer";
 import { initAboutBgtext } from "./js/modules/aboutBgtext";
 import { initReveal } from "./js/modules/reveal";
+import { initPhilosophyParallax } from "./js/modules/parallax.js";
 
 // =====================================
 // Helpers
@@ -26,6 +27,7 @@ function runInit() {
     rootMargin: "0px 0px -5% 0px",
     threshold: 0.25,
   });
+  if (typeof initPhilosophyParallax === "function") initPhilosophyParallax();
 }
 
 // DOM ready

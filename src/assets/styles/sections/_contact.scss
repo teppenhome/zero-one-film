@@ -10,8 +10,10 @@
     to bottom,
     #081843 0%,     // ← galleryの終点と完全一致
     #05132e 55%,
-    #020a1a 100%    // ← ほぼ黒の濃紺
+    #020a1a 100% 
   );
+
+  overflow: hidden;
 
   //タイトルまわり
   .section-head__eyebrow {
@@ -24,6 +26,36 @@
     color: #fff;
   }
 }
+
+.contact::before,
+.contact::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(60px);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0; // 背景として敷く
+}
+
+/* 左下〜中央寄りのぼかし */
+.contact::before {
+  width: 520px;
+  height: 520px;
+  left: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(80, 140, 255, 0.55) 0%, rgba(80, 140, 255, 0) 60%);
+}
+
+/* 右上〜中央寄りのぼかし */
+.contact::after {
+  width: 460px;
+  height: 460px;
+  right: 160px;
+  top: 0;
+  background: radial-gradient(circle, rgba(60, 120, 255, 0.45) 0%, rgba(60, 120, 255, 0) 60%);
+}
+
 
 /* ===== body only ===== */
 
@@ -99,8 +131,9 @@
   bottom: -6px;
 
   display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;   // ← 縦並び
+  align-items: center;      // ← 左右中央揃え
+  gap: 6px;                 // ← 矢印と文字の間隔
 
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
@@ -109,6 +142,10 @@
 
   &:hover {
     color: rgba(255, 255, 255, 0.85);
+  }
+
+  @media (max-width: 480px) {
+    bottom: -60px;
   }
 
   @include m.mq(md) {

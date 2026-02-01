@@ -28,18 +28,25 @@
 /* 共通：テクスチャブロック */
 .philosophy__bg {
   position: absolute;
-  z-index: 0; 
+  z-index: 0;
   pointer-events: none;
-  background: url("/img/philosophy_back.webp") center / cover no-repeat;
+
+  background-image: url("/img/philosophy_back.webp");
+  background-size: 150% auto;
+  background-repeat: no-repeat;
+  background-position: center 50%; // ← 基準（上下中央）
+
   opacity: 0.9;
   border-radius: 2px;
+
+  will-change: background-position;
 
   &::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.2); // 白の強さ
-    }
+    background: rgba(255, 255, 255, 0.2);
+  }
 }
 
 /* Mission 左上あたり */
@@ -48,6 +55,12 @@
   right: -200px;
   width: min(1000px, 95vw);
   aspect-ratio: 21 / 9;
+
+  @media (max-width: 768px) {
+    top: 150px;
+    right: -100px;
+    aspect-ratio: 16 / 9;
+  }
 }
 
 /* Value 左下 */
@@ -56,6 +69,12 @@
   left: -200px;
   width: min(1000px, 95vw);
   aspect-ratio: 24 / 9;
+
+  @media (max-width: 768px) {
+    bottom: -40px;
+    left: -100px;
+    aspect-ratio: 4 / 3;
+  }
 }
 
 .philosophy__tagline {
@@ -78,7 +97,7 @@
   padding: 0;
 
   position: relative;
-  padding: 44px 24px 64px;
+  padding: 44px 0 64px;
   overflow: hidden;
 
   display: grid;

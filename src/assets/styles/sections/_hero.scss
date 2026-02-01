@@ -70,16 +70,6 @@
   padding-left: 2em;
 }
 
-.hero__subtitle {
-  margin-bottom: v.$spacing-32;
-  color: #fff;
-  font-size: 1rem;
-
-  @include m.mq(md) {
-    font-size: 1.125rem;
-  }
-}
-
 .hero__play {
   display: inline-flex;
   align-items: center;

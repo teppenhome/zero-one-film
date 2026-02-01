@@ -18,7 +18,7 @@
           <ul class="global-nav__list">
             <li class="global-nav__item"><a href="#services" class="global-nav__link">Service</a></li>
             <li class="global-nav__item"><a href="#works" class="global-nav__link">Works</a></li>
-            <li class="global-nav__item"><a href="#philosophy" class="global-nav__link">Company</a></li>
+            <li class="global-nav__item"><a href="/company" class="global-nav__link">Company</a></li>
             <li class="global-nav__item"><a href="#blog" class="global-nav__link">Blog</a></li>
             <li class="global-nav__item"><a href="#contact" class="global-nav__link">Contact</a></li>
           </ul>
@@ -61,10 +61,14 @@
 
     <main>
       <section id="hero" class="hero">
+        <div class="loader" id="hero-loader" role="status" aria-live="polite" aria-label="動画を読み込み中">
+          <span class="loader__text" id="loaderText">Loading...</span>
+        </div>
         <div class="hero__media" aria-hidden="true">
           <iframe
+            id="hero-vimeo"
             class="hero__bg"
-            src="https://player.vimeo.com/video/1160430245?background=1&autoplay=1&loop=1&muted=1&autopause=0&badge=0"
+            src="https://player.vimeo.com/video/1160430245?background=1&autoplay=1&loop=1&muted=1&autopause=0&badge=0&playsinline=1"
             frameborder="0"
             allow="autoplay; fullscreen; picture-in-picture"
             title="Hero Movie"

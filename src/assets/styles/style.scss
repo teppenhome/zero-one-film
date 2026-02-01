@@ -3,6 +3,7 @@
 @use "base";
 @use "layout";
 @use "sections/hero";
+@use "sections/loader";
 @use "sections/about";
 @use "sections/services";
 @use "sections/strength";
@@ -14,4 +15,5 @@
 @use "sections/philosophy";
 @use "sections/gallery";
 @use "sections/contact";
+@use "pages/company";
 @use "untilities/reveal";

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company | ZERO ONE FILM</title>
+  </head>
+  <body>
+    <header id="header" class="global-header">
+      <div class="container">
+        <a href="/" class="global-header__logo">
+          <img src="/img/logo_white.png" alt="ZERO ONE FILM" />
+        </a>
+
+        <nav class="global-nav" aria-label="Primary">
+          <ul class="global-nav__list">
+            <li class="global-nav__item"><a href="/#services" class="global-nav__link">Service</a></li>
+            <li class="global-nav__item"><a href="/#works" class="global-nav__link">Works</a></li>
+            <li class="global-nav__item"><a href="/company.html" class="global-nav__link">Company</a></li>
+            <li class="global-nav__item"><a href="/#blog" class="global-nav__link">Blog</a></li>
+            <li class="global-nav__item"><a href="/#contact" class="global-nav__link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="nav-toggle__lines" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="drawer" id="mobile-menu" hidden>
+      <button class="drawer__backdrop" type="button" aria-label="メニューを閉じる"></button>
+      <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="モバイルメニュー">
+        <div class="drawer__head">
+          <span class="drawer__title">MENU</span>
+          <button class="drawer__close" type="button" aria-label="閉じる">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <nav class="drawer__nav" aria-label="Mobile">
+          <a href="/#services" class="drawer__link">Service</a>
+          <a href="/#works" class="drawer__link">Works</a>
+          <a href="/company.html" class="drawer__link">Company</a>
+          <a href="/#blog" class="drawer__link">Blog</a>
+          <a href="/#contact" class="drawer__link">Contact</a>
+        </nav>
+      </div>
+    </div>
+
+    <main>
+      <!-- 2-1. ページヒーロー -->
+      <section class="page-hero page-hero--company">
+        <div class="page-hero__bg" aria-hidden="true"></div>
+        <div class="container">
+          <div class="page-hero__inner">
+            <h1 class="page-hero__title">Company</h1>
+            <p class="page-hero__sub">
+              <span class="page-hero__sub-line">企業・ブランドの価値を、</span>
+              <span class="page-hero__sub-line">映像で"伝わる形"に。</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2-2. パンくず -->
+      <nav class="breadcrumb" aria-label="パンくず">
+        <div class="container">
+          <ol class="breadcrumb__list">
+            <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">TOP</a></li>
+            <li class="breadcrumb__item" aria-current="page">COMPANY</li>
+          </ol>
+        </div>
+      </nav>
+
+      <!-- 2-3. Section 01：Message -->
+      <section class="company-section company-message" id="message">
+        <div class="container">
+          <header class="section-head">
+            <div class="section-head__top">
+              <div class="section-head__label">
+                <p class="section-head__eyebrow">What We Do</p>
+              </div>
+              <p class="section-head__no" aria-hidden="true">01</p>
+            </div>
+            <h2 class="section-head__title content">MESSAGE</h2>
+            <p class="section-head__jp">・ZEROONEFILMってどんな会社？</p>
+          </header>
+          <div class="company-message__body">
+            <p class="company-message_title">いまの努力が、未来を変える。<br>楽しめ、人生！</p>
+            <p class="company-message__text">
+              今日の選択や挑戦が、<br>未来の景色をつくっていく。
+            </p>
+            <p class="company-message__text">
+              ZEROONEFILMは、<br>一つひとつの仕事に本気で向き合い、<br>楽しみながら、意味のあるクリエイティブを生み出します。
+            </p>
+            <p class="company-message__text">
+              映像・写真・SNSを通して、<br>想像にイノチを吹き込み、<br>人やブランドの未来に、そっと火を灯します。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2-4. Section 02：会社概要 -->
+      <section class="company-overview" id="overview">
+        <div class="container">
+          <header class="section-head">
+            <div class="section-head__top">
+              <div class="section-head__label">
+                <p class="section-head__eyebrow">Company Overview</p>
+              </div>
+              <p class="section-head__no" aria-hidden="true">02</p>
+            </div>
+            <h2 class="section-head__title content">会社概要</h2>
+          </header>
+          <div class="company-overview__table-wrap">
+            <table class="company-overview__table">
+              <tbody>
+                <tr class="company-overview__row">
+                  <th class="company-overview__th">会社名</th>
+                  <td class="company-overview__td">株式会社 ZEROONEFILM</td>
+                </tr>
+                <tr class="company-overview__row">
+                  <th class="company-overview__th">設立年月日</th>
+                  <td class="company-overview__td">2023年8月22日</td>
+                </tr>
+                <tr class="company-overview__row">
+                  <th class="company-overview__th">資本金</th>
+                  <td class="company-overview__td">1,000,000円</td>
+                </tr>
+                <tr class="company-overview__row">
+                  <th class="company-overview__th">住所</th>
+                  <td class="company-overview__td">神奈川県横浜市港北区高田西1-16-42</td>
+                </tr>
+                <tr class="company-overview__row">
+                  <th class="company-overview__th">代表取締役</th>
+                  <td class="company-overview__td">中本拓海</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2-5. Contact導線 -->
+      <section class="company-cta">
+        <div class="container">
+          <div class="company-cta__inner">
+            <p class="company-cta__lead">お問合せはこちら</p>
+            <a href="/#contact" class="company-cta__btn">CONTACT</a>
+          </div>
+          <p class="company-cta__note">大切な瞬間を、写真に。</p>
+          <p class="company-cta__note-sub"> 企業撮影・個人撮影ともに対応しています。<br>イメージが固まっていなくても問題ありません。<br>まずはお気軽にご相談ください。</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- 2-6. フッター -->
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <nav class="site-footer__nav" aria-label="フッターナビ">
+          <ul class="site-footer__list">
+            <li><a class="site-footer__link" href="/">Top</a></li>
+            <li><a class="site-footer__link" href="/#services">Service</a></li>
+            <li><a class="site-footer__link" href="/#works">Works</a></li>
+            <li><a class="site-footer__link" href="/#philosophy">Price</a></li>
+            <li><a class="site-footer__link" href="/company.html">Company</a></li>
+            <li><a class="site-footer__link" href="/#contact">Contact</a></li>
+          </ul>
+          <ul class="site-footer__list">
+            <li><a class="site-footer__link" href="/#blog">Blog</a></li>
+            <li><a class="site-footer__link" href="/#news">News</a></li>
+          </ul>
+        </nav>
+        <div class="site-footer__divider" aria-hidden="true"></div>
+        <div class="site-footer__brand">
+          <a class="site-footer__logo" href="/" aria-label="ZERO ONE FILM">
+            <img src="/img/logo_white.png" alt="ZERO ONE FILM" />
+          </a>
+          <address class="site-footer__meta">
+            <p>Access　東京都渋谷区恵比寿 1-15-42</p>
+            <p class="site-footer__tel"><span>Tel</span> <a href="tel:0300000000">03-(0000)-0000</a></p>
+          </address>
+        </div>
+        <a class="company-to-top" href="#header" aria-label="ページ上部へ">
+          <span class="company-to-top__icon" aria-hidden="true"></span>
+          <span class="company-to-top__text">to top</span>
+        </a>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

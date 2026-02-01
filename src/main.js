@@ -11,12 +11,14 @@ import { initVideoPlayer } from "./js/modules/videoPlayer";
 import { initAboutBgtext } from "./js/modules/aboutBgtext";
 import { initReveal } from "./js/modules/reveal";
 import { initPhilosophyParallax } from "./js/modules/parallax.js";
+import { initHeroVideoLoader } from "./js/modules/heroVideoLoader";
 
 // =====================================
 // Helpers
 function runInit() {
   // ヘッダー（スクロールで背景変更など）
   if (typeof initHeader === "function") initHeader();
+  if (typeof initHeroVideoLoader === "function") initHeroVideoLoader();
 
   // About 動画（必要なページにだけ .js-video が存在すればOK）
   if (typeof initAboutVideo === "function") initAboutVideo();

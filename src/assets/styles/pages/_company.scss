@@ -1,0 +1,439 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+
+// 罫線・ラベル用の色（画像に寄せる）
+$company-border: #e0e0e0;
+$company-label: rgba(0, 0, 0, 0.5);
+$company-cta-bg: #1366ff;
+
+/* =========================================
+   2-1. ページヒーロー
+========================================= */
+.page-hero--company {
+  position: relative;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+
+  @include m.mq(md) {
+    min-height: 360px;
+  }
+
+  @media (min-width: 1024px) {
+    min-height: 420px;
+  }
+}
+
+.page-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("/img/philosophy_back.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(19, 102, 255, 0.75) 0%,
+      rgba(10, 55, 140, 0.6) 50%,
+      rgba(5, 30, 80, 0.7) 100%
+    );
+  }
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero__inner {
+  padding-top: calc(65px + 2rem);
+  padding-bottom: 2.5rem;
+}
+
+.page-hero__title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.page-hero__sub {
+  margin: 20px 0 0;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+
+.page-hero__sub-line {
+  display: block;
+}
+
+/* =========================================
+   2-2. パンくず
+========================================= */
+.breadcrumb {
+  padding-top: clamp(1.25rem, 3vw, 2rem);
+  padding-bottom: clamp(1.25rem, 3vw, 2rem);
+  background: #fff;
+  border-bottom: 1px solid $company-border;
+}
+
+.breadcrumb__list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: $company-label;
+}
+
+.breadcrumb__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &:not(:last-child)::after {
+    content: "/";
+    color: $company-label;
+    margin-left: 0.25rem;
+  }
+}
+
+.breadcrumb__link {
+  color: $company-label;
+  text-decoration: none;
+
+  &:hover {
+    color: v.$color-text;
+  }
+}
+
+.breadcrumb__item[aria-current="page"] {
+  color: v.$color-text;
+  font-weight: 500;
+}
+
+/* =========================================
+   2-3. Section 01：Message / 2-4. Section 02 共通
+========================================= */
+.company-section {
+  padding-top: clamp(3.5rem, 8vw, 7rem);
+  padding-bottom: clamp(3.5rem, 8vw, 7rem);
+  background: #fff;
+}
+
+.company-section__head {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.company-section__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1px;
+  border-top: 1px solid $company-border;
+  margin-bottom: 0.6rem;
+}
+
+.company-section__label {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: $company-label;
+  text-transform: uppercase;
+}
+
+.company-section__no {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: $company-label;
+}
+
+.company-section__title {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: v.$color-text;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+/* Message 本文 */
+.company-message__body {
+  max-width: 720px;
+  margin-left: 0;
+}
+
+.company-message_title {
+  margin: 0 0 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: v.$color-text;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+
+  @media (max-width: 767px) {
+    font-size: 1.25rem;
+  }
+}
+
+.company-message__text {
+  margin: 0 0 1.5rem;
+  font-size: 0.9375rem;
+  line-height: 2;
+  color: v.$color-text;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include m.mq(md) {
+    font-size: 1rem;
+  }
+}
+
+/* ==============================
+  Company Overview Table
+================================ */
+.company-overview__table-wrap {
+  max-width: 980px;
+  margin-inline: auto;
+  margin-top: 80px;
+}
+
+.company-overview__table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;       /* th/tdの幅を安定 */
+  border-top: 1px solid rgba(0, 0, 0, 0.18);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+  background: transparent;
+}
+
+.company-overview__row {
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+
+  &:first-child {
+    border-top: none; /* 上は table の border-top に任せる */
+  }
+}
+
+.company-overview__th,
+.company-overview__td {
+  padding: clamp(28px, 4vw, 44px) clamp(18px, 3vw, 28px);
+  vertical-align: middle;
+  text-align: center;
+  line-height: 1.9;
+  color: rgba(0, 0, 0, 0.78);
+  letter-spacing: 0.04em;
+}
+
+/* 左カラム */
+.company-overview__th {
+  width: 38%;
+  font-weight: 500;
+  border-right: 2px solid rgba(0, 0, 0, 0.28); /* 画像の“中央の太め縦線” */
+}
+
+/* 右カラム */
+.company-overview__td {
+  width: 62%;
+  font-weight: 400;
+}
+
+/* SP微調整（2カラム維持しつつ余白と文字を調整） */
+@media (max-width: 767px) {
+  .company-overview__th,
+  .company-overview__td {
+    padding: 22px 14px;
+    font-size: 0.95rem;
+  }
+}
+
+/* ==============================
+  Company CTA
+================================ */
+.company-cta {
+  padding-block: clamp(80px, 12vw, 160px);
+  background: #fff;
+  text-align: center;
+}
+
+.company-cta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+}
+
+/* 上段（テキスト → ボタン） */
+.company-cta__lead {
+  margin-bottom: clamp(24px, 4vw, 40px);
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  color: rgba(0, 0, 0, 0.7);
+  padding-bottom: 10px;
+  padding-right: 40px;
+  position: relative;
+  margin-bottom: 60px;
+
+  @media (max-width: 767px) {
+    margin-bottom: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100px;
+    height: 10px;
+    background-image: url("/img/icons/arrow_right.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    right: 0;
+    bottom: 0;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+}
+
+/* CONTACTボタン */
+.company-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 240px;
+  height: 56px;
+  padding-inline: 40px;
+  margin-bottom: clamp(32px, 6vw, 56px);
+
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+
+  color: #fff;
+  background: #1f4e8c; /* 画像の濃いブルー寄り */
+  border-radius: 8px;
+
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    background 0.25s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    background: #183f73;
+  }
+}
+
+/* 下の説明テキスト */
+.company-cta__note {
+  max-width: 560px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 2;
+  letter-spacing: 0.08em;
+  color: rgba(0, 0, 0, 0.65);
+  display: block;
+  margin: 0 auto;
+}
+
+.company-cta__note-sub {
+  font-size: 0.95rem;
+  line-height: 2;
+  letter-spacing: 0.08em;
+  color: rgba(0, 0, 0, 0.65);
+  display: block;
+  margin: 20px auto 0;
+}
+
+/* SP微調整 */
+@media (max-width: 767px) {
+  .company-cta {
+    padding-block: 96px;
+  }
+
+  .company-cta__btn {
+    min-width: 220px;
+    height: 52px;
+    font-size: 0.9rem;
+  }
+
+  .company-cta__note {
+    font-size: 1.25rem;
+  }
+}
+
+/* =========================================
+   2-6. フッター内 to top（Companyページ用）
+========================================= */
+.company-to-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding-top: 0.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  @media (max-width: 767px) {
+    position: static;
+    margin-left: auto;
+    margin-top: 0.5rem;
+  }
+}
+
+.company-to-top__icon {
+  width: 14px;
+  height: 14px;
+  border-right: 2px solid currentColor;
+  border-top: 2px solid currentColor;
+  transform: rotate(-45deg);
+}
+
+.company-to-top__text {
+  text-transform: lowercase;
+}
+
+/* Companyページのフッター：to top 用に relative */
+body:has(.company-cta) .site-footer__inner,
+.site-footer__inner:has(.company-to-top) {
+  position: relative;
+  padding-top: 2.5rem;
+}

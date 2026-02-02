@@ -384,3 +384,70 @@
   .drawer { display: none; }
 }
 
+// aboutセクション以降の背景：円形・棒状の青色ぼかし（疑似要素）
+.top-wrap {
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+
+  // 円形のぼかし（複数箇所を radial-gradient で表現）
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse  clamp(140px, 22vw, 320px) clamp(140px, 22vw, 320px) at 15% 12%, rgba(100, 180, 255, 0.5) 0%, transparent 62%),
+      radial-gradient(ellipse  clamp(130px, 20vw, 260px) clamp(130px, 20vw, 260px) at 88% 18%, rgba(47, 136, 255, 0.48) 0%, transparent 55%),
+      radial-gradient(ellipse  clamp(120px, 18vw, 240px) clamp(120px, 18vw, 240px) at 72% 25%, rgba(120, 200, 255, 0.4) 0%, transparent 58%),
+      radial-gradient(ellipse  clamp(100px, 15vw, 200px) clamp(100px, 15vw, 200px) at 88% 55%, rgba(55, 130, 215, 0.38) 0%, transparent 55%),
+      radial-gradient(ellipse  clamp(110px, 17vw, 230px) clamp(110px, 17vw, 230px) at 42% 78%, rgba(35, 115, 245, 0.42) 0%, transparent 52%),
+      radial-gradient(ellipse  clamp(160px, 24vw, 280px) clamp(160px, 24vw, 280px) at 35% 68%, rgba(110, 190, 255, 0.38) 0%, transparent 62%),
+      radial-gradient(ellipse  clamp(110px, 16vw, 220px) clamp(110px, 16vw, 220px) at 5% 82%, rgba(95, 175, 255, 0.32) 0%, transparent 56%),
+      radial-gradient(ellipse  clamp(120px, 18vw, 240px) clamp(120px, 18vw, 240px) at 55% 42%, rgba(100, 185, 255, 0.28) 0%, transparent 58%),
+      radial-gradient(ellipse  clamp(90px, 14vw, 180px) clamp(90px, 14vw, 180px) at 25% 38%, rgba(45, 115, 200, 0.32) 0%, transparent 52%),
+      radial-gradient(ellipse  clamp(85px, 13vw, 170px) clamp(85px, 13vw, 170px) at 82% 75%, rgba(50, 120, 205, 0.28) 0%, transparent 50%);
+    filter: blur( clamp(32px, 5vw, 56px) );
+    -webkit-filter: blur( clamp(32px, 5vw, 56px) );
+  }
+
+  // 棒状のぼかし（細長いグラデーションをランダムな位置に）
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(105deg, transparent 32%, rgba(100, 180, 255, 0.32) 40%, rgba(55, 125, 210, 0.26) 50%, transparent 62%),
+      linear-gradient(12deg, transparent 38%, rgba(90, 170, 255, 0.34) 46%, transparent 58%),
+      linear-gradient(78deg, transparent 52%, rgba(47, 136, 255, 0.38) 58%, transparent 68%),
+      linear-gradient(-8deg, transparent 18%, rgba(95, 175, 255, 0.3) 26%, rgba(50, 115, 200, 0.22) 34%, transparent 42%),
+      linear-gradient(165deg, transparent 60%, rgba(35, 115, 245, 0.32) 66%, transparent 76%),
+      linear-gradient(45deg, transparent 48%, rgba(45, 110, 195, 0.28) 54%, transparent 62%);
+    background-size:
+      48% 40%,
+      58% 28%,
+      44% 34%,
+      38% 44%,
+      52% 32%,
+      42% 26%;
+    background-position:
+      5% 12%,
+      68% 52%,
+      78% 22%,
+      18% 68%,
+      48% 78%,
+      62% 38%;
+    background-repeat: no-repeat;
+    filter: blur( clamp(40px, 6vw, 72px) );
+    -webkit-filter: blur( clamp(40px, 6vw, 72px) );
+  }
+}
+
+/* 中身を前に */
+.top-wrap > * {
+  position: relative;
+  z-index: 1;
+}

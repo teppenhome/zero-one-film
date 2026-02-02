@@ -4,6 +4,42 @@
 .news {
   padding-top: v.$spacing-80;
   padding-bottom: 120px;
+  position: relative;
+  overflow: hidden;
+
+  // セクション内の青いぼかし
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse clamp(90px, 18vw, 200px) clamp(90px, 18vw, 200px) at 15% 30%, rgba(100, 180, 255, 0.38) 0%, transparent 55%),
+      radial-gradient(ellipse clamp(100px, 20vw, 220px) clamp(100px, 20vw, 220px) at 90% 65%, rgba(47, 136, 255, 0.42) 0%, transparent 55%),
+      radial-gradient(ellipse clamp(65px, 12vw, 130px) clamp(65px, 12vw, 130px) at 55% 15%, rgba(50, 120, 205, 0.26) 0%, transparent 50%);
+    filter: blur(clamp(28px, 4vw, 48px));
+    -webkit-filter: blur(clamp(28px, 4vw, 48px));
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(12deg, transparent 35%, rgba(95, 175, 255, 0.24) 42%, transparent 52%);
+    background-size: 50% 45%;
+    background-position: 70% 25%;
+    background-repeat: no-repeat;
+    filter: blur(clamp(36px, 5vw, 56px));
+    -webkit-filter: blur(clamp(36px, 5vw, 56px));
+  }
+}
+
+.news > * {
+  position: relative;
+  z-index: 1;
 }
 
 .news__list {

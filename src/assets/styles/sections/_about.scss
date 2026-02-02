@@ -5,11 +5,41 @@
   padding-top: v.$spacing-80;
   position: relative;
   overflow: hidden;
+
+  // セクション内の青いぼかし
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse clamp(140px, 26vw, 320px) clamp(140px, 26vw, 320px) at 85% 20%, rgba(29, 127, 255, 0.45) 0%, transparent 75%),
+      radial-gradient(ellipse clamp(80px, 14vw, 160px) clamp(80px, 14vw, 160px) at 10% 70%, rgba(110, 190, 255, 0.35) 0%, transparent 52%),
+      radial-gradient(ellipse clamp(70px, 12vw, 140px) clamp(70px, 12vw, 140px) at 50% 45%, rgba(55, 130, 215, 0.28) 0%, transparent 48%);
+    filter: blur(clamp(28px, 4vw, 48px));
+    -webkit-filter: blur(clamp(28px, 4vw, 48px));
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(75deg, transparent 50%, rgba(90, 170, 255, 0.22) 58%, transparent 66%);
+    background-size: 60% 50%;
+    background-position: 30% 60%;
+    background-repeat: no-repeat;
+    filter: blur(clamp(36px, 5vw, 56px));
+    -webkit-filter: blur(clamp(36px, 5vw, 56px));
+  }
 }
 
 .about .container {
   max-width: 980px;
   position: relative;
+  z-index: 1;
 }
 
 .about__bgtext {

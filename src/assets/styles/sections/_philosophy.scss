@@ -7,18 +7,6 @@
   padding-bottom: 200px;
   overflow: hidden;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, #4a90e2 0%, #357abd 50%, #2e6da4 100%);
-    opacity: 0.1;
-    z-index: 0;
-  }
-
   .container {
     position: relative;
     z-index: 1;
@@ -228,7 +216,6 @@
   font-size: 30px;
   font-weight: 300;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
 
   color: rgba(0, 0, 0);
 
@@ -243,8 +230,34 @@
     background: rgba(255, 255, 255, 0.7);
     z-index: -1;
   }
+
+  @media (max-width: 767px) {
+    font-size: 25px;
+    margin: 24px 0 0 auto;
+  }
 }
 
 .philosophy__closing-blue {
   color: #2b66d9;
+}
+
+.sp-break {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .sp-break {
+    display: block;
+  }
+}
+
+.philosophy__to {
+  position: relative;
+}
+
+/* スマホだけ「to」の前に空白3つ */
+@media (max-width: 767px) {
+  .philosophy__to::before {
+    content: "\00a0\00a0\00a0"; // 半角スペース3つ分
+  }
 }

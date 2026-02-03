@@ -404,7 +404,7 @@ button {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: linear-gradient(105deg, transparent 32%, rgba(100, 180, 255, 0.32) 40%, rgba(55, 125, 210, 0.26) 50%, transparent 62%), linear-gradient(12deg, transparent 38%, rgba(90, 170, 255, 0.34) 46%, transparent 58%), linear-gradient(78deg, transparent 52%, rgba(47, 136, 255, 0.38) 58%, transparent 68%), linear-gradient(-8deg, transparent 18%, rgba(95, 175, 255, 0.3) 26%, rgba(50, 115, 200, 0.22) 34%, transparent 42%), linear-gradient(165deg, transparent 60%, rgba(35, 115, 245, 0.32) 66%, transparent 76%), linear-gradient(45deg, transparent 48%, rgba(45, 110, 195, 0.28) 54%, transparent 62%);
+  background: linear-gradient(105deg, transparent 32%, rgba(100, 180, 255, 0.32) 40%, rgba(55, 125, 210, 0.26) 50%, transparent 62%), linear-gradient(78deg, transparent 52%, rgba(23, 119, 245, 0.38) 80%, transparent 90%), linear-gradient(-8deg, transparent 18%, rgba(95, 175, 255, 0.3) 26%, rgba(50, 115, 200, 0.22) 34%, transparent 42%), linear-gradient(165deg, transparent 60%, rgba(35, 115, 245, 0.32) 66%, transparent 76%), linear-gradient(45deg, transparent 48%, rgba(45, 110, 195, 0.28) 54%, transparent 62%);
   background-size: 48% 40%, 58% 28%, 44% 34%, 38% 44%, 52% 32%, 42% 26%;
   background-position: 5% 12%, 68% 52%, 78% 22%, 18% 68%, 48% 78%, 62% 38%;
   background-repeat: no-repeat;
@@ -463,7 +463,7 @@ button {
 
 @media (max-width: 767px) {
   .hero {
-    min-height: 100svh;
+    min-height: 60vh;
   }
   .hero__bg {
     width: max(240vw, 240vh);
@@ -482,6 +482,11 @@ button {
 @media (min-width: 768px) {
   .hero__title {
     font-size: 3rem;
+  }
+}
+@media (max-width: 767px) {
+  .hero__title {
+    font-size: 1.5rem;
   }
 }
 
@@ -551,29 +556,6 @@ button {
   position: relative;
   overflow: hidden;
 }
-.about::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: radial-gradient(ellipse clamp(140px, 26vw, 320px) clamp(140px, 26vw, 320px) at 85% 20%, rgba(29, 127, 255, 0.45) 0%, transparent 75%), radial-gradient(ellipse clamp(80px, 14vw, 160px) clamp(80px, 14vw, 160px) at 10% 70%, rgba(110, 190, 255, 0.35) 0%, transparent 52%), radial-gradient(ellipse clamp(70px, 12vw, 140px) clamp(70px, 12vw, 140px) at 50% 45%, rgba(55, 130, 215, 0.28) 0%, transparent 48%);
-  filter: blur(clamp(28px, 4vw, 48px));
-  -webkit-filter: blur(clamp(28px, 4vw, 48px));
-}
-.about::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: linear-gradient(75deg, transparent 50%, rgba(90, 170, 255, 0.22) 58%, transparent 66%);
-  background-size: 60% 50%;
-  background-position: 30% 60%;
-  background-repeat: no-repeat;
-  filter: blur(clamp(36px, 5vw, 56px));
-  -webkit-filter: blur(clamp(36px, 5vw, 56px));
-}
 
 .about .container {
   max-width: 980px;
@@ -599,6 +581,13 @@ button {
   opacity: 0;
   transform: translateX(-50%) translateX(120px);
   transition: transform 1.2s ease-out, opacity 0.8s ease-out;
+}
+@media (max-width: 767px) {
+  .about__bgtext {
+    font-size: 3.5rem;
+    letter-spacing: -0.02em;
+    top: -80px;
+  }
 }
 
 .about.is-visible .about__bgtext {
@@ -1473,29 +1462,6 @@ button {
   padding-bottom: 120px;
   position: relative;
   overflow: hidden;
-}
-.news::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: radial-gradient(ellipse clamp(90px, 18vw, 200px) clamp(90px, 18vw, 200px) at 15% 30%, rgba(100, 180, 255, 0.38) 0%, transparent 55%), radial-gradient(ellipse clamp(100px, 20vw, 220px) clamp(100px, 20vw, 220px) at 90% 65%, rgba(47, 136, 255, 0.42) 0%, transparent 55%), radial-gradient(ellipse clamp(65px, 12vw, 130px) clamp(65px, 12vw, 130px) at 55% 15%, rgba(50, 120, 205, 0.26) 0%, transparent 50%);
-  filter: blur(clamp(28px, 4vw, 48px));
-  -webkit-filter: blur(clamp(28px, 4vw, 48px));
-}
-.news::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: linear-gradient(12deg, transparent 35%, rgba(95, 175, 255, 0.24) 42%, transparent 52%);
-  background-size: 50% 45%;
-  background-position: 70% 25%;
-  background-repeat: no-repeat;
-  filter: blur(clamp(36px, 5vw, 56px));
-  -webkit-filter: blur(clamp(36px, 5vw, 56px));
 }
 
 .news > * {

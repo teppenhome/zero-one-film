@@ -25,7 +25,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 140%;   // ← ここがポイント
+  width: 140%;
   height: 140%;
   transform: translate(-50%, -50%);
   border: 0;
@@ -45,7 +45,7 @@
 
 @media (max-width: 767px) {
   .hero {
-    min-height: 100svh;   // iOS含め安定
+    min-height: 60vh; // ← 60〜80vhで調整
   }
 
   .hero__bg {
@@ -67,6 +67,10 @@
 
   @include m.mq(md) {
     font-size: 3rem;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 1.5rem;
   }
 }
 

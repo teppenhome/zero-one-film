@@ -1,0 +1,326 @@
+// =========================================
+// SERVICE ページ専用スタイル
+// ルートクラス .service-page 配下にスコープ
+// トップページ用 _services.scss は未使用・未変更
+// =========================================
+@use "../variables" as v;
+@use "../mixins" as m;
+
+$service-page-border: #e0e0e0;
+$service-page-cta-bg: #1366ff;
+$service-page-text: v.$color-text;
+$service-page-muted: rgba(0, 0, 0, 0.6);
+
+/* =========================================
+   A. Service Hero
+========================================= */
+.service-page {
+  .service-hero {
+    position: relative;
+    min-height: clamp(200px, 40vw, 320px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding-top: calc(65px + clamp(1.5rem, 4vw, 2.5rem));
+    padding-bottom: clamp(2rem, 5vw, 3rem);
+
+    background-color: #f8f6f3;
+    background: #f8f6f3 url("/img/sub-page/sub-top-image.webp") center / cover no-repeat;
+
+    @media (min-width: 768px) {
+      min-height: clamp(280px, 35vw, 380px);
+    }
+  }
+
+  .service-hero .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .service-hero__title {
+    margin: 0 0 clamp(0.5rem, 1.5vw, 1rem);
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+    font-weight: 700;
+    color: $service-page-text;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+  }
+
+  .service-hero__lead {
+    margin: 0;
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
+    font-weight: 400;
+    color: $service-page-muted;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+  }
+
+  /* =========================================
+     B. サービス一覧
+  ========================================== */
+  .service-list {
+    padding-top: clamp(3rem, 8vw, 5rem);
+    padding-bottom: clamp(3rem, 8vw, 5rem);
+    background: #fff;
+    padding-left: 80px;
+    padding-right: 80px;
+
+    @media (max-width: 767px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .service-list__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid $service-page-border;
+  }
+
+  .service-list__item {
+    margin: 0;
+    border-bottom: 1px solid $service-page-border;
+  }
+
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: clamp(1.25rem, 4vw, 2rem) 0;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.25s ease;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: center;
+      gap: clamp(2rem, 4vw, 3rem);
+      padding: clamp(1.5rem, 4vw, 2.5rem) 0;
+    }
+
+    &:hover {
+      .service-card__arrow {
+        transform: translateX(4px); // ← これが「少しだけ動く」
+      }
+
+      .service-card__title {
+        color: $service-page-cta-bg;
+      }
+
+      .service-card__catch,
+      .service-card__desc {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  .service-card__media {
+    flex-shrink: 0;
+    width: 100px;
+    aspect-ratio: 1;
+    max-width: clamp(160px, 28vw, 240px);
+    margin: 0 auto clamp(1rem, 2vw, 1.25rem);
+    border: 4px solid #1265D2;
+    overflow: hidden;
+    background: #f5f5f5;
+    position: relative;
+
+    @media (min-width: 768px) {
+      width: 120px;
+      max-width: none;
+      aspect-ratio: 1;
+      margin: 0;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.55);
+      z-index: 1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("/img/strength01.webp") center / cover no-repeat;
+    }
+
+    &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("/img/icons/service_page01.webp") center / 55px no-repeat;
+    pointer-events: none;
+    z-index: 2;
+    }
+
+    &._01 {
+      &::after {
+        background: url("/img/icons/service_page01.webp") center / 55px no-repeat;
+      }
+    }
+    &._02 {
+      &::after {
+        background: url("/img/icons/service_page02.webp") center / 55px no-repeat;
+      }
+    }
+    &._03 {
+      &::after {
+        background: url("/img/icons/service_page03.webp") center / 55px no-repeat;
+      }
+    }
+    &._04 {
+      &::after {
+        background: url("/img/icons/service_page04.webp") center / 55px no-repeat;
+      }
+    }
+    &._05 {
+      &::after {
+        background: url("/img/icons/service_page05.webp") center / 65px no-repeat;
+      }
+    }
+  }
+
+  .service-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .service-card__body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .service-card__title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    margin: 0 0 clamp(0.5rem, 1.5vw, 0.75rem);
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    color: $service-page-text;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+    transition: color 0.25s ease;
+
+    @media (max-width: 767px) {
+      font-size: 1.25rem;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center; // ← これ
+      text-align: center;      // ← これ
+      width: 120%;
+    }
+  }
+
+  .service-card__arrow {
+    display: inline-block;
+    width: 120px;   // ← 添付画像っぽい横長
+    height: 6px;
+    background: url("/img/icons/arrow_right.webp") no-repeat center;
+    background-size: contain;
+
+    position: relative; 
+    left: -50px;          
+    top: 17px;            
+
+    transform: translateX(0);          // ← hover用の基準
+    transition: transform 0.25s ease;
+  }
+
+  .service-card__catch {
+    margin: 0 0 clamp(0.5rem, 1vw, 0.75rem);
+    font-size: clamp(0.875rem, 1.8vw, 1rem);
+    font-weight: 600;
+    color: $service-page-muted;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    transition: opacity 0.25s ease;
+    padding-left: 20px;
+
+    @media (max-width: 767px) {
+      margin-top: 20px;
+    }
+  }
+
+  .service-card__desc {
+    margin: 0;
+    font-size: clamp(0.8125rem, 1.6vw, 0.9375rem);
+    line-height: 1.7;
+    color: $service-page-muted;
+    transition: opacity 0.25s ease;
+    padding-left: 20px;
+  }
+}
+
+/* =========================================
+   フッター内 to top（Serviceページ用）
+   ※フッターは .service-page 外のためルートで定義
+========================================= */
+.service-page-to-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding-top: 0.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  transition: color 0.25s ease;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  @media (max-width: 767px) {
+    position: static;
+    margin-left: auto;
+    margin-top: 0.5rem;
+  }
+}
+
+.service-page-to-top__icon {
+  width: 14px;
+  height: 14px;
+  border-right: 2px solid currentColor;
+  border-top: 2px solid currentColor;
+  transform: rotate(-45deg);
+}
+
+.service-page-to-top__text {
+  text-transform: lowercase;
+}
+
+/* Serviceページのフッター：to top 用に relative */
+body:has(.service-page) .site-footer__inner,
+.site-footer__inner:has(.service-page-to-top) {
+  position: relative;
+  padding-top: 2.5rem;
+}
+
+/* =========================================
+   Serviceページ：PC時のみヘッダーメニューを黒系に
+   ※body.page-service でスコープ、SPは既存仕様のまま
+========================================= */
+@media (min-width: 768px) {
+  body.page-service .global-header .global-nav__link {
+    color: $service-page-text;
+    &::after {
+      background: $service-page-text;
+    }
+  }
+  body.page-service .global-header.is-scrolled .global-nav__link::after {
+    background: $service-page-text;
+  }
+}

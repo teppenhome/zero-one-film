@@ -1,6 +1,11 @@
 @use "variables" as v;
 @use "mixins" as m;
 
+$service-page-border: #e0e0e0;
+$service-page-cta-bg: #1366ff;
+$service-page-text: v.$color-text;
+$service-page-muted: rgba(0, 0, 0, 0.6);
+
 .container {
   width: 100%;
   max-width: v.$container-max;
@@ -124,12 +129,6 @@
     );
     backdrop-filter: blur(1px) saturate(120%);
     -webkit-backdrop-filter: blur(1px) saturate(120%);
-
-    /* ロゴ・ナビは通常文字色に */
-    // .global-header__logo,
-    // .global-nav__link {
-    //   color: v.$color-text;
-    // }
 
     /* ナビの下線 */
     .global-nav__link {
@@ -421,8 +420,8 @@
     pointer-events: none;
     background:
       linear-gradient(105deg, transparent 32%, rgba(100, 180, 255, 0.32) 40%, rgba(55, 125, 210, 0.26) 50%, transparent 62%),
-
-      linear-gradient(78deg, transparent 52%, rgba(23, 119, 245, 0.38) 80%, transparent 90%),
+      linear-gradient(12deg, transparent 38%, rgba(90, 170, 255, 0.34) 46%, transparent 58%),
+      linear-gradient(78deg, transparent 52%, rgba(47, 136, 255, 0.38) 58%, transparent 68%),
       linear-gradient(-8deg, transparent 18%, rgba(95, 175, 255, 0.3) 26%, rgba(50, 115, 200, 0.22) 34%, transparent 42%),
       linear-gradient(165deg, transparent 60%, rgba(35, 115, 245, 0.32) 66%, transparent 76%),
       linear-gradient(45deg, transparent 48%, rgba(45, 110, 195, 0.28) 54%, transparent 62%);
@@ -451,3 +450,93 @@
   position: relative;
   z-index: 1;
 }
+
+/* =========================================
+     C. 下部 CTA --下層ページ用--
+  ========================================== */
+  .page-cta {
+    padding-top: clamp(3rem, 10vw, 5rem);
+    padding-bottom: clamp(3rem, 10vw, 5rem);
+    background: #fff;
+    text-align: center;
+  }
+
+  .page-cta__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1rem, 3vw, 1.5rem);
+    margin-bottom: clamp(1rem, 2vw, 1.25rem);
+
+    @media (min-width: 768px) {
+      flex-wrap: nowrap;
+      justify-content: center;
+      text-align: left;
+    }
+  }
+
+  .page-cta__lead {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25em;
+    margin: 0;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: $service-page-muted;
+  }
+
+  .page-card__arrow {
+      display: inline-block;
+      width: 120px;   // ← 添付画像っぽい横長
+      height: 6px;
+      background: url("/img/icons/arrow_right.webp") no-repeat center;
+      background-size: contain;
+
+      position: relative; 
+      left: -50px;          
+      top: 17px;            
+
+      transform: translateX(0);          // ← hover用の基準
+      transition: transform 0.25s ease;
+    }
+
+  .page-cta__inner:hover .service-cta__arrow {
+    transform: translateX(4px);
+  }
+
+  .page-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: clamp(200px, 30vw, 260px);
+    height: clamp(48px, 6vw, 56px);
+    padding-inline: clamp(1.5rem, 3vw, 2.5rem);
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-decoration: none;
+    color: #fff;
+    background: $service-page-cta-bg;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(19, 102, 255, 0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease,
+      background 0.25s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(19, 102, 255, 0.4);
+      background: #0d52cc;
+    }
+  }
+
+  .page-cta__note {
+    margin: 0;
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+    color: $service-page-muted;
+  }

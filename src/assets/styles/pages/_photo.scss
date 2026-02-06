@@ -1,0 +1,470 @@
+// =========================================
+// PHOTO ページ専用スタイル
+// ルートクラス .photo-page 配下に100%スコープ
+// 既存の film-page / service-page は未変更
+// =========================================
+@use "../variables" as v;
+@use "../mixins" as m;
+
+$photo-border: #e0e0e0;
+$photo-accent: #1265d2;
+$photo-text: v.$color-text;
+$photo-muted: rgba(0, 0, 0, 0.65);
+
+.photo-page {
+  /* =========================================
+     Photo Hero
+  ========================================== */
+  .photo-hero {
+    position: relative;
+    min-height: clamp(200px, 40vw, 320px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding-top: calc(65px + clamp(1.5rem, 4vw, 2.5rem));
+    padding-bottom: clamp(2rem, 5vw, 3rem);
+    background-color: #f5f4f2;
+    background: #f5f4f2 url("/img/sub-page/sub-top-image.webp") center / cover
+      no-repeat;
+
+    @include m.mq(md) {
+      min-height: clamp(280px, 35vw, 380px);
+    }
+  }
+
+  .photo-hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .photo-hero .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .photo-hero__title {
+    margin: 0 0 clamp(0.5rem, 1.5vw, 1rem);
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+    font-weight: 700;
+    color: $photo-text;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+  }
+
+  .photo-hero__lead {
+    margin: 0;
+    max-width: 640px;
+    padding: clamp(1rem, 2.5vw, 1.5rem) clamp(1.25rem, 3vw, 2rem);
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
+    font-weight: 400;
+    color: $photo-text;
+    line-height: 1.75;
+    letter-spacing: 0.02em;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  /* =========================================
+     共通：セクション英字見出し（.photo-page 内のみ）
+  ========================================== */
+  .photo-section-title {
+    display: block;
+    margin: 0 0 clamp(2rem, 5vw, 3rem);
+    text-align: left;
+
+    &__en {
+      display: block;
+      margin: 0 0 0.35em;
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: $photo-accent;
+    }
+
+    &__sub {
+      display: block;
+      margin: 0;
+      font-size: clamp(0.9rem, 1.8vw, 1rem);
+      color: $photo-muted;
+      letter-spacing: 0.03em;
+    }
+  }
+
+  /* =========================================
+     INTRODUCTION
+  ========================================== */
+  .photo-intro {
+    padding-top: clamp(3rem, 8vw, 5rem);
+    padding-bottom: clamp(3rem, 8vw, 5rem);
+    background: #fff;
+  }
+
+  .photo-intro__box {
+    max-width: 800px;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    background: #f5f5f5;
+    border: 1px solid $photo-border;
+    border-radius: 4px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  }
+
+  .photo-intro__text {
+    margin: 0;
+    font-size: clamp(0.9375rem, 1.5vw, 1rem);
+    line-height: 1.9;
+    color: $photo-text;
+  }
+
+  /* =========================================
+     STRENGTH（3つの強み）
+  ========================================== */
+  .photo-strength {
+    padding-top: clamp(3rem, 8vw, 5rem);
+    padding-bottom: clamp(3rem, 8vw, 5rem);
+    background: url("/img/sub-page/sub-page-background.webp") center / 200px
+      200px repeat;
+  }
+
+  .photo-strength__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .photo-strength__item {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: clamp(1.5rem, 4vw, 2.5rem) 0;
+    border-top: 1px solid $photo-border;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    @include m.mq(md) {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+  }
+
+  .photo-strength__thumb {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 240px;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .photo-strength__no {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.25rem 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    background: $photo-accent;
+    letter-spacing: 0.02em;
+  }
+
+  .photo-strength__body {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    padding-left: 0;
+
+    @include m.mq(md) {
+      padding-left: 1.5rem;
+      border-left: 3px solid $photo-accent;
+    }
+  }
+
+  .photo-strength__heading {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    font-weight: 600;
+    color: $photo-text;
+  }
+
+  .photo-strength__text {
+    margin: 0;
+    font-size: clamp(0.875rem, 1.4vw, 0.9375rem);
+    line-height: 1.8;
+    color: $photo-muted;
+  }
+
+  /* =========================================
+     BUSINESS PHOTO
+  ========================================== */
+  .photo-business {
+    padding-top: clamp(3rem, 8vw, 5rem);
+    padding-bottom: clamp(3rem, 8vw, 5rem);
+    background: #fff;
+  }
+
+  .photo-business__inner {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+
+    @include m.mq(md) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+  .photo-business__media {
+    flex: 1;
+    min-width: 0;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+  }
+
+  .photo-business__content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .photo-business__checklist {
+    margin: 0 0 1.5rem;
+    padding: 0 0 0 1.25rem;
+    list-style: none;
+
+    li {
+      position: relative;
+      margin-bottom: 0.5rem;
+      font-size: clamp(0.9rem, 1.5vw, 1rem);
+      line-height: 1.6;
+      color: $photo-text;
+
+      &::before {
+        content: "◆";
+        position: absolute;
+        left: -1.25rem;
+        color: $photo-accent;
+        font-size: 0.65em;
+      }
+    }
+  }
+
+  .photo-business__worries {
+    padding: clamp(1rem, 2.5vw, 1.5rem);
+    background: #f5f5f5;
+    border: 1px solid $photo-border;
+    border-radius: 4px;
+  }
+
+  .photo-business__worries-title {
+    margin: 0 0 0.5rem;
+    font-size: clamp(0.9rem, 1.4vw, 1rem);
+    font-weight: 600;
+    color: $photo-text;
+  }
+
+  .photo-business__worries-text {
+    margin: 0;
+    font-size: clamp(0.8125rem, 1.3vw, 0.875rem);
+    line-height: 1.8;
+    color: $photo-muted;
+  }
+
+  /* =========================================
+     PERSONAL PHOTO
+  ========================================== */
+  .photo-personal {
+    padding-top: clamp(3rem, 8vw, 5rem);
+    padding-bottom: clamp(3rem, 8vw, 5rem);
+    background: url("/img/sub-page/sub-page-background.webp") center / 200px
+      200px repeat;
+  }
+
+  .photo-personal__block {
+    margin-bottom: clamp(2rem, 5vw, 3rem);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .photo-personal__inner {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.25rem, 3vw, 1.5rem);
+
+    @include m.mq(md) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+  .photo-personal__media {
+    flex: 1;
+    min-width: 0;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+  }
+
+  .photo-personal__content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .photo-personal__tag {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: $photo-accent;
+    background: rgba(18, 101, 210, 0.1);
+    border-radius: 4px;
+  }
+
+  .photo-personal__text {
+    margin: 0;
+    font-size: clamp(0.9rem, 1.4vw, 0.9375rem);
+    line-height: 1.8;
+    color: $photo-muted;
+  }
+
+  /* =========================================
+     WORKS（写真参考）
+  ========================================== */
+  .photo-works {
+    padding-top: clamp(3rem, 8vw, 5rem);
+    padding-bottom: clamp(3rem, 8vw, 5rem);
+    background: #fff;
+  }
+
+  .photo-works__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(1.5rem, 4vw, 2rem);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include m.mq(md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .photo-work-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .photo-work-card__media {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .photo-work-card__label {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: $photo-accent;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 4px;
+  }
+
+  .photo-work-card__body {
+    padding: clamp(1rem, 2.5vw, 1.25rem);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .photo-work-card__title {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1rem, 1.6vw, 1.125rem);
+    font-weight: 600;
+    color: $photo-text;
+  }
+
+  .photo-work-card__desc {
+    margin: 0;
+    font-size: clamp(0.8125rem, 1.3vw, 0.875rem);
+    line-height: 1.65;
+    color: $photo-muted;
+  }
+
+  /* =========================================
+     MESSAGE
+  ========================================== */
+  .photo-message {
+    padding-top: clamp(3rem, 8vw, 5rem);
+    padding-bottom: clamp(2rem, 5vw, 3rem);
+    background: #f9f9f9;
+    text-align: center;
+  }
+
+  .photo-message .photo-section-title {
+    text-align: center;
+  }
+
+  .photo-message__text {
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: clamp(0.9375rem, 1.5vw, 1rem);
+    line-height: 1.9;
+    color: $photo-text;
+  }
+}
+
+/* Photoページ：PC時のみヘッダーメニューを黒系に（薄い背景のため） */
+@include m.mq(md) {
+  body.page-photo .global-header .global-nav__link {
+    color: v.$color-text;
+    &::after {
+      background: v.$color-text;
+    }
+  }
+  body.page-photo .global-header.is-scrolled .global-nav__link::after {
+    background: v.$color-text;
+  }
+}

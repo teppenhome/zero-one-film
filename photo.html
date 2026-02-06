@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>写真撮影 | ZERO ONE FILM</title>
+  </head>
+  <body class="page-photo">
+    <header id="header" class="global-header">
+      <div class="container">
+        <a href="/" class="global-header__logo">
+          <img src="/img/logo_white.png" alt="ZERO ONE FILM" />
+        </a>
+
+        <nav class="global-nav" aria-label="Primary">
+          <ul class="global-nav__list">
+            <li class="global-nav__item">
+              <a href="/service.html" class="global-nav__link">Service</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="/#works" class="global-nav__link">Works</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="/company.html" class="global-nav__link">Company</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="/#blog" class="global-nav__link">Blog</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="/#contact" class="global-nav__link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="nav-toggle__lines" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="drawer" id="mobile-menu" hidden>
+      <button
+        class="drawer__backdrop"
+        type="button"
+        aria-label="メニューを閉じる"
+      ></button>
+      <div
+        class="drawer__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-label="モバイルメニュー"
+      >
+        <div class="drawer__head">
+          <span class="drawer__title">MENU</span>
+          <button class="drawer__close" type="button" aria-label="閉じる">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <nav class="drawer__nav" aria-label="Mobile">
+          <a href="/" class="drawer__link">Top</a>
+          <a href="/service.html" class="drawer__link">Service</a>
+          <a href="/#works" class="drawer__link">Works</a>
+          <a href="/company.html" class="drawer__link">Company</a>
+          <a href="/#blog" class="drawer__link">Blog</a>
+          <a href="/#contact" class="drawer__link">Contact</a>
+        </nav>
+      </div>
+    </div>
+
+    <main class="photo-page">
+      <!-- 1. HERO -->
+      <section class="photo-hero">
+        <div class="photo-hero__bg" aria-hidden="true"></div>
+        <div class="container">
+          <h1 class="photo-hero__title">写真撮影</h1>
+          <p class="photo-hero__lead">
+            企業・法人様の撮影から、ファミリー・ウエディング・個人撮影まで。映像会社ならではの視点で、用途に合わせた写真をご提供します。
+          </p>
+        </div>
+      </section>
+
+      <!-- 2. INTRODUCTION -->
+      <section class="photo-intro">
+        <div class="container">
+          <h2 class="photo-section-title">
+            <span class="photo-section-title__en">INTRODUCTION</span>
+            <span class="photo-section-title__sub">写真撮影について</span>
+          </h2>
+          <div class="photo-intro__box">
+            <p class="photo-intro__text">
+              ZEROONEFILMの写真撮影は、映像制作で培った「伝えるための構成力」と「自然体を引き出すコミュニケーション」を活かしたサービスです。企業のプロモーション、採用、Web・SNS用素材から、ウエディング・前撮り、キッズ・ファミリー撮影まで、用途に合わせたプランをご提案します。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. STRENGTH -->
+      <section class="photo-strength">
+        <div class="container">
+          <h2 class="photo-section-title">
+            <span class="photo-section-title__en">STRENGTH</span>
+            <span class="photo-section-title__sub"
+              >ZEROONEFILMの写真撮影の強み</span
+            >
+          </h2>
+          <ul class="photo-strength__list">
+            <li class="photo-strength__item">
+              <div class="photo-strength__thumb">
+                <img
+                  src="/img/sub-page/use-img01.webp"
+                  alt="映像会社ならではの視点"
+                  width="240"
+                  height="160"
+                />
+                <span class="photo-strength__no" aria-hidden="true">01</span>
+              </div>
+              <div class="photo-strength__body">
+                <h3 class="photo-strength__heading">映像会社ならではの視点</h3>
+                <p class="photo-strength__text">
+                  動画と写真の両方を手がけるからこそ、構図・光・表情の「動きの一瞬」を意識した撮影ができます。PRや採用で使う写真も、映像と統一感のあるトーンでご提供します。
+                </p>
+              </div>
+            </li>
+            <li class="photo-strength__item">
+              <div class="photo-strength__thumb">
+                <img
+                  src="/img/sub-page/use-img02.webp"
+                  alt="用途から逆算した撮影設計"
+                  width="240"
+                  height="160"
+                />
+                <span class="photo-strength__no" aria-hidden="true">02</span>
+              </div>
+              <div class="photo-strength__body">
+                <h3 class="photo-strength__heading">
+                  用途から逆算した撮影設計
+                </h3>
+                <p class="photo-strength__text">
+                  Web・SNS・印刷物・採用ページなど、どこでどう使うかを最初にヒアリングし、必要な枚数・トーン・構図を設計してから撮影します。「撮って終わり」にならない設計をご提案します。
+                </p>
+              </div>
+            </li>
+            <li class="photo-strength__item">
+              <div class="photo-strength__thumb">
+                <img
+                  src="/img/sub-page/use-img03.webp"
+                  alt="自然体を引き出すコミュニケーション"
+                  width="240"
+                  height="160"
+                />
+                <span class="photo-strength__no" aria-hidden="true">03</span>
+              </div>
+              <div class="photo-strength__body">
+                <h3 class="photo-strength__heading">
+                  自然体を引き出すコミュニケーション
+                </h3>
+                <p class="photo-strength__text">
+                  堅い記念写真ではなく、その人らしさや会社の空気感が伝わる写真を。リラックスした雰囲気づくりと、ちょっとした声かけで、自然な表情や動きを引き出します。
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 4. BUSINESS PHOTO -->
+      <section class="photo-business">
+        <div class="container">
+          <h2 class="photo-section-title">
+            <span class="photo-section-title__en">BUSINESS PHOTO</span>
+            <span class="photo-section-title__sub">企業・法人様向け</span>
+          </h2>
+          <div class="photo-business__inner">
+            <div class="photo-business__media">
+              <img
+                src="/img/service01.webp"
+                alt="企業・法人向け写真撮影"
+                width="600"
+                height="400"
+              />
+            </div>
+            <div class="photo-business__content">
+              <ul class="photo-business__checklist">
+                <li>企業・サービス紹介用の写真</li>
+                <li>採用ページ・会社説明会用</li>
+                <li>Web・SNS・パンフレット用</li>
+                <li>イベント・展示会の記録</li>
+                <li>代表・チームのポートレート</li>
+              </ul>
+              <div class="photo-business__worries">
+                <p class="photo-business__worries-title">
+                  こんなお悩みはありますか？
+                </p>
+                <p class="photo-business__worries-text">
+                  ・写真の用途が多く、何を撮ればいいかわからない<br />
+                  ・既存の写真が古く、統一感がない<br />
+                  ・動画と写真を同じトーンで揃えたい
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. PERSONAL PHOTO -->
+      <section class="photo-personal">
+        <div class="container">
+          <h2 class="photo-section-title">
+            <span class="photo-section-title__en">PERSONAL PHOTO</span>
+            <span class="photo-section-title__sub">ファミリー・個人様向け</span>
+          </h2>
+          <div class="photo-personal__block">
+            <div class="photo-personal__inner">
+              <div class="photo-personal__media">
+                <img
+                  src="/img/service02.webp"
+                  alt="ウエディング・前撮り"
+                  width="600"
+                  height="400"
+                />
+              </div>
+              <div class="photo-personal__content">
+                <span class="photo-personal__tag">ウエディング・前撮り</span>
+                <p class="photo-personal__text">
+                  結婚式の前撮りや当日スナップまで、二人の自然な笑顔と空気感を残します。衣裳・ロケーションのご希望に合わせてプランをご提案します。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="photo-personal__block">
+            <div class="photo-personal__inner">
+              <div class="photo-personal__media">
+                <img
+                  src="/img/service03.webp"
+                  alt="キッズ・ファミリー撮影"
+                  width="600"
+                  height="400"
+                />
+              </div>
+              <div class="photo-personal__content">
+                <span class="photo-personal__tag">キッズ・ファミリー撮影</span>
+                <p class="photo-personal__text">
+                  お子様の成長記録や家族の思い出を、スタジオやロケーションで撮影。無理のないスケジュールと、子どもも楽しめる雰囲気づくりを心がけています。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. WORKS -->
+      <section class="photo-works">
+        <div class="container">
+          <h2 class="photo-section-title">
+            <span class="photo-section-title__en">WORKS</span>
+            <span class="photo-section-title__sub">写真参考</span>
+          </h2>
+          <ul class="photo-works__grid">
+            <li class="photo-work-card">
+              <div class="photo-work-card__media">
+                <img
+                  src="/img/sub-page/service-work01.webp"
+                  alt="企業撮影サンプル"
+                  width="400"
+                  height="225"
+                />
+                <span class="photo-work-card__label">01</span>
+              </div>
+              <div class="photo-work-card__body">
+                <h3 class="photo-work-card__title">企業・オフィス撮影</h3>
+                <p class="photo-work-card__desc">
+                  会社の雰囲気とチームの表情を伝える撮影です。
+                </p>
+              </div>
+            </li>
+            <li class="photo-work-card">
+              <div class="photo-work-card__media">
+                <img
+                  src="/img/sub-page/service-work02.webp"
+                  alt="前撮りサンプル"
+                  width="400"
+                  height="225"
+                />
+                <span class="photo-work-card__label">02</span>
+              </div>
+              <div class="photo-work-card__body">
+                <h3 class="photo-work-card__title">ウエディング前撮り</h3>
+                <p class="photo-work-card__desc">
+                  自然な二人の表情を残す前撮りプラン。
+                </p>
+              </div>
+            </li>
+            <li class="photo-work-card">
+              <div class="photo-work-card__media">
+                <img
+                  src="/img/sub-page/service-work03.webp"
+                  alt="ファミリー撮影サンプル"
+                  width="400"
+                  height="225"
+                />
+                <span class="photo-work-card__label">03</span>
+              </div>
+              <div class="photo-work-card__body">
+                <h3 class="photo-work-card__title">キッズ・ファミリー</h3>
+                <p class="photo-work-card__desc">
+                  成長の記録と家族の思い出を一枚に。
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 7. MESSAGE + CTA -->
+      <section class="photo-message">
+        <div class="container">
+          <h2 class="photo-section-title">
+            <span class="photo-section-title__en">MESSAGE</span>
+          </h2>
+          <p class="photo-message__text">
+            写真は、企業の「顔」であり、個人の「思い出」です。映像と写真の両方を手がける私たちに、ぜひご相談ください。用途や予算に合わせたプランをご提案します。
+          </p>
+        </div>
+      </section>
+
+      <section class="page-cta">
+        <div class="container">
+          <div class="page-cta__inner">
+            <p class="page-cta__lead">
+              お問合せはこちら
+              <span class="page-card__arrow" aria-hidden="true"></span>
+            </p>
+            <a href="/#contact" class="page-cta__btn">CONTACT</a>
+          </div>
+          <p class="page-cta__note">
+            企業撮影・個人撮影ともに対応しています。<br />
+            まずはお気軽にご相談ください。
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <nav class="site-footer__nav" aria-label="フッターナビ">
+          <ul class="site-footer__list">
+            <li><a class="site-footer__link" href="/">Top</a></li>
+            <li>
+              <a class="site-footer__link" href="/service.html">Service</a>
+            </li>
+            <li><a class="site-footer__link" href="/#works">Works</a></li>
+            <li><a class="site-footer__link" href="/#philosophy">Price</a></li>
+            <li>
+              <a class="site-footer__link" href="/company.html">Company</a>
+            </li>
+            <li><a class="site-footer__link" href="/#contact">Contact</a></li>
+          </ul>
+          <ul class="site-footer__list">
+            <li><a class="site-footer__link" href="/#blog">Blog</a></li>
+            <li><a class="site-footer__link" href="/#news">News</a></li>
+          </ul>
+        </nav>
+        <div class="site-footer__divider" aria-hidden="true"></div>
+        <div class="site-footer__brand">
+          <a class="site-footer__logo" href="/" aria-label="ZERO ONE FILM">
+            <img src="/img/logo_white.png" alt="ZERO ONE FILM" />
+          </a>
+          <address class="site-footer__meta">
+            <p>Access　東京都渋谷区恵比寿 1-15-42</p>
+            <p class="site-footer__tel">
+              <span>Tel</span> <a href="tel:0300000000">03-(0000)-0000</a>
+            </p>
+          </address>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

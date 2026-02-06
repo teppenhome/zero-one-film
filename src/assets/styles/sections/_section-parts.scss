@@ -1,0 +1,36 @@
+//下層ページのタイトル
+.section-title {
+  width: fit-content;
+  margin: 0 auto clamp(2rem, 6vw, 4rem);
+  padding: clamp(18px, 3vw, 28px) clamp(32px, 6vw, 48px);
+
+  text-align: center;
+
+  background: url("/img/sub-page/sub-title-image.jpg") no-repeat center / cover;
+  border-radius: 6px;
+
+  &__en {
+    margin: 0;
+    font-family: "Cinzel", serif; // 例
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    font-weight: 500;
+    letter-spacing: 0.055em;
+    color: #1265D2;
+    line-height: 1.1;
+
+    &._mini {
+      font-size: 2.2rem;
+    }
+  }
+
+  &__sub {
+    margin-top: 0.4em;
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.75);
+    letter-spacing: 0.04em;
+  }
+}
+
+.font-bold {
+  font-weight: 700;
+}

@@ -6,62 +6,126 @@
   padding-top: v.$spacing-80;
   padding-bottom: 200px;
   overflow: hidden;
+  z-index: -3;
 
-  .container {
+  > .container {
     position: relative;
     z-index: 1;
   }
-}
 
-/* 共通：テクスチャブロック */
-.philosophy__bg {
-  position: absolute;
-  z-index: 0;
-  pointer-events: none;
-
-  background-image: url("/img/philosophy_back.webp");
-  background-size: 150% auto;
-  background-repeat: no-repeat;
-  background-position: center 50%; // ← 基準（上下中央）
-
-  opacity: 0.9;
-  border-radius: 2px;
-
-  will-change: background-position;
-
+  // =========================
+  // 背景（初期：待機状態）
+  // =========================
+  &::before,
   &::after {
     content: "";
     position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.2);
+    pointer-events: none;
+
+    background: url("/img/background/background-bom01.png") no-repeat center / contain;
+    filter: saturate(1.05);
+    opacity: 0;
   }
-}
 
-/* Mission 左上あたり */
-.philosophy__bg--top {
-  top: 300px;
-  right: -200px;
-  width: min(1000px, 95vw);
-  aspect-ratio: 21 / 9;
-
-  @media (max-width: 768px) {
+  // 上：右から入る
+  &::before {
     top: 150px;
-    right: -100px;
-    aspect-ratio: 16 / 9;
+    right: 0;
+
+    width: min(1200px, 110vw);
+    aspect-ratio: 14 / 9;
+
+    transform: translateX(8vw);
+  }
+
+  // 下：左から入る（反転）
+  &::after {
+    bottom: 0;
+    left: -10px;
+
+    width: min(950px, 100vw);
+    aspect-ratio: 14 / 9;
+
+    transform: scaleX(-1) translateX(-8vw);
+    transform-origin: center;
+  }
+
+  // =========================
+  // reveal.js 発火後
+  // .js-reveal が付いて is-revealed が付与されたら開始
+  // =========================
+  &.is-revealed::before {
+    animation: bg-in-right 900ms cubic-bezier(.22, 1, .36, 1) 120ms forwards;
+  }
+
+  &.is-revealed::after {
+    animation: bg-in-left 900ms cubic-bezier(.22, 1, .36, 1) 260ms forwards;
+  }
+
+  // =========================
+  // Responsive
+  // =========================
+  @media (max-width: 768px) {
+    &::before {
+      top: 150px;
+      right: -100px;
+      width: 130vw;         // ← SPははみ出し前提が綺麗
+      aspect-ratio: 4 / 3;
+      transform: translateX(10vw);
+    }
+
+    &::after {
+      bottom: -40px;
+      left: -100px;
+      width: 120vw;
+      aspect-ratio: 4 / 3;
+
+      // ここが大事：初期も最終も「反転 + 縮小 + X移動」を揃える
+      transform: scaleX(-1) scale(0.8) translateX(-10vw);
+      transform-origin: center;
+    }
+
+    &.is-revealed::after {
+      animation: bg-in-left-sp 900ms cubic-bezier(.22, 1, .36, 1) 260ms forwards;
+    }
   }
 }
 
-/* Value 左下 */
-.philosophy__bg--bottom {
-  bottom: -80px;
-  left: -200px;
-  width: min(1000px, 95vw);
-  aspect-ratio: 24 / 9;
+/* 右から入る */
+@keyframes bg-in-right {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
-  @media (max-width: 768px) {
-    bottom: -40px;
-    left: -100px;
-    aspect-ratio: 4 / 3;
+/* 左から入る（反転を維持） */
+@keyframes bg-in-left {
+  to {
+    transform: scaleX(-1) translateX(0);
+    opacity: 1;
+  }
+}
+
+/* SP：反転 + 縮小を維持したまま入る */
+@keyframes bg-in-left-sp {
+  to {
+    transform: scaleX(-1) scale(0.8) translateX(0);
+    opacity: 1;
+  }
+}
+
+/* 動きを減らす設定の人にはアニメ無し */
+@media (prefers-reduced-motion: reduce) {
+  .philosophy::before,
+  .philosophy::after {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .philosophy::after {
+    transform: scaleX(-1) !important; // 反転だけ残す
   }
 }
 
@@ -119,13 +183,13 @@
     grid-column: 6 / span 7;
     transform: translateY(18px);
     justify-self: stretch;
-    margin-top: 20px;
+    margin-top: 30px;
   }
 
   /* Value：下は横長 */
   .philosophy__item--value {
     grid-column: 1 / span 7;
-    margin-top: 70px;
+    margin-top: 50px;
   }
 }
 

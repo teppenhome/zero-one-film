@@ -1,36 +1,6 @@
 @use "../variables" as v;
 @use "../mixins" as m;
 
-.vivid-blur {
-  position: relative;
-  overflow: visible;
-}
-
-.vivid-blur::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 -15% 0;
-  pointer-events: none;
-
-  background:
-    radial-gradient(
-      ellipse
-        clamp(260px, 38vw, 520px)     /* 横：そのまま */
-        clamp(1100px, 140vh, 1800px)  /* ← 縦を大幅に拡張 */
-      at 65% 100%,                    /* ← 発生点をかなり下へ */
-      rgba(120, 210, 255, 0.75) 0%,  /* 色味は完全に維持 */
-      rgba(60, 150, 255, 0.55) 28%,
-      rgba(30, 100, 220, 0.35) 48%,
-      rgba(30, 100, 220, 0.22) 62%,
-      transparent 90%                /* ← 消えをかなり遅らせる */
-    );
-
-  filter: blur(56px) saturate(135%);
-
-  transform: rotate(-20deg);
-  transform-origin: 50% 100%; /* 下を起点に傾く */
-}
-
 .news {
   padding-top: v.$spacing-80;
   padding-bottom: 120px;

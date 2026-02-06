@@ -384,7 +384,6 @@ button {
 }
 .top-wrap {
   position: relative;
-  background: #fff;
   overflow: hidden;
 }
 .top-wrap::before {
@@ -393,28 +392,10 @@ button {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(ellipse clamp(140px, 22vw, 320px) clamp(140px, 22vw, 320px) at 15% 12%, rgba(100, 180, 255, 0.5) 0%, transparent 62%), radial-gradient(ellipse clamp(130px, 20vw, 260px) clamp(130px, 20vw, 260px) at 88% 18%, rgba(47, 136, 255, 0.48) 0%, transparent 55%), radial-gradient(ellipse clamp(120px, 18vw, 240px) clamp(120px, 18vw, 240px) at 72% 25%, rgba(120, 200, 255, 0.4) 0%, transparent 58%), radial-gradient(ellipse clamp(100px, 15vw, 200px) clamp(100px, 15vw, 200px) at 88% 55%, rgba(55, 130, 215, 0.38) 0%, transparent 55%), radial-gradient(ellipse clamp(110px, 17vw, 230px) clamp(110px, 17vw, 230px) at 42% 78%, rgba(35, 115, 245, 0.42) 0%, transparent 52%), radial-gradient(ellipse clamp(160px, 24vw, 280px) clamp(160px, 24vw, 280px) at 35% 68%, rgba(110, 190, 255, 0.38) 0%, transparent 62%), radial-gradient(ellipse clamp(110px, 16vw, 220px) clamp(110px, 16vw, 220px) at 5% 82%, rgba(95, 175, 255, 0.32) 0%, transparent 56%), radial-gradient(ellipse clamp(120px, 18vw, 240px) clamp(120px, 18vw, 240px) at 55% 42%, rgba(100, 185, 255, 0.28) 0%, transparent 58%), radial-gradient(ellipse clamp(90px, 14vw, 180px) clamp(90px, 14vw, 180px) at 25% 38%, rgba(45, 115, 200, 0.32) 0%, transparent 52%), radial-gradient(ellipse clamp(85px, 13vw, 170px) clamp(85px, 13vw, 170px) at 82% 75%, rgba(50, 120, 205, 0.28) 0%, transparent 50%);
-  filter: blur(clamp(32px, 5vw, 56px));
-  -webkit-filter: blur(clamp(32px, 5vw, 56px));
-}
-.top-wrap::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: linear-gradient(105deg, transparent 32%, rgba(100, 180, 255, 0.32) 40%, rgba(55, 125, 210, 0.26) 50%, transparent 62%), linear-gradient(12deg, transparent 38%, rgba(90, 170, 255, 0.34) 46%, transparent 58%), linear-gradient(78deg, transparent 52%, rgba(47, 136, 255, 0.38) 58%, transparent 68%), linear-gradient(-8deg, transparent 18%, rgba(95, 175, 255, 0.3) 26%, rgba(50, 115, 200, 0.22) 34%, transparent 42%), linear-gradient(165deg, transparent 60%, rgba(35, 115, 245, 0.32) 66%, transparent 76%), linear-gradient(45deg, transparent 48%, rgba(45, 110, 195, 0.28) 54%, transparent 62%);
-  background-size: 48% 40%, 58% 28%, 44% 34%, 38% 44%, 52% 32%, 42% 26%;
-  background-position: 5% 12%, 68% 52%, 78% 22%, 18% 68%, 48% 78%, 62% 38%;
+  background-image: url("/img/background/mist01.webp"), url("/img/background/mist03.webp"), url("/img/background/mist02.webp"), url("/img/background/mist04.webp"), url("/img/background/mist04.webp"), url("/img/background/mist01.webp");
   background-repeat: no-repeat;
-  filter: blur(clamp(40px, 6vw, 72px));
-  -webkit-filter: blur(clamp(40px, 6vw, 72px));
-}
-
-/* 中身を前に */
-.top-wrap > * {
-  position: relative;
-  z-index: 1;
+  background-position: 90% 3%, 5% 20%, 120% 32%, -30% 43%, 110% 75%, -50% 90%;
+  background-size: 70vw, 40vw, 70vw, 80vw, 50vw, 90vw;
 }
 
 /* =========================================
@@ -1534,22 +1515,6 @@ button {
   color: #fff;
 }
 
-.vivid-blur {
-  position: relative;
-  overflow: visible;
-}
-
-.vivid-blur::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 -15% 0;
-  pointer-events: none;
-  background: radial-gradient(ellipse clamp(260px, 38vw, 520px) clamp(1100px, 140vh, 1800px) at 65% 100%, rgba(120, 210, 255, 0.75) 0%, rgba(60, 150, 255, 0.55) 28%, rgba(30, 100, 220, 0.35) 48%, rgba(30, 100, 220, 0.22) 62%, transparent 90%);
-  filter: blur(56px) saturate(135%);
-  transform: rotate(-20deg);
-  transform-origin: 50% 100%; /* 下を起点に傾く */
-}
-
 .news {
   padding-top: 5rem;
   padding-bottom: 120px;
@@ -1777,62 +1742,95 @@ button {
   padding-top: 5rem;
   padding-bottom: 200px;
   overflow: hidden;
+  z-index: -3;
 }
-.philosophy .container {
+.philosophy > .container {
   position: relative;
   z-index: 1;
 }
-
-/* 共通：テクスチャブロック */
-.philosophy__bg {
-  position: absolute;
-  z-index: 0;
-  pointer-events: none;
-  background-image: url("/img/philosophy_back.webp");
-  background-size: 150% auto;
-  background-repeat: no-repeat;
-  background-position: center 50%;
-  opacity: 0.9;
-  border-radius: 2px;
-  will-change: background-position;
-}
-.philosophy__bg::after {
+.philosophy::before, .philosophy::after {
   content: "";
   position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+  background: url("/img/background/background-bom01.png") no-repeat center/contain;
+  filter: saturate(1.05);
+  opacity: 0;
 }
-
-/* Mission 左上あたり */
-.philosophy__bg--top {
-  top: 300px;
-  right: -200px;
-  width: min(1000px, 95vw);
-  aspect-ratio: 21/9;
+.philosophy::before {
+  top: 150px;
+  right: 0;
+  width: min(1200px, 110vw);
+  aspect-ratio: 14/9;
+  transform: translateX(8vw);
+}
+.philosophy::after {
+  bottom: 0;
+  left: -10px;
+  width: min(950px, 100vw);
+  aspect-ratio: 14/9;
+  transform: scaleX(-1) translateX(-8vw);
+  transform-origin: center;
+}
+.philosophy.is-revealed::before {
+  animation: bg-in-right 900ms cubic-bezier(0.22, 1, 0.36, 1) 120ms forwards;
+}
+.philosophy.is-revealed::after {
+  animation: bg-in-left 900ms cubic-bezier(0.22, 1, 0.36, 1) 260ms forwards;
 }
 @media (max-width: 768px) {
-  .philosophy__bg--top {
+  .philosophy::before {
     top: 150px;
     right: -100px;
-    aspect-ratio: 16/9;
+    width: 130vw;
+    aspect-ratio: 4/3;
+    transform: translateX(10vw);
   }
-}
-
-/* Value 左下 */
-.philosophy__bg--bottom {
-  bottom: -80px;
-  left: -200px;
-  width: min(1000px, 95vw);
-  aspect-ratio: 24/9;
-}
-@media (max-width: 768px) {
-  .philosophy__bg--bottom {
+  .philosophy::after {
     bottom: -40px;
     left: -100px;
+    width: 120vw;
     aspect-ratio: 4/3;
+    transform: scaleX(-1) scale(0.8) translateX(-10vw);
+    transform-origin: center;
+  }
+  .philosophy.is-revealed::after {
+    animation: bg-in-left-sp 900ms cubic-bezier(0.22, 1, 0.36, 1) 260ms forwards;
   }
 }
 
+/* 右から入る */
+@keyframes bg-in-right {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* 左から入る（反転を維持） */
+@keyframes bg-in-left {
+  to {
+    transform: scaleX(-1) translateX(0);
+    opacity: 1;
+  }
+}
+/* SP：反転 + 縮小を維持したまま入る */
+@keyframes bg-in-left-sp {
+  to {
+    transform: scaleX(-1) scale(0.8) translateX(0);
+    opacity: 1;
+  }
+}
+/* 動きを減らす設定の人にはアニメ無し */
+@media (prefers-reduced-motion: reduce) {
+  .philosophy::before,
+  .philosophy::after {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .philosophy::after {
+    transform: scaleX(-1) !important;
+  }
+}
 .philosophy__tagline {
   margin: 0 0 4rem;
   font-size: 0.875rem;
@@ -1885,12 +1883,12 @@ button {
     grid-column: 6/span 7;
     transform: translateY(18px);
     justify-self: stretch;
-    margin-top: 20px;
+    margin-top: 30px;
   }
   /* Value：下は横長 */
   .philosophy__item--value {
     grid-column: 1/span 7;
-    margin-top: 70px;
+    margin-top: 50px;
   }
 }
 /* カード本体（白いパネル） */

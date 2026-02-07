@@ -410,7 +410,7 @@ $service-page-muted: rgba(0, 0, 0, 0.6);
       120% 32%,
       -30% 43%,
       110% 75%,
-      -50% 90%;
+      -20% 90%;
 
     background-size:
       70vw,
@@ -418,7 +418,27 @@ $service-page-muted: rgba(0, 0, 0, 0.6);
       70vw,
       80vw,
       50vw,
-      90vw;
+      70vw;
+  }
+
+  @include m.mq-down(sm) {
+    &::before {
+      background-position:
+      250% 3%,
+      5% 20%,
+      0% 28.5%,
+      10% 43%,
+      180% 81%,
+      80% 91%;
+
+    background-size:
+      90vw,
+      150vw,
+      150vw,
+      150vw,
+      100vw,
+      150vw;
+    }
   }
 }
 

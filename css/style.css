@@ -394,8 +394,14 @@ button {
   pointer-events: none;
   background-image: url("/img/background/mist01.webp"), url("/img/background/mist03.webp"), url("/img/background/mist02.webp"), url("/img/background/mist04.webp"), url("/img/background/mist04.webp"), url("/img/background/mist01.webp");
   background-repeat: no-repeat;
-  background-position: 90% 3%, 5% 20%, 120% 32%, -30% 43%, 110% 75%, -50% 90%;
-  background-size: 70vw, 40vw, 70vw, 80vw, 50vw, 90vw;
+  background-position: 90% 3%, 5% 20%, 120% 32%, -30% 43%, 110% 75%, -20% 90%;
+  background-size: 70vw, 40vw, 70vw, 80vw, 50vw, 70vw;
+}
+@media (max-width: 599.98px) {
+  .top-wrap::before {
+    background-position: 250% 3%, 5% 20%, 0% 28.5%, 10% 43%, 180% 81%, 80% 91%;
+    background-size: 90vw, 150vw, 150vw, 150vw, 100vw, 150vw;
+  }
 }
 
 /* =========================================
@@ -1401,6 +1407,12 @@ button {
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
+@media (max-width: 767px) {
+  .blog {
+    padding-top: 0;
+    margin-top: -40px;
+  }
+}
 
 .blog__grid {
   display: grid;
@@ -1779,16 +1791,16 @@ button {
 }
 @media (max-width: 768px) {
   .philosophy::before {
-    top: 150px;
+    top: 20px;
     right: -100px;
     width: 130vw;
     aspect-ratio: 4/3;
     transform: translateX(10vw);
   }
   .philosophy::after {
-    bottom: -40px;
+    bottom: 130px;
     left: -100px;
-    width: 120vw;
+    width: 150vw;
     aspect-ratio: 4/3;
     transform: scaleX(-1) scale(0.8) translateX(-10vw);
     transform-origin: center;

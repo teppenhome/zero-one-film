@@ -67,7 +67,7 @@
   // =========================
   @media (max-width: 768px) {
     &::before {
-      top: 150px;
+      top: 20px;
       right: -100px;
       width: 130vw;         // ← SPははみ出し前提が綺麗
       aspect-ratio: 4 / 3;
@@ -75,9 +75,9 @@
     }
 
     &::after {
-      bottom: -40px;
+      bottom: 130px;
       left: -100px;
-      width: 120vw;
+      width: 150vw;
       aspect-ratio: 4 / 3;
 
       // ここが大事：初期も最終も「反転 + 縮小 + X移動」を揃える

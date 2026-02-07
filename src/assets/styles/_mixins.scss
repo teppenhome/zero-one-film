@@ -7,3 +7,13 @@
     @content;
   }
 }
+
+// ✅ 追加：スマホ以下（max-width）
+@mixin mq-down($key) {
+  $width: map.get(v.$breakpoints, $key);
+
+  // 同値ちょうどで競合しないように 0.02px 引く（定番テク）
+  @media (max-width: ($width - 0.02px)) {
+    @content;
+  }
+}

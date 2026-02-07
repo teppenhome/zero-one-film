@@ -4,6 +4,11 @@
 .blog {
   padding-top: v.$spacing-80;
   padding-bottom: v.$spacing-80;
+
+  @media (max-width: 767px) {
+    padding-top: 0;
+    margin-top: -40px;
+  }
 }
 
 .blog__grid {

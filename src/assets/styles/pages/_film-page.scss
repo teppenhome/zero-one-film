@@ -56,16 +56,16 @@ $film-muted: rgba(0, 0, 0, 0.6);
   @media (max-width: 768px) {
     .service-page__bg {
       background-position:
-        100% 8%,
-        0% 29%,
+        100% 9%,
+        0% 32%,
         30% 44%,
-        110% 69.5%,
-        50% 82%,
-        0% 92.5%;
+        110% 78.5%,
+        50% 85%,
+        0% 93.5%;
 
       background-size:
         130vw,
-        80vw,
+        100vw,
         120vw,
         120vw,
         120vw,
@@ -153,14 +153,10 @@ $film-muted: rgba(0, 0, 0, 0.6);
     padding: clamp(32px, 6vw, 56px);
     text-align: center;
     background-color: rgb(255, 255, 255, 0.5);
-  }
 
-  .film-work-concept__title {
-    margin: 0 0 16px;
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    color: #111;
+    @media (max-width: 768px) {
+      padding: 20px;
+    }
   }
 
   .film-work-concept__text {
@@ -168,6 +164,10 @@ $film-muted: rgba(0, 0, 0, 0.6);
     font-size: 1rem;
     line-height: 2;
     color: rgba(0, 0, 0);
+
+    @media (max-width: 768px) {
+      text-align: left;
+    }
   }
 
     /* =========================================
@@ -363,6 +363,10 @@ $film-muted: rgba(0, 0, 0, 0.6);
       width: 80%;
       height: 1px;
       background: #838383;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
 
     &::after {
@@ -374,6 +378,10 @@ $film-muted: rgba(0, 0, 0, 0.6);
       width: 1px;
       height: 100%;
       background: #838383;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
   }
 
@@ -615,7 +623,8 @@ $film-muted: rgba(0, 0, 0, 0.6);
     }
 
     @media (max-width: 520px) {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      row-gap: clamp(28px, 6vw, 40px);
     }
   }
 
@@ -668,6 +677,10 @@ $film-muted: rgba(0, 0, 0, 0.6);
     color: rgba(0, 0, 0, 0.78);
     letter-spacing: 0.03em;
     white-space: nowrap;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
   }
 
   .film-uses__note {
@@ -705,6 +718,13 @@ $film-muted: rgba(0, 0, 0, 0.6);
     color: $film-text;
     background-color: rgb(255, 255, 255, 0.5);
     padding: 1rem 1.5rem;
+
+    @media (max-width: 768px) {
+      text-align: left;
+      padding: 0;
+      font-size: 1rem;
+      margin-top: 0;
+    }
   }
 }
 

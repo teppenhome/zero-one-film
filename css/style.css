@@ -2997,8 +2997,8 @@ body:has(.service-page) .site-footer__inner,
 }
 @media (max-width: 768px) {
   .film-page .service-page__bg {
-    background-position: 100% 8%, 0% 29%, 30% 44%, 110% 69.5%, 50% 82%, 0% 92.5%;
-    background-size: 130vw, 80vw, 120vw, 120vw, 120vw, 120vw;
+    background-position: 100% 9%, 0% 32%, 30% 44%, 110% 78.5%, 50% 85%, 0% 93.5%;
+    background-size: 130vw, 100vw, 120vw, 120vw, 120vw, 120vw;
   }
 }
 .film-page .film-hero {
@@ -3065,18 +3065,21 @@ body:has(.service-page) .site-footer__inner,
   text-align: center;
   background-color: rgba(255, 255, 255, 0.5);
 }
-.film-page .film-work-concept__title {
-  margin: 0 0 16px;
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: #111;
+@media (max-width: 768px) {
+  .film-page .film-work-concept__inner {
+    padding: 20px;
+  }
 }
 .film-page .film-work-concept__text {
   margin: 0;
   font-size: 1rem;
   line-height: 2;
   color: rgb(0, 0, 0);
+}
+@media (max-width: 768px) {
+  .film-page .film-work-concept__text {
+    text-align: left;
+  }
 }
 .film-page .film-works {
   padding-top: clamp(3rem, 8vw, 5rem);
@@ -3242,6 +3245,11 @@ body:has(.service-page) .site-footer__inner,
   height: 1px;
   background: #838383;
 }
+@media (max-width: 768px) {
+  .film-page .film-worries__grid::before {
+    display: none;
+  }
+}
 .film-page .film-worries__grid::after {
   content: "";
   position: absolute;
@@ -3251,6 +3259,11 @@ body:has(.service-page) .site-footer__inner,
   width: 1px;
   height: 100%;
   background: #838383;
+}
+@media (max-width: 768px) {
+  .film-page .film-worries__grid::after {
+    display: none;
+  }
 }
 .film-page .film-worry-card {
   padding: clamp(1.5rem, 4vw, 2rem);
@@ -3457,7 +3470,8 @@ body:has(.service-page) .site-footer__inner,
 }
 @media (max-width: 520px) {
   .film-page .film-uses__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: clamp(28px, 6vw, 40px);
   }
 }
 .film-page .film-use-card {
@@ -3506,6 +3520,11 @@ body:has(.service-page) .site-footer__inner,
   letter-spacing: 0.03em;
   white-space: nowrap;
 }
+@media (max-width: 768px) {
+  .film-page .film-use-card__text {
+    font-size: 1rem;
+  }
+}
 .film-page .film-uses__note {
   max-width: 720px;
   margin: 0 auto;
@@ -3535,6 +3554,14 @@ body:has(.service-page) .site-footer__inner,
   color: #333;
   background-color: rgba(255, 255, 255, 0.5);
   padding: 1rem 1.5rem;
+}
+@media (max-width: 768px) {
+  .film-page .film-message__text {
+    text-align: left;
+    padding: 0;
+    font-size: 1rem;
+    margin-top: 0;
+  }
 }
 
 /* =========================================
@@ -4058,7 +4085,7 @@ body:has(.film-page) .site-footer__inner,
 }
 @media (max-width: 768px) {
   .c-section-title__text {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -4077,4 +4104,14 @@ body:has(.film-page) .site-footer__inner,
   letter-spacing: 0.05em;
   color: #09329b;
   text-transform: uppercase;
+}
+
+.sp-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sp-only {
+    display: inline;
+  }
 }/*# sourceMappingURL=style.css.map */

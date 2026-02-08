@@ -33,7 +33,7 @@
   color: transparent;
 
   @media (max-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -52,4 +52,14 @@
   letter-spacing: 0.05em;
   color: #09329b;
   text-transform: uppercase;
+}
+
+.sp-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sp-only {
+    display: inline;
+  }
 }

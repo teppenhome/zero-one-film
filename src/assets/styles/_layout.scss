@@ -142,7 +142,7 @@ $service-page-muted: rgba(0, 0, 0, 0.6);
 
 .global-header__logo {
   text-decoration: none;
-  width: 120px;
+  width: 200px;
   flex-shrink: 0;
 }
 
@@ -448,7 +448,6 @@ $service-page-muted: rgba(0, 0, 0, 0.6);
   .page-cta {
     padding-top: clamp(3rem, 10vw, 5rem);
     padding-bottom: clamp(3rem, 10vw, 5rem);
-    background: #fff;
     text-align: center;
   }
 

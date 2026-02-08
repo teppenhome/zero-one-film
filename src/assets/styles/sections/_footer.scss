@@ -2,9 +2,22 @@
 @use "../mixins" as m;
 
 .site-footer {
-  background: #020a1a;
   color: rgba(255, 255, 255, 0.78);
   padding-block: clamp(28px, 4vw, 56px);
+}
+
+body.home .site-footer {
+  background: #020a1a;
+}
+
+body.page .site-footer,
+body.single .site-footer {
+  background: linear-gradient(
+    to bottom,
+    #246bdd 0%,
+    #11388b 45%,
+    #041a3f 100%
+  );
 }
 
 .site-footer__inner {

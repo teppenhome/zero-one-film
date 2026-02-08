@@ -1,36 +1,55 @@
 //下層ページのタイトル
-.section-title {
-  width: fit-content;
-  margin: 0 auto clamp(2rem, 6vw, 4rem);
-  padding: clamp(18px, 3vw, 28px) clamp(32px, 6vw, 48px);
+@use "../variables" as v;
+@use "../mixins" as m;
 
+.c-section-title {
   text-align: center;
+  margin: 0 auto 2rem;
+  background-color: rgb(255, 255, 255, 0.5);
+  width: fit-content;
+  padding: 1rem 1.5rem;
+}
 
-  background: url("/img/sub-page/sub-title-image.jpg") no-repeat center / cover;
-  border-radius: 6px;
+.c-section-title__text {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  z-index: 0;
 
-  &__en {
-    margin: 0;
-    font-family: "Cinzel", serif; // 例
-    font-size: clamp(2rem, 6vw, 3.2rem);
-    font-weight: 500;
-    letter-spacing: 0.055em;
-    color: #1265D2;
-    line-height: 1.1;
+  position: relative;
+  display: block;
 
-    &._mini {
-      font-size: 2.2rem;
-    }
-  }
+  /* 中の文字：青グラデーション */
+  background: linear-gradient(
+    to bottom,
+    #2f80ff 0%,
+    #1c5cff 50%,
+    #09329b 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 
-  &__sub {
-    margin-top: 0.4em;
+  @media (max-width: 768px) {
     font-size: 1.5rem;
-    color: rgba(0, 0, 0, 0.75);
-    letter-spacing: 0.04em;
   }
 }
 
-.font-bold {
+.c-section-title__line {
+  display: block;
+  width: clamp(52px, 7vw, 88px);
+  height: 6px;
+  margin: 0.8rem auto 0;
+  background:#17cbeb;
+}
+
+.section-title__sub {
+  margin: 0;
+  font-size: 1.25rem;
   font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #09329b;
+  text-transform: uppercase;
 }

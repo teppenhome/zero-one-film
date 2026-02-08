@@ -178,18 +178,6 @@ $film-muted: rgba(0, 0, 0, 0.6);
     padding-bottom: clamp(3rem, 8vw, 5rem);
   }
 
-  .c-works__note {
-    font-size: 0.85rem;
-    line-height: 1.7;
-    color: rgba(0, 0, 0, 0.75);
-    background-color: #f0f0f0;
-    padding: 5px;
-    max-width: 450px;
-    margin-left: auto;
-    text-align: center;
-    border-radius: 10px;
-  }
-
   .film-works__en {
     margin: 0 0 0.5rem;
     font-size: clamp(1.75rem, 3.5vw, 2.5rem);

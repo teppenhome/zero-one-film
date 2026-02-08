@@ -1,19 +1,68 @@
 // =========================================
 // PHOTO ページ専用スタイル
 // ルートクラス .photo-page 配下に100%スコープ
-// 既存の film-page / service-page は未変更
+// film.html のデザイン・トーンを踏襲
 // =========================================
 @use "../variables" as v;
 @use "../mixins" as m;
 
 $photo-border: #e0e0e0;
-$photo-accent: #1265d2;
+$photo-accent: #0066cc;
 $photo-text: v.$color-text;
-$photo-muted: rgba(0, 0, 0, 0.65);
+$photo-muted: rgba(0, 0, 0, 0.6);
 
 .photo-page {
+  position: relative;
+  overflow: hidden;
+
+  .service-page__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      url("/img/background/background-bom01.png"),
+      url("/img/background/background-bom01-flip.png"),
+      url("/img/background/mist01.webp"),
+      url("/img/background/background-bom01.png"),
+      url("/img/background/mist04.webp"),
+      url("/img/background/background-bom01-flip.png");
+    background-repeat: no-repeat;
+    background-position:
+      100% 3%,
+      0% 26%,
+      20% 40%,
+      100% 75%,
+      50% 89%,
+      -30% 98%;
+    background-size:
+      80vw,
+      50vw,
+      70vw,
+      80vw,
+      40vw,
+      65vw;
+
+    @media (max-width: 768px) {
+      background-position:
+        100% 9%,
+        0% 32%,
+        30% 44%,
+        110% 78.5%,
+        50% 85%,
+        0% 93.5%;
+      background-size:
+        130vw,
+        100vw,
+        120vw,
+        120vw,
+        120vw,
+        120vw;
+    }
+  }
+
   /* =========================================
-     Photo Hero
+     Photo Hero（film-hero 踏襲）
   ========================================== */
   .photo-hero {
     position: relative;
@@ -24,9 +73,8 @@ $photo-muted: rgba(0, 0, 0, 0.65);
     overflow: hidden;
     padding-top: calc(65px + clamp(1.5rem, 4vw, 2.5rem));
     padding-bottom: clamp(2rem, 5vw, 3rem);
-    background-color: #f5f4f2;
-    background: #f5f4f2 url("/img/sub-page/sub-top-image.webp") center / cover
-      no-repeat;
+    background-color: #f8f6f3;
+    background: #f8f6f3 url("/img/page-header/service-header02.webp") center / cover no-repeat;
 
     @include m.mq(md) {
       min-height: clamp(280px, 35vw, 380px);
@@ -38,11 +86,15 @@ $photo-muted: rgba(0, 0, 0, 0.65);
     inset: 0;
     z-index: 0;
     pointer-events: none;
+    background: rgba(255, 255, 255, 0.35);
   }
 
   .photo-hero .container {
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .photo-hero__title {
@@ -56,77 +108,159 @@ $photo-muted: rgba(0, 0, 0, 0.65);
 
   .photo-hero__lead {
     margin: 0;
-    max-width: 640px;
-    padding: clamp(1rem, 2.5vw, 1.5rem) clamp(1.25rem, 3vw, 2rem);
     font-size: clamp(0.9rem, 2vw, 1.05rem);
     font-weight: 400;
-    color: $photo-text;
-    line-height: 1.75;
+    color: #000;
+    line-height: 1.7;
     letter-spacing: 0.02em;
-    background: rgba(255, 255, 255, 0.85);
-    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .photo-hero__title,
+  .photo-hero__lead {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 0.25em 0.5em;
+    line-height: 1.4;
   }
 
   /* =========================================
-     共通：セクション英字見出し（.photo-page 内のみ）
+     (2) 写真撮影について（film-work-concept 踏襲）
   ========================================== */
-  .photo-section-title {
-    display: block;
-    margin: 0 0 clamp(2rem, 5vw, 3rem);
-    text-align: left;
+  .photo-about {
+    margin-top: 40px;
+  }
 
-    &__en {
-      display: block;
-      margin: 0 0 0.35em;
-      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: $photo-accent;
+  .photo-about__inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: clamp(32px, 6vw, 56px);
+    text-align: center;
+    background-color: rgb(255, 255, 255, 0.5);
+
+    @media (max-width: 768px) {
+      padding: 20px;
     }
+  }
 
-    &__sub {
-      display: block;
-      margin: 0;
-      font-size: clamp(0.9rem, 1.8vw, 1rem);
-      color: $photo-muted;
-      letter-spacing: 0.03em;
+  .photo-about__text {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 2;
+    color: rgba(0, 0, 0, 0.85);
+
+    @media (max-width: 768px) {
+      text-align: left;
     }
   }
 
   /* =========================================
-     INTRODUCTION
+     (3) 写真参考（film-works 踏襲）
   ========================================== */
-  .photo-intro {
+  .photo-reference {
     padding-top: clamp(3rem, 8vw, 5rem);
     padding-bottom: clamp(3rem, 8vw, 5rem);
-    background: #fff;
   }
 
-  .photo-intro__box {
-    max-width: 800px;
-    padding: clamp(1.5rem, 4vw, 2.5rem);
-    background: #f5f5f5;
-    border: 1px solid $photo-border;
-    border-radius: 4px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  .photo-reference__note {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.75);
+    background-color: #f0f0f0;
+    padding: 8px 12px;
+    max-width: 450px;
+    margin: 0 auto 2rem;
+    text-align: center;
+    border-radius: 10px;
   }
 
-  .photo-intro__text {
+  .photo-reference__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(1.5rem, 4vw, 2rem);
+    list-style: none;
     margin: 0;
-    font-size: clamp(0.9375rem, 1.5vw, 1rem);
-    line-height: 1.9;
-    color: $photo-text;
+    padding: 0;
+
+    @media (min-width: 901px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 521px) and (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 520px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(1rem, 3vw, 1.5rem);
+    }
+  }
+
+  .photo-reference-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .photo-reference-card__media {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .photo-reference-card__body {
+    position: relative;
+    padding: 18px 18px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .photo-reference-card__title {
+    margin: 0 0 10px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: #111;
+  }
+
+  .photo-reference-card__desc {
+    margin: 0 0 10px;
+    font-size: 0.8rem;
+    line-height: 1.75;
+    color: rgba(0, 0, 0, 0.65);
+    flex: 1;
+  }
+
+  .photo-reference-card__label {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: $photo-accent;
+    background: rgba(26, 92, 255, 0.1);
+    white-space: nowrap;
   }
 
   /* =========================================
-     STRENGTH（3つの強み）
+     (4) STRENGTH（film-solution 踏襲）
   ========================================== */
   .photo-strength {
     padding-top: clamp(3rem, 8vw, 5rem);
     padding-bottom: clamp(3rem, 8vw, 5rem);
-    background: url("/img/sub-page/sub-page-background.webp") center / 200px
-      200px repeat;
+    position: relative;
+    background: url("/img/sub-page/sub-page-background.webp") center / 200px 200px repeat;
   }
 
   .photo-strength__list {
@@ -140,10 +274,10 @@ $photo-muted: rgba(0, 0, 0, 0.65);
     flex-direction: column;
     gap: 1.25rem;
     padding: clamp(1.5rem, 4vw, 2.5rem) 0;
-    border-top: 1px solid $photo-border;
 
-    &:first-child {
-      border-top: none;
+    &:not(:first-child) {
+      margin-top: 0;
+      border-top: 1px solid $photo-border;
     }
 
     @include m.mq(md) {
@@ -156,7 +290,7 @@ $photo-muted: rgba(0, 0, 0, 0.65);
   .photo-strength__thumb {
     flex-shrink: 0;
     width: 100%;
-    max-width: 240px;
+    max-width: 280px;
     aspect-ratio: 3 / 2;
     overflow: hidden;
     position: relative;
@@ -173,7 +307,7 @@ $photo-muted: rgba(0, 0, 0, 0.65);
     position: absolute;
     bottom: 0;
     right: 0;
-    padding: 0.25rem 0.75rem;
+    padding: 0.35rem 0.85rem;
     font-size: 1.5rem;
     font-weight: 700;
     color: #fff;
@@ -184,8 +318,6 @@ $photo-muted: rgba(0, 0, 0, 0.65);
   .photo-strength__body {
     flex: 1;
     min-width: 0;
-    position: relative;
-    padding-left: 0;
 
     @include m.mq(md) {
       padding-left: 1.5rem;
@@ -202,13 +334,13 @@ $photo-muted: rgba(0, 0, 0, 0.65);
 
   .photo-strength__text {
     margin: 0;
-    font-size: clamp(0.875rem, 1.4vw, 0.9375rem);
+    font-size: 0.9375rem;
     line-height: 1.8;
     color: $photo-muted;
   }
 
   /* =========================================
-     BUSINESS PHOTO
+     (5) BUSINESS PHOTO
   ========================================== */
   .photo-business {
     padding-top: clamp(3rem, 8vw, 5rem);
@@ -237,6 +369,7 @@ $photo-muted: rgba(0, 0, 0, 0.65);
       display: block;
       aspect-ratio: 3 / 2;
       object-fit: cover;
+      border-radius: 8px;
     }
   }
 
@@ -258,11 +391,11 @@ $photo-muted: rgba(0, 0, 0, 0.65);
       color: $photo-text;
 
       &::before {
-        content: "◆";
+        content: "・";
         position: absolute;
         left: -1.25rem;
         color: $photo-accent;
-        font-size: 0.65em;
+        font-weight: 700;
       }
     }
   }
@@ -271,7 +404,7 @@ $photo-muted: rgba(0, 0, 0, 0.65);
     padding: clamp(1rem, 2.5vw, 1.5rem);
     background: #f5f5f5;
     border: 1px solid $photo-border;
-    border-radius: 4px;
+    border-radius: 8px;
   }
 
   .photo-business__worries-title {
@@ -289,13 +422,12 @@ $photo-muted: rgba(0, 0, 0, 0.65);
   }
 
   /* =========================================
-     PERSONAL PHOTO
+     (6) PERSONAL PHOTO
   ========================================== */
   .photo-personal {
     padding-top: clamp(3rem, 8vw, 5rem);
     padding-bottom: clamp(3rem, 8vw, 5rem);
-    background: url("/img/sub-page/sub-page-background.webp") center / 200px
-      200px repeat;
+    background: url("/img/sub-page/sub-page-background.webp") center / 200px 200px repeat;
   }
 
   .photo-personal__block {
@@ -327,6 +459,7 @@ $photo-muted: rgba(0, 0, 0, 0.65);
       display: block;
       aspect-ratio: 3 / 2;
       object-fit: cover;
+      border-radius: 8px;
     }
   }
 
@@ -343,7 +476,7 @@ $photo-muted: rgba(0, 0, 0, 0.65);
     font-weight: 600;
     letter-spacing: 0.04em;
     color: $photo-accent;
-    background: rgba(18, 101, 210, 0.1);
+    background: rgba(0, 102, 204, 0.1);
     border-radius: 4px;
   }
 
@@ -355,105 +488,37 @@ $photo-muted: rgba(0, 0, 0, 0.65);
   }
 
   /* =========================================
-     WORKS（写真参考）
-  ========================================== */
-  .photo-works {
-    padding-top: clamp(3rem, 8vw, 5rem);
-    padding-bottom: clamp(3rem, 8vw, 5rem);
-    background: #fff;
-  }
-
-  .photo-works__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: clamp(1.5rem, 4vw, 2rem);
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    @include m.mq(md) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  .photo-work-card {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.06);
-  }
-
-  .photo-work-card__media {
-    position: relative;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-  }
-
-  .photo-work-card__label {
-    position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
-    padding: 0.25rem 0.6rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: $photo-accent;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 4px;
-  }
-
-  .photo-work-card__body {
-    padding: clamp(1rem, 2.5vw, 1.25rem);
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .photo-work-card__title {
-    margin: 0 0 0.5rem;
-    font-size: clamp(1rem, 1.6vw, 1.125rem);
-    font-weight: 600;
-    color: $photo-text;
-  }
-
-  .photo-work-card__desc {
-    margin: 0;
-    font-size: clamp(0.8125rem, 1.3vw, 0.875rem);
-    line-height: 1.65;
-    color: $photo-muted;
-  }
-
-  /* =========================================
-     MESSAGE
+     (7) MESSAGE（film-message 踏襲）
   ========================================== */
   .photo-message {
     padding-top: clamp(3rem, 8vw, 5rem);
     padding-bottom: clamp(2rem, 5vw, 3rem);
-    background: #f9f9f9;
-    text-align: center;
-  }
-
-  .photo-message .photo-section-title {
     text-align: center;
   }
 
   .photo-message__text {
-    max-width: 640px;
-    margin: 0 auto;
-    font-size: clamp(0.9375rem, 1.5vw, 1rem);
-    line-height: 1.9;
+    width: fit-content;
+    margin: 30px auto 0;
+    font-size: 1.2rem;
+    line-height: 2;
     color: $photo-text;
+    background-color: rgb(255, 255, 255, 0.5);
+    padding: 1rem 1.5rem;
+
+    @media (max-width: 768px) {
+      text-align: left;
+      padding: 0;
+      font-size: 1rem;
+      margin-top: 0;
+    }
   }
+}
+
+/* Photoページ：フッター to top 用（film と同一） */
+body:has(.photo-page) .site-footer__inner,
+.site-footer__inner:has(.film-page-to-top) {
+  position: relative;
+  padding-top: 2.5rem;
 }
 
 /* Photoページ：PC時のみヘッダーメニューを黒系に（薄い背景のため） */

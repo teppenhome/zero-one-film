@@ -17,19 +17,19 @@
         <nav class="global-nav" aria-label="Primary">
           <ul class="global-nav__list">
             <li class="global-nav__item">
-              <a href="service.html" class="global-nav__link">Service</a>
+              <a href="/service.html" class="global-nav__link">Service</a>
             </li>
             <li class="global-nav__item">
-              <a href="works.html" class="global-nav__link">Works</a>
+              <a href="/works.html" class="global-nav__link">Works</a>
             </li>
             <li class="global-nav__item">
-              <a href="company.html" class="global-nav__link">Company</a>
+              <a href="/company.html" class="global-nav__link">Company</a>
             </li>
             <li class="global-nav__item">
               <a href="/blog.html" class="global-nav__link">Blog</a>
             </li>
             <li class="global-nav__item">
-              <a href="contact.html" class="global-nav__link">Contact</a>
+              <a href="/contact.html" class="global-nav__link">Contact</a>
             </li>
           </ul>
         </nav>
@@ -70,11 +70,11 @@
 
         <nav class="drawer__nav" aria-label="Mobile">
           <a href="/" class="drawer__link">Top</a>
-          <a href="service.html" class="drawer__link">Service</a>
-          <a href="works.html" class="drawer__link">Works</a>
-          <a href="company.html" class="drawer__link">Company</a>
-          <a href="blog.html" class="drawer__link">Blog</a>
-          <a href="contact.html" class="drawer__link">Contact</a>
+          <a href="/service.html" class="drawer__link">Service</a>
+          <a href="/works.html" class="drawer__link">Works</a>
+          <a href="/company.html" class="drawer__link">Company</a>
+          <a href="/blog.html" class="drawer__link">Blog</a>
+          <a href="/contact.html" class="drawer__link">Contact</a>
         </nav>
       </div>
     </div>
@@ -340,7 +340,7 @@
               </li>
               <li class="services__item js-reveal">
                 <!-- #6 -->
-                <a href="contact.html">
+                <a href="/contact.html">
                 <article class="service-card service-card--contact">
                   <div class="service-card__bg" aria-hidden="true"></div>
 
@@ -1245,12 +1245,12 @@
             <li><a class="site-footer__link" href="/#works">Works</a></li>
       
             <li><a class="site-footer__link" href="/#company">Company</a></li>
-            <li><a class="site-footer__link" href="contact.html">Contact</a></li>
+            <li><a class="site-footer__link" href="/contact.html">Contact</a></li>
           </ul>
 
           <ul class="site-footer__list">
             <li><a class="site-footer__link" href="/blog.html">Blog</a></li>
-            <li><a class="site-footer__link" href="/news/">News</a></li>
+            <li><a class="site-footer__link" href="/#news">News</a></li>
           </ul>
         </nav>
 
@@ -1274,25 +1274,5 @@
   </div>
 
     <script type="module" src="/src/main.js"></script>
-    <script type="module">
-      import { TypeShuffle } from "/src/js/modules/textShuffle.js";
-
-      const textElements = document.querySelectorAll(".content");
-      textElements.forEach((textElement) => {
-        const ts = new TypeShuffle(textElement);
-
-        const io = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (!entry.isIntersecting) return;
-              ts.trigger("fx6");
-              io.unobserve(entry.target);
-            });
-          },
-          { rootMargin: "0px 0px -10% 0px", threshold: 0.2 }
-        );
-        io.observe(textElement);
-      });
-    </script>
   </body>
 </html>

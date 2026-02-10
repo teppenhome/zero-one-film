@@ -1,0 +1,344 @@
+// =========================================
+// CONTACT ページ専用スタイル
+// ルートクラス .contact-page 配下にスコープ
+// =========================================
+@use "../variables" as v;
+@use "../mixins" as m;
+
+$contact-border: #ddd;
+$contact-border-alt: #e0e0e0;
+$contact-bg-input: #f5f5f5;
+$contact-text: v.$color-text;
+$contact-muted: rgba(0, 0, 0, 0.6);
+$accent-color: #1265d2;
+
+.contact-page {
+  --accent-color: #1265d2;
+  position: relative;
+  overflow: hidden;
+
+  /* 背景レイヤー（film/photo と同じ思想） */
+  .service-page__bg {
+    
+  }
+
+  /* コンテンツを背景より前面に */
+  > *:not(.service-page__bg) {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* =========================================
+     Hero（film-hero 使用時は _film-page のスタイルを流用）
+     以下は contact-hero 用（未使用時も互換のため残す）
+  ========================================== */
+  .contact-hero {
+    position: relative;
+    min-height: clamp(200px, 40vw, 320px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding-top: calc(65px + clamp(1.5rem, 4vw, 2.5rem));
+    padding-bottom: clamp(2rem, 5vw, 3rem);
+
+    background-color: #f5f5f5;
+    background-image: url("/img/page-header/service-header06.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    .container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .contact-hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background: rgba(255, 255, 255, 0.35);
+  }
+
+  .contact-hero__title {
+    margin: 0 0 clamp(0.5rem, 1.5vw, 1rem);
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+    font-weight: 700;
+    color: $contact-text;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+  }
+
+  .contact-hero__lead {
+    margin: 0;
+    font-size: clamp(0.875rem, 1.8vw, 1rem);
+    font-weight: 400;
+    color: $contact-muted;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+  }
+
+  .contact-hero__title,
+  .contact-hero__lead {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 0.25em 0.5em;
+    line-height: 1.4;
+  }
+
+  /* =========================================
+     リード文
+  ========================================== */
+  .contact-lead {
+    padding: clamp(1.5rem, 4vw, 2rem) 0;
+    background: #fff;
+    text-align: center;
+  }
+
+  .contact-lead__text {
+    margin: 0;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.8;
+    color: $contact-text;
+    letter-spacing: 0.02em;
+  }
+
+  /* =========================================
+    Contact Form セクション（完成版）
+  ========================================== */
+
+  .contact-form-section {
+    padding-top: clamp(2rem, 5vw, 3rem);
+    padding-bottom: clamp(3rem, 8vw, 5rem);
+    background: #fff;
+
+    .c-section-title {
+      margin-bottom: clamp(2rem, 5vw, 3rem);
+    }
+  }
+
+  /* 必須マーク（＊） */
+  .contact-form__required {
+    margin-left: 0.25em;
+    font-size: 0.85em;
+    color: $accent-color; // var(--accent-color)より統一（既存に合わせる）
+    vertical-align: baseline;
+  }
+
+  /* フォーム全体 */
+  .contact-form {
+    max-width: 860px; // カンプ寄せで少し広め
+    margin: 0 auto;
+
+    /* カンプは上に罫線がある */
+    border-top: 1px solid $contact-border;
+  }
+
+  /* 1行（row） */
+  .contact-form__row {
+    /* 罫線で区切るので余白はここで管理 */
+    margin: 0;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid $contact-border;
+
+    display: grid;
+    grid-template-columns: 1fr; // SP
+    gap: 0.5rem;
+
+    position: relative;
+
+    @include m.mq(md) {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 240px; // ← ラベル列幅と同じ
+        width: 1px;
+        background: $contact-border;
+        pointer-events: none;
+      }
+    }
+
+    @include m.mq(md) {
+      /* ラベル列 | 縦線 | 入力列 */
+      grid-template-columns: 240px 1px minmax(0, 1fr);
+      align-items: center;
+      gap: 0;
+      padding: 1.75rem 0;
+    }
+
+    /* テキストエリア行（縦位置を上に） */
+    &.contact-form__row--full {
+      @include m.mq(md) {
+        align-items: start;
+      }
+    }
+  }
+
+  /* ラベル */
+  .contact-form__label {
+    margin: 0;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    font-weight: 500;
+    color: $contact-text;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+
+    @include m.mq(md) {
+      width: auto; // 既存の width:180px を無効化
+      padding-top: 0; // 既存の上ズレを消す
+      text-align: center;
+      justify-self: stretch;
+    }
+  }
+
+  /* 入力側（右カラム） */
+  .contact-form__field {
+    min-width: 0;
+
+    @include m.mq(md) {
+      grid-column: 3; // 右カラムへ固定
+      padding-left: 2.25rem; // 縦線からの距離（カンプ寄せ）
+    }
+  }
+
+  /* 共通入力 */
+  .contact-form__input,
+  .contact-form__select,
+  .contact-form__textarea {
+    width: min(520px, 100%); // ★横幅を抑えて「表」っぽく
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+    color: $contact-text;
+
+    /* ★カンプは白い箱っぽい */
+    background-color: #fff;
+    border: 1px solid $contact-border;
+    border-radius: 2px;
+
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+
+    &::placeholder {
+      color: $contact-muted;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $accent-color;
+      box-shadow: 0 0 0 3px rgba(18, 101, 210, 0.12);
+    }
+
+    @include m.mq(md) {
+      justify-self: start;
+    }
+  }
+
+  /* input/selectの高さ統一 */
+  .contact-form__input,
+  .contact-form__select {
+    height: 48px;
+  }
+
+  /* select：▼アイコン */
+  .contact-form__select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 12px 12px;
+    padding-right: 2.75rem;
+  }
+
+  /* textarea */
+  .contact-form__textarea {
+    min-height: 220px; // ★カンプ寄せで大きめ
+    resize: vertical;
+    padding: 1rem;
+  }
+
+  /* privacy */
+  .contact-form__privacy {
+    margin: clamp(2rem, 5vw, 3rem) 0 clamp(1.5rem, 4vw, 2rem);
+    padding: 1.25rem 0 0;
+  }
+
+  .contact-form__privacy-text {
+    margin: 0;
+    font-size: clamp(0.8125rem, 1.4vw, 0.875rem);
+    line-height: 1.9;
+    color: $contact-muted;
+    letter-spacing: 0.02em;
+    text-align: center; // カンプ寄せ
+  }
+
+  .contact-form__privacy-link {
+    color: $accent-color;
+    text-decoration: underline;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .contact-form__submit-wrap {
+    text-align: center;
+  }
+
+  /* 既存CTAボタンと同一デザイン（.page-cta 外で使用するためここで定義） */
+  .contact-form__submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: clamp(240px, 40vw, 280px);
+    height: clamp(48px, 6vw, 56px);
+    padding-inline: clamp(1.5rem, 3vw, 2.5rem);
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: #fff;
+    background: #1366ff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(19, 102, 255, 0.35);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      background 0.25s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(19, 102, 255, 0.4);
+      background: #0d52cc;
+    }
+  }
+}
+
+/* =========================================
+   Contactページ：ヘッダーメニューを #333 に
+========================================= */
+@include m.mq(md) {
+  body.page-contact .global-header .global-nav__link {
+    color: $contact-text;
+
+    &::after {
+      background: $contact-text;
+    }
+  }
+
+  body.page-contact .global-header.is-scrolled .global-nav__link::after {
+    background: $contact-text;
+  }
+}

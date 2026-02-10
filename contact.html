@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | ZERO ONE FILM</title>
+  </head>
+  <body class="page-contact page">
+    <header id="header" class="global-header">
+      <div class="container">
+        <a href="/" class="global-header__logo">
+          <img src="/img/logo_wide_gray.png" alt="ZERO ONE FILM" />
+        </a>
+
+        <nav class="global-nav" aria-label="Primary">
+          <ul class="global-nav__list">
+            <li class="global-nav__item">
+              <a href="/service.html" class="global-nav__link">Service</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="/works.html" class="global-nav__link">Works</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="/company.html" class="global-nav__link">Company</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="/blog.html" class="global-nav__link">Blog</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="/contact.html" class="global-nav__link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="nav-toggle__lines" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="drawer" id="mobile-menu" hidden>
+      <button
+        class="drawer__backdrop"
+        type="button"
+        aria-label="メニューを閉じる"
+      ></button>
+      <div
+        class="drawer__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-label="モバイルメニュー"
+      >
+        <div class="drawer__head">
+          <span class="drawer__title"></span>
+          <button class="drawer__close" type="button" aria-label="閉じる">
+            <span class="drawer__close-lines" aria-hidden="true"></span>
+          </button>
+        </div>
+        <nav class="drawer__nav" aria-label="Mobile">
+          <a href="/" class="drawer__link">Top</a>
+          <a href="/service.html" class="drawer__link">Service</a>
+          <a href="/works.html" class="drawer__link">Works</a>
+          <a href="/company.html" class="drawer__link">Company</a>
+          <a href="/blog.html" class="drawer__link">Blog</a>
+          <a href="/contact.html" class="drawer__link">Contact</a>
+        </nav>
+      </div>
+    </div>
+
+    <main class="contact-page">
+      <div class="service-page__bg" aria-hidden="true"></div>
+      <!-- Film Hero -->
+      <section class="film-hero" style="background-image:url('/img/page-header/service-header05.webp')">
+        <div class="film-hero__bg" aria-hidden="true"></div>
+        <div class="container">
+          <h1 class="film-hero__title">
+            <span class="film-hero__mark" aria-hidden="true"><i></i></span>
+            Contact
+          </h1>
+          <p class="film-hero__lead">
+            ・ご相談・お見積りに関するお問い合わせ
+          </p>
+        </div>
+      </section>
+
+      <!-- パンくず -->
+      <nav class="breadcrumb" aria-label="パンくず">
+        <div class="container">
+          <ol class="breadcrumb__list">
+            <li class="breadcrumb__item">
+              <a href="/" class="breadcrumb__link">TOP</a>
+            </li>
+            <li class="breadcrumb__item" aria-current="page">CONTACT</li>
+          </ol>
+        </div>
+      </nav>
+
+      <!-- リード文 -->
+      <div class="contact-lead">
+        <div class="container">
+          <p class="contact-lead__text">
+            必須事項を明記の上、下記フォームよりお問い合わせください。<br />
+            ※は入力必須項目です。
+          </p>
+        </div>
+      </div>
+
+      <!-- Contact Form セクション -->
+      <section class="contact-form-section">
+        <div class="container">
+          <header class="c-section-title">
+            <h2 class="c-section-title__text">Contact Form</h2>
+            <p class="section-title__sub">お問い合わせフォーム</p>
+            <span class="c-section-title__line" aria-hidden="true"></span>
+          </header>
+
+          <form class="contact-form" action="#" method="post">
+            <div class="contact-form__row">
+              <label for="inquiry-type" class="contact-form__label">
+                お問い合わせ項目<span class="contact-form__required">*</span>
+              </label>
+              <div class="contact-form__field">
+                <select id="inquiry-type" name="inquiry_type" class="contact-form__select" required>
+                  <option value="">選択してください</option>
+                  <option value="estimate">お見積り</option>
+                  <option value="consultation">ご相談</option>
+                  <option value="other">その他</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="contact-form__row">
+              <label for="name" class="contact-form__label">
+                ご担当者様名<span class="contact-form__required">*</span>
+              </label>
+              <div class="contact-form__field">
+                <input type="text" id="name" name="name" class="contact-form__input" required />
+              </div>
+            </div>
+
+            <div class="contact-form__row">
+              <label for="name-kana" class="contact-form__label">
+                ご担当者様名（フリガナ）
+              </label>
+              <div class="contact-form__field">
+                <input type="text" id="name-kana" name="name_kana" class="contact-form__input" />
+              </div>
+            </div>
+
+            <div class="contact-form__row">
+              <label for="company" class="contact-form__label">貴社名</label>
+              <div class="contact-form__field">
+                <input type="text" id="company" name="company" class="contact-form__input" />
+              </div>
+            </div>
+
+            <div class="contact-form__row">
+              <label for="email" class="contact-form__label">
+                メールアドレス<span class="contact-form__required">*</span>
+              </label>
+              <div class="contact-form__field">
+                <input type="email" id="email" name="email" class="contact-form__input" required />
+              </div>
+            </div>
+
+            <div class="contact-form__row">
+              <label for="tel" class="contact-form__label">電話番号</label>
+              <div class="contact-form__field">
+                <input type="tel" id="tel" name="tel" class="contact-form__input" />
+              </div>
+            </div>
+
+            <div class="contact-form__row">
+              <label for="url" class="contact-form__label">ホームページURL</label>
+              <div class="contact-form__field">
+                <input type="url" id="url" name="url" class="contact-form__input" placeholder="https://" />
+              </div>
+            </div>
+
+            <div class="contact-form__row">
+              <label for="referrer" class="contact-form__label">弊社を知ったきっかけ</label>
+              <div class="contact-form__field">
+                <select id="referrer" name="referrer" class="contact-form__select">
+                  <option value="">選択してください</option>
+                  <option value="search">検索エンジン</option>
+                  <option value="sns">SNS</option>
+                  <option value="introduction">知人の紹介</option>
+                  <option value="other">その他</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="contact-form__row">
+              <label for="budget" class="contact-form__label">ご予算</label>
+              <div class="contact-form__field">
+                <select id="budget" name="budget" class="contact-form__select">
+                  <option value="">選択してください</option>
+                  <option value="under30">30万円未満</option>
+                  <option value="30-50">30万円～50万円</option>
+                  <option value="50-100">50万円～100万円</option>
+                  <option value="over100">100万円以上</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="contact-form__row contact-form__row--full">
+              <label for="message" class="contact-form__label">
+                お問い合わせ内容<span class="contact-form__required">*</span>
+              </label>
+              <div class="contact-form__field">
+                <textarea id="message" name="message" class="contact-form__textarea" rows="6" required></textarea>
+              </div>
+            </div>
+
+            <div class="contact-form__privacy">
+              <p class="contact-form__privacy-text">
+                こちらの<a href="/privacy.html" class="contact-form__privacy-link">プライバシーポリシー</a>をご一読の上、同意していただけましたら、「同意して送信する」ボタンを押してください。
+              </p>
+            </div>
+
+            <div class="contact-form__submit-wrap">
+              <button type="submit" class="contact-form__submit">同意して送信する</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <nav class="site-footer__nav" aria-label="フッターナビ">
+          <ul class="site-footer__list">
+            <li><a class="site-footer__link" href="/">Top</a></li>
+            <li>
+              <a class="site-footer__link" href="/service.html">Service</a>
+            </li>
+            <li><a class="site-footer__link" href="/works.html">Works</a></li>
+            <li><a class="site-footer__link" href="/#philosophy">Price</a></li>
+            <li>
+              <a class="site-footer__link" href="/company.html">Company</a>
+            </li>
+            <li><a class="site-footer__link" href="/contact.html">Contact</a></li>
+          </ul>
+          <ul class="site-footer__list">
+            <li><a class="site-footer__link" href="/blog.html">Blog</a></li>
+            <li><a class="site-footer__link" href="/#news">News</a></li>
+          </ul>
+        </nav>
+        <div class="site-footer__divider" aria-hidden="true"></div>
+        <div class="site-footer__brand">
+          <a class="site-footer__logo" href="/" aria-label="ZERO ONE FILM">
+            <img src="/img/logo_white.png" alt="ZERO ONE FILM" />
+          </a>
+          <address class="site-footer__meta">
+            <p>神奈川県横浜市港北区高田西1-16-42</p>
+            <p class="site-footer__tel">
+              <span>Tel</span> <a href="tel:0455507383">045-550-7383</a>
+            </p>
+            <p>神奈川県公安委員会<br />第451450020303号</p>
+          </address>
+        </div>
+        <a class="film-page-to-top" href="#header" aria-label="ページ上部へ">
+          <span class="film-page-to-top__icon" aria-hidden="true"></span>
+          <span class="film-page-to-top__text">to top</span>
+        </a>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

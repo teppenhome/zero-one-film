@@ -1,0 +1,162 @@
+// =========================================
+// PRIVACY ページ専用スタイル
+// ルートクラス .privacy-page 配下にスコープ
+// =========================================
+@use "../variables" as v;
+@use "../mixins" as m;
+
+$privacy-text: v.$color-text;
+$privacy-muted: rgba(0, 0, 0, 0.6);
+
+.privacy-page {
+  position: relative;
+  overflow: hidden;
+
+  /* =========================================
+     Hero（contact と同じ薄いグレーのテクスチャ＋白フィルター）
+  ========================================== */
+  .privacy-hero {
+    position: relative;
+    min-height: clamp(200px, 40vw, 320px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding-top: calc(65px + clamp(1.5rem, 4vw, 2.5rem));
+    padding-bottom: clamp(2rem, 5vw, 3rem);
+
+    background-color: #f5f5f5;
+    background-image: url("/img/page-header/service-header06.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    .container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .privacy-hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  .privacy-hero__title {
+    margin: 0 0 clamp(0.5rem, 1.5vw, 1rem);
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+    font-weight: 700;
+    color: $privacy-text;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+  }
+
+  .privacy-hero__lead {
+    margin: 0;
+    font-size: clamp(0.875rem, 1.8vw, 1rem);
+    font-weight: 400;
+    color: $privacy-muted;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+  }
+
+  /* =========================================
+     本文（ポリシー）
+  ========================================== */
+  .privacy-content {
+    padding-top: clamp(3rem, 6vw, 5rem);
+    padding-bottom: clamp(5rem, 10vw, 7rem);
+    background: #fff;
+  }
+
+  .privacy-content__inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .privacy-content__h2 {
+    margin: 0 0 clamp(1.5rem, 4vw, 2.5rem);
+    font-size: clamp(1.5rem, 3.5vw, 1.875rem);
+    font-weight: 700;
+    color: $privacy-text;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+  }
+
+  .privacy-content__intro {
+    margin: 0 0 clamp(2rem, 5vw, 3rem);
+    font-size: clamp(0.9375rem, 1.5vw, 1rem);
+    line-height: 1.9;
+    color: $privacy-text;
+    letter-spacing: 0.02em;
+  }
+
+  .privacy-content__h3 {
+    margin: clamp(2rem, 4vw, 2.5rem) 0 clamp(1rem, 2vw, 1.25rem);
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    font-weight: 700;
+    color: $privacy-text;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  .privacy-content__p {
+    margin: 0 0 clamp(1rem, 2vw, 1.25rem);
+    font-size: clamp(0.9375rem, 1.5vw, 1rem);
+    line-height: 1.9;
+    color: $privacy-text;
+    letter-spacing: 0.02em;
+  }
+
+  .privacy-content__list {
+    margin: 0 0 clamp(1.5rem, 3vw, 2rem);
+    padding-left: 1.25em;
+    list-style: none;
+    font-size: clamp(0.9375rem, 1.5vw, 1rem);
+    line-height: 1.9;
+    color: $privacy-text;
+    letter-spacing: 0.02em;
+
+    li {
+      position: relative;
+      padding-left: 0.5em;
+      margin-bottom: 0.5em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        content: "・";
+        position: absolute;
+        left: -1em;
+        color: $privacy-text;
+      }
+    }
+  }
+}
+
+/* プライバシーページ：ヘッダーメニューを #333333 に（薄いヒーロー背景のため） */
+@include m.mq(md) {
+  body.privacy-page .global-header .global-nav__link {
+    color: #333333;
+
+    &::after {
+      background: #333333;
+    }
+  }
+
+  body.privacy-page .global-header.is-scrolled .global-nav__link::after {
+    background: #333333;
+  }
+}

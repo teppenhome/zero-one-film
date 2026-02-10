@@ -19,7 +19,7 @@
               <a href="/service.html" class="global-nav__link">Service</a>
             </li>
             <li class="global-nav__item">
-              <a href="/#works" class="global-nav__link">Works</a>
+              <a href="/works.html" class="global-nav__link">Works</a>
             </li>
             <li class="global-nav__item">
               <a href="/company.html" class="global-nav__link">Company</a>
@@ -28,7 +28,7 @@
               <a href="/#blog" class="global-nav__link">Blog</a>
             </li>
             <li class="global-nav__item">
-              <a href="/#contact" class="global-nav__link">Contact</a>
+              <a href="/contact.html" class="global-nav__link">Contact</a>
             </li>
           </ul>
         </nav>
@@ -58,18 +58,18 @@
         aria-label="モバイルメニュー"
       >
         <div class="drawer__head">
-          <span class="drawer__title">MENU</span>
+          <span class="drawer__title"></span>
           <button class="drawer__close" type="button" aria-label="閉じる">
-            <span aria-hidden="true">×</span>
+            <span class="drawer__close-lines" aria-hidden="true"></span>
           </button>
         </div>
         <nav class="drawer__nav" aria-label="Mobile">
           <a href="/" class="drawer__link">Top</a>
           <a href="/service.html" class="drawer__link">Service</a>
-          <a href="/#works" class="drawer__link">Works</a>
+          <a href="/works.html" class="drawer__link">Works</a>
           <a href="/company.html" class="drawer__link">Company</a>
           <a href="/#blog" class="drawer__link">Blog</a>
-          <a href="/#contact" class="drawer__link">Contact</a>
+          <a href="/contact.html" class="drawer__link">Contact</a>
         </nav>
       </div>
     </div>
@@ -78,17 +78,18 @@
 
       <div class="service-page__bg" aria-hidden="true"></div>
       <!-- Film Hero -->
-      <section class="film-hero">
+      <section class="film-hero" style="background-image:url('/img/page-header/service-header01.webp')">
         <div class="film-hero__bg" aria-hidden="true"></div>
         <div class="container">
-          <h1 class="film-hero__title">映像制作</h1>
+          <h1 class="film-hero__title">
+            <span class="film-hero__mark" aria-hidden="true"><i></i></span>
+            映像制作
+          </h1>
           <p class="film-hero__lead">
             企業プロモーション、インタビュー、SNS動画、ウェディングまで。 企画・構成・撮影・編集を一気通貫で対応します。
           </p>
         </div>
       </section>
-
-      
 
       <!-- パンくず -->
       <nav class="breadcrumb" aria-label="パンくず">
@@ -126,42 +127,42 @@
             <span class="c-section-title__line" aria-hidden="true"></span>
           </header>
           <p class="c-works__note">※金額はあくまで概算です。<br class="sp-only">ご要望に合わせて見積りさせていただきます。</p>
-          <ul class="film-works__grid">
-            <li class="film-work-card">
-              <div class="film-work-card__media">
+          <ul class="c-work-grid">
+            <li class="c-work">
+              <div class="c-work__media">
                 <img src="/img/sub-page/service-work01.webp" alt="" />
               </div>
-              <div class="film-work-card__body">
-                <h3 class="film-work-card__title">インタビュー動画</h3>
-                <span class="film-work-card__price"><span class="film-work-card__price__number">15</span>万円～</span>
-                <p class="film-work-card__desc__top">リアルな声と表情で、<br />サービスへの共感を生む実写</p>
-                <p class="film-work-card__desc">ユーザーや担当者のストーリーを通して、信頼感と"自分ごと化"を促したい時に最適。</p>
+              <div class="c-work__body">
+                <h3 class="c-work__title">インタビュー動画</h3>
+                <span class="c-work__price"><span class="c-work__price-number">15</span>万円～</span>
+                <p class="c-work__desc-top">リアルな声と表情で、<br />サービスへの共感を生む実写</p>
+                <p class="c-work__desc">ユーザーや担当者のストーリーを通して、信頼感と"自分ごと化"を促したい時に最適。</p>
               </div>
-              <a href="https://youtu.be/uame7vDyCaE" class="film-work-card__link" target="_blank" rel="noopener noreferrer">https://youtu.be/uame7vDyCaE</a>
+              <a href="https://youtu.be/uame7vDyCaE" class="c-work__link" target="_blank" rel="noopener noreferrer">https://youtu.be/uame7vDyCaE</a>
             </li>
-            <li class="film-work-card">
-              <div class="film-work-card__media">
+            <li class="c-work">
+              <div class="c-work__media">
                 <img src="/img/sub-page/service-work03.webp" alt="" />
               </div>
-              <div class="film-work-card__body">
-                <h3 class="film-work-card__title">アニメーション動画</h3>
-                <span class="film-work-card__price"><span class="film-work-card__price__number">20</span>万円～</span>
-                <p class="film-work-card__desc__top">伝えたい概念を、<br />直感的に“理解できる形”へ</p>
-                <p class="film-work-card__desc">サービス内容や仕組み、無形の価値をわかりやすく整理し、短時間で理解を促したい時に最適。複雑な情報や新しい概念も、アニメーションなら視覚的に噛み砕いて伝えることができます。</p>
+              <div class="c-work__body">
+                <h3 class="c-work__title">アニメーション動画</h3>
+                <span class="c-work__price"><span class="c-work__price-number">20</span>万円～</span>
+                <p class="c-work__desc-top">伝えたい概念を、<br />直感的に“理解できる形”へ</p>
+                <p class="c-work__desc">サービス内容や仕組み、無形の価値をわかりやすく整理し、短時間で理解を促したい時に最適。複雑な情報や新しい概念も、アニメーションなら視覚的に噛み砕いて伝えることができます。</p>
               </div>
-              <a href="https://youtu.be/QS9Xt7kFOUA" class="film-work-card__link" target="_blank" rel="noopener noreferrer">https://youtu.be/QS9Xt7kFOUA</a>
+              <a href="https://youtu.be/QS9Xt7kFOUA" class="c-work__link" target="_blank" rel="noopener noreferrer">https://youtu.be/QS9Xt7kFOUA</a>
             </li>
-            <li class="film-work-card">
-              <div class="film-work-card__media">
+            <li class="c-work">
+              <div class="c-work__media">
                 <img src="/img/sub-page/service-work02.webp" alt="" />
               </div>
-              <div class="film-work-card__body">
-                <h3 class="film-work-card__title">インタビュー動画</h3>
-                <span class="film-work-card__price"><span class="film-work-card__price__number">15</span>万円～</span>
-                <p class="film-work-card__desc__top">課題を軸にストーリーを展開し、<br />サービスを紹介</p>
-                <p class="film-work-card__desc">物語性を持たせて訴求したい時に最適。</p>
+              <div class="c-work__body">
+                <h3 class="c-work__title">インタビュー動画</h3>
+                <span class="c-work__price"><span class="c-work__price-number">15</span>万円～</span>
+                <p class="c-work__desc-top">課題を軸にストーリーを展開し、<br />サービスを紹介</p>
+                <p class="c-work__desc">物語性を持たせて訴求したい時に最適。</p>
               </div>
-              <a href="https://youtu.be/TjisvG0tRZM" class="film-work-card__link" target="_blank" rel="noopener noreferrer">https://youtu.be/TjisvG0tRZM</a>
+              <a href="https://youtu.be/TjisvG0tRZM" class="c-work__link" target="_blank" rel="noopener noreferrer">https://youtu.be/TjisvG0tRZM</a>
             </li>
 
           </ul>
@@ -218,49 +219,49 @@
       </section>
 
       <!-- Solution -->
-      <section class="film-solution">
+      <section class="c-solution">
         <div class="container">
           <header class="c-section-title">
             <h2 class="c-section-title__text">わたしたちが解決します</h2>
             <span class="c-section-title__line" aria-hidden="true"></span>
           </header>
-          <ul class="film-solution__items">
-            <li class="film-solution__item">
-              <div class="film-solution__thumb">
+          <ul class="c-solution__items">
+            <li class="c-solution__item">
+              <div class="c-solution__thumb">
                 <img src="/img/strength05.webp" alt="" />
-                <span class="film-solution__no" aria-hidden="true">01</span>
+                <span class="c-solution__no" aria-hidden="true">01</span>
               </div>
-              <div class="film-solution__body">
-                <h3 class="film-solution__heading">
+              <div class="c-solution__body">
+                <h3 class="c-solution__heading">
                   ヒアリングから始まる映像設計
                 </h3>
-                <p class="film-solution__text">
+                <p class="c-solution__text">
                   私たちは、いきなり撮影をしません。<br />事業内容、強み、課題、そして「どう見られたいか」まで丁寧にヒアリングし、PR動画の軸となるストーリーを設計します。
                 </p>
               </div>
             </li>
-            <li class="film-solution__item">
-              <div class="film-solution__thumb">
+            <li class="c-solution__item">
+              <div class="c-solution__thumb">
                 <img src="/img/strength03.webp" alt="" />
-                <span class="film-solution__no" aria-hidden="true">02</span>
+                <span class="c-solution__no" aria-hidden="true">02</span>
               </div>
-              <div class="film-solution__body">
-                <h3 class="film-solution__heading">
+              <div class="c-solution__body">
+                <h3 class="c-solution__heading">
                   伝えるための構成・演出
                 </h3>
-                <p class="film-solution__text">
+                <p class="c-solution__text">
                   かっこよさだけを追求しない。<br />伝わる順番・伝わる温度感を大切にします。<br /><span class="font-bold">・企業紹介</span><br /><span class="font-bold">・サービスPR</span><br /><span class="font-bold">・採用向けPR</span><br /><span class="font-bold">・ブランドムービー</span><br />目的に応じた最適な構成をご提案します。
                 </p>
               </div>
             </li>
-            <li class="film-solution__item">
-              <div class="film-solution__thumb">
+            <li class="c-solution__item">
+              <div class="c-solution__thumb">
                 <img src="/img/strength01.webp" alt="" />
-                <span class="film-solution__no" aria-hidden="true">03</span>
+                <span class="c-solution__no" aria-hidden="true">03</span>
               </div>
-              <div class="film-solution__body">
-                <h3 class="film-solution__heading">一気通貫の制作体制</h3>
-                <p class="film-solution__text">
+              <div class="c-solution__body">
+                <h3 class="c-solution__heading">一気通貫の制作体制</h3>
+                <p class="c-solution__text">
                   企画・構成・撮影・編集まで、すべて社内で対応。<br />少人数精鋭だからこそ、認識のズレがなく、スピード感とクオリティを両立できます。
                 </p>
               </div>
@@ -351,7 +352,7 @@
               お問合せはこちら
               <span class="page-card__arrow" aria-hidden="true"></span>
             </p>
-            <a href="/#contact" class="page-cta__btn">CONTACT</a>
+            <a href="/contact.html" class="page-cta__btn">CONTACT</a>
           </div>
           <p class="page-cta__note">
             企業撮影・個人撮影ともに対応しています。<br />イメージが固まっていなくても問題ありません。<br />まずはお気軽にご相談ください。
@@ -368,7 +369,7 @@
             <li>
               <a class="site-footer__link" href="/service.html">Service</a>
             </li>
-            <li><a class="site-footer__link" href="/#works">Works</a></li>
+            <li><a class="site-footer__link" href="/works.html">Works</a></li>
             <li><a class="site-footer__link" href="/#philosophy">Price</a></li>
             <li>
               <a class="site-footer__link" href="/company.html">Company</a>

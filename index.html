@@ -17,19 +17,19 @@
         <nav class="global-nav" aria-label="Primary">
           <ul class="global-nav__list">
             <li class="global-nav__item">
-              <a href="#services" class="global-nav__link">Service</a>
+              <a href="service.html" class="global-nav__link">Service</a>
             </li>
             <li class="global-nav__item">
-              <a href="#works" class="global-nav__link">Works</a>
+              <a href="works.html" class="global-nav__link">Works</a>
             </li>
             <li class="global-nav__item">
               <a href="company.html" class="global-nav__link">Company</a>
             </li>
             <li class="global-nav__item">
-              <a href="#blog" class="global-nav__link">Blog</a>
+              <a href="/blog.html" class="global-nav__link">Blog</a>
             </li>
             <li class="global-nav__item">
-              <a href="#contact" class="global-nav__link">Contact</a>
+              <a href="contact.html" class="global-nav__link">Contact</a>
             </li>
           </ul>
         </nav>
@@ -62,19 +62,19 @@
         aria-label="モバイルメニュー"
       >
         <div class="drawer__head">
-          <span class="drawer__title">MENU</span>
+          <span class="drawer__title"></span>
           <button class="drawer__close" type="button" aria-label="閉じる">
-            <span aria-hidden="true">×</span>
+            <span class="drawer__close-lines" aria-hidden="true"></span>
           </button>
         </div>
 
         <nav class="drawer__nav" aria-label="Mobile">
           <a href="/" class="drawer__link">Top</a>
-          <a href="#services" class="drawer__link">Service</a>
-          <a href="#works" class="drawer__link">Works</a>
+          <a href="service.html" class="drawer__link">Service</a>
+          <a href="works.html" class="drawer__link">Works</a>
           <a href="company.html" class="drawer__link">Company</a>
-          <a href="#blog" class="drawer__link">Blog</a>
-          <a href="#contact" class="drawer__link">Contact</a>
+          <a href="blog.html" class="drawer__link">Blog</a>
+          <a href="contact.html" class="drawer__link">Contact</a>
         </nav>
       </div>
     </div>
@@ -138,10 +138,9 @@
                 課題の本質を見極め、映像・写真・縦型SNS動画・デザイン・3Dモデリングで、伝わる表現へ。
               </p>
 
-              <a href="/contact/" class="about__cta">
-                制作のご相談はこちら
-                <span class="arrow"></span>
-              </a>
+              <div class="works__footer">
+                <a href="/works.html" class="works__view-all">制作のご相談はこちら</a>
+              </div>
             </div>
           </div>
         </section>
@@ -161,7 +160,7 @@
             <ul class="services__grid">
               <li class="services__item js-reveal">
                 <!-- 変更: カード全体を a でラップ（遷移先は元の price-link の URL） -->
-                <a href="/service/film/">
+                <a href="/film.html">
                 <article class="service-card service-card--film">
                   <div class="service-card__bg" aria-hidden="true"></div>
 
@@ -198,7 +197,7 @@
               </li>
               <li class="services__item js-reveal">
                 <!-- 変更: カード全体を a でラップ -->
-                <a href="/service/film/">
+                <a href="/photo.html">
                 <article class="service-card service-card--photo">
                   <div class="service-card__bg" aria-hidden="true"></div>
 
@@ -235,7 +234,7 @@
               </li>
               <li class="services__item js-reveal">
                 <!-- 変更: カード全体を a でラップ -->
-                <a href="/service/film/">
+                <a href="/sns.html">
                 <article class="service-card service-card--sns">
                   <div class="service-card__bg" aria-hidden="true"></div>
 
@@ -341,7 +340,7 @@
               </li>
               <li class="services__item js-reveal">
                 <!-- #6 -->
-                <a href="/contact/">
+                <a href="contact.html">
                 <article class="service-card service-card--contact">
                   <div class="service-card__bg" aria-hidden="true"></div>
 
@@ -756,7 +755,7 @@
               </li>
             </ul>
             <div class="works__footer">
-              <a href="#" class="works__view-all">VIEW ALL</a>
+              <a href="/works.html" class="works__view-all">VIEW ALL</a>
             </div>
           </div>
         </section>
@@ -899,7 +898,7 @@
               </li>
             </ul>
             <div class="blog__footer">
-              <a href="#" class="blog__view-all">VIEW ALL</a>
+              <a href="/blog.html" class="blog__view-all">VIEW ALL</a>
             </div>
           </div>
         </section>
@@ -1246,11 +1245,11 @@
             <li><a class="site-footer__link" href="/#works">Works</a></li>
       
             <li><a class="site-footer__link" href="/#company">Company</a></li>
-            <li><a class="site-footer__link" href="/#contact">Contact</a></li>
+            <li><a class="site-footer__link" href="contact.html">Contact</a></li>
           </ul>
 
           <ul class="site-footer__list">
-            <li><a class="site-footer__link" href="/blog/">Blog</a></li>
+            <li><a class="site-footer__link" href="/blog.html">Blog</a></li>
             <li><a class="site-footer__link" href="/news/">News</a></li>
           </ul>
         </nav>

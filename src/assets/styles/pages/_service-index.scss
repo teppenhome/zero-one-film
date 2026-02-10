@@ -1,0 +1,301 @@
+// =========================================
+// SERVICE 一覧ページ専用スタイル
+// ページラッパー .service-page / コンテンツ .service-index でスコープ
+// film/photo/company と同じページ設計ルール
+// =========================================
+@use "../variables" as v;
+@use "../mixins" as m;
+
+$si-border: #e0e0e0;
+$si-accent: #1265d2;
+$si-text: v.$color-text;
+$si-muted: rgba(0, 0, 0, 0.6);
+
+/* =========================================
+   ページラッパー：背景レイヤー（film/photo と同じ思想）
+========================================= */
+.service-page {
+  position: relative;
+  overflow: hidden;
+
+  .service-page__bg {
+  }
+}
+
+/* =========================================
+   A. Hero / B. サービス一覧
+========================================= */
+.service-index {
+  position: relative;
+  overflow: hidden;
+
+  .service-index__hero {
+    position: relative;
+    min-height: clamp(180px, 35vw, 280px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding-top: calc(65px + clamp(1.5rem, 4vw, 2.5rem));
+    padding-bottom: clamp(2rem, 5vw, 3rem);
+
+    background-color: #f5f5f5;
+    background-image: url("/img/sub-page/sub-page-background.webp");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    background-position: center;
+
+    .container {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .service-index__hero-title {
+    margin: 0 0 clamp(0.5rem, 1.5vw, 1rem);
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+    font-weight: 700;
+    color: $si-text;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+  }
+
+  .service-index__hero-lead {
+    margin: 0;
+    font-size: clamp(0.875rem, 1.8vw, 1rem);
+    font-weight: 400;
+    color: $si-muted;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+  }
+
+  /* =========================================
+     B. サービス一覧
+  ========================================== */
+  .service-index__list {
+    padding-top: clamp(3rem, 8vw, 5rem);
+    padding-bottom: clamp(3rem, 8vw, 5rem);
+    background: #fff;
+  }
+
+  .service-index__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .service-index__item {
+    margin: 0;
+  }
+
+  .service-index__arrow {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -28px;
+      right: -100px;
+      width: 150px;
+      height: 15px;
+      background: url("/img/icons/arrow_right.webp") no-repeat center / contain;
+    }
+  }
+
+  .service-index__link {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: clamp(1.25rem, 4vw, 2rem) 0;
+    text-decoration: none;
+    color: inherit;
+    transition:
+      opacity 0.25s ease,
+      box-shadow 0.25s ease;
+
+    @include m.mq(md) {
+      flex-direction: row;
+      align-items: center;
+      gap: clamp(2rem, 4vw, 3rem);
+      padding: clamp(1.5rem, 4vw, 2.5rem) 0;
+    }
+
+    &:hover {
+      .service-index__arrow {
+        transform: translateX(4px);
+      }
+
+      .service-index__title {
+        color: $si-accent;
+      }
+
+      .service-index__catch,
+      .service-index__text {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  .service-index__thumb {
+    position: relative;
+    flex-shrink: 0;
+    margin: 0;
+    width: min(220px, 70vw);
+    aspect-ratio: 1;
+    margin-inline: auto;
+    margin-bottom: clamp(1rem, 2vw, 1.25rem);
+    border: 6px solid #1265d2;
+    overflow: hidden;
+    background: #f5f5f5;
+
+    @include m.mq(md) {
+      width: clamp(160px, 22vw, 220px);
+      margin: 0;
+      margin-bottom: 0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      z-index: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.45); // ← 白の薄さ（調整OK）
+      z-index: 1;
+      pointer-events: none;
+    }
+  }
+
+  .service-index__icon {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+    z-index: 2;
+
+    &::before {
+      content: "";
+      max-width: 100px;
+      width: 100%;
+      aspect-ratio: 1;
+    }
+
+    &._01::before {
+      background: url("../img/icons/service_page01.webp") no-repeat center /
+        contain;
+    }
+
+    &._02::before {
+      background: url("../img/icons/service_page02.webp") no-repeat center /
+        contain;
+    }
+
+    &._03::before {
+      background: url("../img/icons/service_page03.webp") no-repeat center /
+        contain;
+    }
+
+    &._04::before {
+      background: url("../img/icons/service_page04.webp") no-repeat center /
+        contain;
+    }
+
+    &._05::before {
+      background: url("../img/icons/service_page05.webp") no-repeat center /
+        contain;
+    }
+  }
+
+  .service-index__content {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+
+    @include m.mq(md) {
+      text-align: left;
+    }
+  }
+
+  .service-index__head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    margin-bottom: clamp(0.5rem, 1.5vw, 0.75rem);
+
+    @include m.mq(md) {
+      justify-content: flex-start;
+    }
+  }
+
+  .service-index__title {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $si-text;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+    transition: color 0.25s ease;
+  }
+
+  .service-index__arrow {
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: $si-accent;
+    transform: translateX(0);
+    transition: transform 0.25s ease;
+  }
+
+  .service-index__catch {
+    margin: 1.5rem 0 clamp(0.5rem, 1vw, 0.75rem);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $si-muted;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    transition: opacity 0.25s ease;
+  }
+
+  .service-index__text {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: $si-muted;
+    transition: opacity 0.25s ease;
+  }
+
+  .service-index__divider {
+    margin: 0;
+    border: none;
+    border-top: 1px solid $si-border;
+    opacity: 0.8;
+  }
+
+  /* 最後のitemの直後のhrは非表示 */
+  .service-index__item:last-child .service-index__divider {
+    display: none;
+  }
+}
+
+/* =========================================
+   Service一覧ページ：フッター to top
+   ※film-page-to-top を流用するため、footer の relative を有効化
+========================================= */
+body:has(main.service-index) .site-footer__inner {
+  position: relative;
+  padding-top: 2.5rem;
+}
+
+/* =========================================
+   Service一覧ページ：PC時ヘッダーメニューを黒系に
+   ※body.page-service は _service-page.scss で定義済み
+========================================= */

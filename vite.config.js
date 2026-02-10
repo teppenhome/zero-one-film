@@ -10,6 +10,7 @@ export default defineConfig({
         service: resolve(__dirname, "service.html"),
         film: resolve(__dirname, "film.html"),
         photo: resolve(__dirname, "photo.html"),
+        sns: resolve(__dirname, "sns.html"),
       },
     },
   },

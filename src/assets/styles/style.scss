@@ -14,10 +14,16 @@
 @use "sections/footer";
 @use "sections/philosophy";
 @use "sections/gallery";
-@use "sections/contact";
+@use "sections/contact" as contactSection;
 @use "pages/company";
 @use "pages/service-page";
+@use "pages/service-index";
 @use "pages/film-page";
 @use "pages/photo";
+@use "pages/sns";
+@use "pages/contact" as contactPage;
+@use "pages/privacy";
+@use "pages/blog" as blogPage;
+@use "pages/works" as worksPage;
 @use "untilities/reveal";
 @use "sections/section-parts";

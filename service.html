@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Service | ZERO ONE FILM</title>
   </head>
-  <body class="page-service">
+  <body class="page-service service-index page">
     <header id="header" class="global-header">
       <div class="container">
         <a href="/" class="global-header__logo">
-          <img src="/img/logo_white.png" alt="ZERO ONE FILM" />
+          <img src="/img/logo_wide_gray.png" alt="ZERO ONE FILM" />
         </a>
 
         <nav class="global-nav" aria-label="Primary">
@@ -19,16 +19,16 @@
               <a href="/service.html" class="global-nav__link">Service</a>
             </li>
             <li class="global-nav__item">
-              <a href="/#works" class="global-nav__link">Works</a>
+              <a href="/works.html" class="global-nav__link">Works</a>
             </li>
             <li class="global-nav__item">
               <a href="/company.html" class="global-nav__link">Company</a>
             </li>
             <li class="global-nav__item">
-              <a href="/#blog" class="global-nav__link">Blog</a>
+              <a href="/blog.html" class="global-nav__link">Blog</a>
             </li>
             <li class="global-nav__item">
-              <a href="/#contact" class="global-nav__link">Contact</a>
+              <a href="/contact.html" class="global-nav__link">Contact</a>
             </li>
           </ul>
         </nav>
@@ -58,28 +58,33 @@
         aria-label="モバイルメニュー"
       >
         <div class="drawer__head">
-          <span class="drawer__title">MENU</span>
+          <span class="drawer__title"></span>
           <button class="drawer__close" type="button" aria-label="閉じる">
-            <span aria-hidden="true">×</span>
+            <span class="drawer__close-lines" aria-hidden="true"></span>
           </button>
         </div>
         <nav class="drawer__nav" aria-label="Mobile">
           <a href="/" class="drawer__link">Top</a>
           <a href="/service.html" class="drawer__link">Service</a>
-          <a href="/#works" class="drawer__link">Works</a>
+          <a href="/works.html" class="drawer__link">Works</a>
           <a href="/company.html" class="drawer__link">Company</a>
-          <a href="/#blog" class="drawer__link">Blog</a>
-          <a href="/#contact" class="drawer__link">Contact</a>
+          <a href="/blog.html" class="drawer__link">Blog</a>
+          <a href="/contact.html" class="drawer__link">Contact</a>
         </nav>
       </div>
     </div>
 
-    <main class="service-page">
-      <!-- A. Service Hero -->
-      <section class="service-hero">
+    <main class="service-page service-index">
+      <div class="service-page__bg" aria-hidden="true"></div>
+      <!-- Film Hero -->
+      <section class="film-hero" style="background-image:url('/img/page-header/service-header.webp')">
+        <div class="film-hero__bg" aria-hidden="true"></div>
         <div class="container">
-          <h1 class="service-hero__title">SERVICE</h1>
-          <p class="service-hero__lead">
+          <h1 class="film-hero__title">
+            <span class="film-hero__mark" aria-hidden="true"><i></i></span>
+            SERVICE
+          </h1>
+          <p class="film-hero__lead">
             ・お悩みに合わせたサービスをご紹介しております
           </p>
         </div>
@@ -98,99 +103,109 @@
       </nav>
 
       <!-- B. サービス一覧 -->
-      <section class="service-list">
+      <section class="service-index__list">
         <div class="container">
-          <ul class="service-list__items">
-            <li class="service-list__item">
-              <a href="#" class="service-card">
-                <div class="service-card__media _01">
-                  <img src="/img/strength01.webp" alt="映像制作" />
-                </div>
-                <div class="service-card__body">
-                  <h2 class="service-card__title">
-                    映像制作
-                    <span class="service-card__arrow" aria-hidden="true"></span>
-                  </h2>
-                  <p class="service-card__catch">"想像に、イノチを吹き込む"</p>
-                  <p class="service-card__desc">
-                    企業やブランドの価値を、<br />成果につながるPR映像として具現化します。
+          <ul class="service-index__items">
+            <li class="service-index__item">
+              <a href="/film.html" class="service-index__link">
+                <figure class="service-index__thumb">
+                  <img src="/img/page-header/service-header01.webp" alt="映像制作" />
+                  <span class="service-index__icon _01" aria-hidden="true"></span>
+                </figure>
+                <div class="service-index__content">
+                  <div class="service-index__head">
+                    <h2 class="service-index__title">映像制作</h2>
+                    <span class="service-index__arrow" aria-hidden="true"></span>
+                  </div>
+                  <p class="service-index__catch">"想像に、イノチを吹き込む"</p>
+                  <p class="service-index__text">
+                    企業やブランドの価値を、成果につながるPR映像として具現化します。
                   </p>
                 </div>
               </a>
+              <hr class="service-index__divider" />
             </li>
-            <li class="service-list__item">
-              <a href="#" class="service-card">
-                <div class="service-card__media _02">
-                  <img src="/img/service02.webp" alt="写真撮影" />
-                </div>
-                <div class="service-card__body">
-                  <h2 class="service-card__title">
-                    写真撮影
-                    <span class="service-card__arrow" aria-hidden="true"></span>
-                  </h2>
-                  <p class="service-card__catch">”一瞬に、物語を”</p>
-                  <p class="service-card__desc">
-                    企業Webから、人生の節目まで。伝えたい想いを、一枚に。<br />使われ続ける写真を撮影します。
+            <li class="service-index__item">
+              <a href="/photo.html" class="service-index__link">
+                <figure class="service-index__thumb">
+                  <img src="/img/page-header/service-header02.webp" alt="写真撮影" />
+                  <span class="service-index__icon _02" aria-hidden="true"></span>
+                </figure>
+                <div class="service-index__content">
+                  <div class="service-index__head">
+                    <h2 class="service-index__title">写真撮影</h2>
+                    <span class="service-index__arrow" aria-hidden="true"></span>
+                  </div>
+                  <p class="service-index__catch">"一瞬に、物語を"</p>
+                  <p class="service-index__text">
+                    企業Webから、人生の節目まで。<br />伝えたい想いを、一枚に。<br />使われ続ける写真を撮影します。
                   </p>
                 </div>
               </a>
+              <hr class="service-index__divider" />
             </li>
-            <li class="service-list__item">
-              <a href="#" class="service-card">
-                <div class="service-card__media _03">
-                  <img src="/img/service03.webp" alt="SNS縦型映像" />
-                </div>
-                <div class="service-card__body">
-                  <h2 class="service-card__title">
-                    SNS縦型映像
-                    <span class="service-card__arrow" aria-hidden="true"></span>
-                  </h2>
-                  <p class="service-card__catch">”SNSで伝わる映像を”</p>
-                  <p class="service-card__desc">
+            <li class="service-index__item">
+              <a href="/sns.html" class="service-index__link">
+                <figure class="service-index__thumb">
+                  <img src="/img/page-header/service-header03.webp" alt="SNS縦型映像" />
+                  <span class="service-index__icon _03" aria-hidden="true"></span>
+                </figure>
+                <div class="service-index__content">
+                  <div class="service-index__head">
+                    <h2 class="service-index__title">SNS縦型映像</h2>
+                    <span class="service-index__arrow" aria-hidden="true"></span>
+                  </div>
+                  <p class="service-index__catch">"SNSで伝わる映像を"</p>
+                  <p class="service-index__text">
                     縦型映像の企画・撮影・編集まで一貫対応。<br />映像制作会社だからできる、クオリティ重視のSNS動画制作。
                   </p>
                 </div>
               </a>
+              <hr class="service-index__divider" />
             </li>
-            <li class="service-list__item">
-              <a href="#" class="service-card">
-                <div class="service-card__media _04">
-                  <img src="/img/service04.webp" alt="デザイン" />
-                </div>
-                <div class="service-card__body">
-                  <h2 class="service-card__title">
-                    デザイン
-                    <span class="service-card__arrow" aria-hidden="true"></span>
-                  </h2>
-                  <p class="service-card__catch">”伝えるために、整える”</p>
-                  <p class="service-card__desc">
+            <li class="service-index__item">
+              <a href="/design.html" class="service-index__link">
+                <figure class="service-index__thumb">
+                  <img src="/img/page-header/service-header04.webp" alt="デザイン" />
+                  <span class="service-index__icon _04" aria-hidden="true"></span>
+                </figure>
+                <div class="service-index__content">
+                  <div class="service-index__head">
+                    <h2 class="service-index__title">デザイン</h2>
+                    <span class="service-index__arrow" aria-hidden="true"></span>
+                  </div>
+                  <p class="service-index__catch">"伝えるために、整える"</p>
+                  <p class="service-index__text">
                     見た目を整えるだけでなく、意味が伝わる設計を大切にしています。<br />ロゴ・グラフィック・リーフレットまで。<br />ブランドや想いを、一貫したビジュアルで形にします。
                   </p>
                 </div>
               </a>
+              <hr class="service-index__divider" />
             </li>
-            <li class="service-list__item">
-              <a href="#" class="service-card">
-                <div class="service-card__media _05">
-                  <img src="/img/service05.webp" alt="3Dモデリング" />
-                </div>
-                <div class="service-card__body">
-                  <h2 class="service-card__title">
-                    3Dモデリング
-                    <span class="service-card__arrow" aria-hidden="true"></span>
-                  </h2>
-                  <p class="service-card__catch">"現実を超える、表現を"</p>
-                  <p class="service-card__desc">
+            <li class="service-index__item">
+              <a href="/modeling.html" class="service-index__link">
+                <figure class="service-index__thumb">
+                  <img src="/img/page-header/service-header05.webp" alt="3Dモデリング" />
+                  <span class="service-index__icon _05" aria-hidden="true"></span>
+                </figure>
+                <div class="service-index__content">
+                  <div class="service-index__head">
+                    <h2 class="service-index__title">3Dモデリング</h2>
+                    <span class="service-index__arrow" aria-hidden="true"></span>
+                  </div>
+                  <p class="service-index__catch">"現実を超える、表現を"</p>
+                  <p class="service-index__text">
                     まだ形のないイメージを、リアルに、直感的に伝わる3D表現へ。<br />プロダクト、空間、ビジュアル演出など。<br />映像・デザインと連動した3Dモデリングで、表現の可能性を広げます。
                   </p>
                 </div>
               </a>
+              <hr class="service-index__divider" />
             </li>
           </ul>
         </div>
       </section>
 
-      <!-- C. 下部 CTA -->
+      <!-- C. CTA -->
       <section class="page-cta">
         <div class="container">
           <div class="page-cta__inner">
@@ -198,9 +213,9 @@
               お問合せはこちら
               <span class="page-card__arrow" aria-hidden="true"></span>
             </p>
-            <a href="/#contact" class="page-cta__btn">CONTACT</a>
+            <a href="/contact.html" class="page-cta__btn">CONTACT</a>
           </div>
-          <p class="page-cta__note">
+          <p class="page-cta__note service-index__cta-note">
             企業撮影・個人撮影ともに対応しています。<br />イメージが固まっていなくても問題ありません。<br />まずはお気軽にご相談ください。
           </p>
         </div>
@@ -212,18 +227,14 @@
         <nav class="site-footer__nav" aria-label="フッターナビ">
           <ul class="site-footer__list">
             <li><a class="site-footer__link" href="/">Top</a></li>
-            <li>
-              <a class="site-footer__link" href="/service.html">Service</a>
-            </li>
-            <li><a class="site-footer__link" href="/#works">Works</a></li>
+            <li><a class="site-footer__link" href="/service.html">Service</a></li>
+            <li><a class="site-footer__link" href="/works.html">Works</a></li>
             <li><a class="site-footer__link" href="/#philosophy">Price</a></li>
-            <li>
-              <a class="site-footer__link" href="/company.html">Company</a>
-            </li>
-            <li><a class="site-footer__link" href="/#contact">Contact</a></li>
+            <li><a class="site-footer__link" href="/company.html">Company</a></li>
+            <li><a class="site-footer__link" href="/contact.html">Contact</a></li>
           </ul>
           <ul class="site-footer__list">
-            <li><a class="site-footer__link" href="/#blog">Blog</a></li>
+            <li><a class="site-footer__link" href="/blog.html">Blog</a></li>
             <li><a class="site-footer__link" href="/#news">News</a></li>
           </ul>
         </nav>
@@ -233,15 +244,16 @@
             <img src="/img/logo_white.png" alt="ZERO ONE FILM" />
           </a>
           <address class="site-footer__meta">
-            <p>Access　東京都渋谷区恵比寿 1-15-42</p>
+            <p>神奈川県横浜市港北区高田西1-16-42</p>
             <p class="site-footer__tel">
-              <span>Tel</span> <a href="tel:0300000000">03-(0000)-0000</a>
+              <span>Tel</span> <a href="tel:0455507383">045-550-7383</a>
             </p>
+            <p>神奈川県公安委員会<br />第451450020303号</p>
           </address>
         </div>
-        <a class="service-page-to-top" href="#header" aria-label="ページ上部へ">
-          <span class="service-page-to-top__icon" aria-hidden="true"></span>
-          <span class="service-page-to-top__text">to top</span>
+        <a class="film-page-to-top" href="#header" aria-label="ページ上部へ">
+          <span class="film-page-to-top__icon" aria-hidden="true"></span>
+          <span class="film-page-to-top__text">to top</span>
         </a>
       </div>
     </footer>

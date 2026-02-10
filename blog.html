@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | ZERO ONE FILM</title>
+  </head>
+  <body class="page-blog page">
+    <header id="header" class="global-header">
+      <div class="container">
+        <a href="/" class="global-header__logo">
+          <img src="/img/logo_wide_gray.png" alt="ZERO ONE FILM" />
+        </a>
+
+        <nav class="global-nav" aria-label="Primary">
+          <ul class="global-nav__list">
+            <li class="global-nav__item">
+              <a href="/service.html" class="global-nav__link">Service</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="/works.html" class="global-nav__link">Works</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="/company.html" class="global-nav__link">Company</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="/blog.html" class="global-nav__link">Blog</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="/contact.html" class="global-nav__link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="nav-toggle__lines" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="drawer" id="mobile-menu" hidden>
+      <button
+        class="drawer__backdrop"
+        type="button"
+        aria-label="メニューを閉じる"
+      ></button>
+      <div
+        class="drawer__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-label="モバイルメニュー"
+      >
+        <div class="drawer__head">
+          <span class="drawer__title"></span>
+          <button class="drawer__close" type="button" aria-label="閉じる">
+            <span class="drawer__close-lines" aria-hidden="true"></span>
+          </button>
+        </div>
+        <nav class="drawer__nav" aria-label="Mobile">
+          <a href="/" class="drawer__link">Top</a>
+          <a href="/service.html" class="drawer__link">Service</a>
+          <a href="/works.html" class="drawer__link">Works</a>
+          <a href="/company.html" class="drawer__link">Company</a>
+          <a href="/blog.html" class="drawer__link">Blog</a>
+          <a href="/contact.html" class="drawer__link">Contact</a>
+        </nav>
+      </div>
+    </div>
+
+    <main class="blog-page">
+      <div class="service-page__bg" aria-hidden="true"></div>
+      <!-- Film Hero -->
+      <section class="film-hero" style="background-image:url('/img/page-header/service-header06.webp')">
+        <div class="film-hero__bg" aria-hidden="true"></div>
+        <div class="container">
+          <h1 class="film-hero__title">
+            <span class="film-hero__mark" aria-hidden="true"><i></i></span>
+            Blog
+          </h1>
+          <p class="film-hero__lead">・ブログ</p>
+        </div>
+      </section>
+
+      <!-- パンくず -->
+      <nav class="breadcrumb" aria-label="パンくず">
+        <div class="container">
+          <ol class="breadcrumb__list">
+            <li class="breadcrumb__item">
+              <a href="/" class="breadcrumb__link">TOP</a>
+            </li>
+            <li class="breadcrumb__item" aria-current="page">ブログ</li>
+          </ol>
+        </div>
+      </nav>
+
+      <!-- Blog Index -->
+      <section class="blog-index">
+        <div class="container">
+          <!-- 検索バー -->
+          <form class="blog-search" action="#" method="get">
+            <input
+              class="blog-search__input"
+              type="search"
+              name="q"
+              placeholder="キーワードで検索"
+            />
+            <button class="blog-search__button" type="submit" aria-label="検索">
+              Search
+            </button>
+          </form>
+
+          <!-- タグ（カテゴリ）タブ -->
+          <nav class="blog-tabs" aria-label="ブログカテゴリ">
+            <a class="blog-tabs__tab is-active" href="#">すべて</a>
+            <a class="blog-tabs__tab" href="#">お知らせ</a>
+            <a class="blog-tabs__tab" href="#">ブログ</a>
+            <a class="blog-tabs__tab" href="#">Tips / ノウハウ</a>
+            <a class="blog-tabs__tab" href="#">メディア</a>
+          </nav>
+
+          <!-- 記事一覧 -->
+          <ul class="blog-grid">
+            <li class="blog-card">
+              <a class="blog-card__link" href="#">
+                <figure class="blog-card__thumb">
+                  <img src="/img/blog/blog02.webp" alt="" loading="lazy" />
+                </figure>
+                <h2 class="blog-card__title">企業Webサイトの撮影で大切にしていること</h2>
+                <div class="blog-card__meta">
+                  <time class="blog-card__date" datetime="2026-02-15">2026.02.15</time>
+                  <span class="blog-card__tag">お知らせ</span>
+                </div>
+              </a>
+            </li>
+            <li class="blog-card">
+              <a class="blog-card__link" href="#">
+                <figure class="blog-card__thumb">
+                  <img src="/img/blog/blog03.webp" alt="" loading="lazy" />
+                </figure>
+                <h2 class="blog-card__title">SNS向け縦型映像の企画・撮影のポイント</h2>
+                <div class="blog-card__meta">
+                  <time class="blog-card__date" datetime="2026-02-14">2026.02.14</time>
+                  <span class="blog-card__tag">ブログ</span>
+                </div>
+              </a>
+            </li>
+            <li class="blog-card">
+              <a class="blog-card__link" href="#">
+                <figure class="blog-card__thumb">
+                  <img src="/img/blog/blog04.webp" alt="" loading="lazy" />
+                </figure>
+                <h2 class="blog-card__title">撮影現場でよくいただくご質問まとめ</h2>
+                <div class="blog-card__meta">
+                  <time class="blog-card__date" datetime="2026-02-13">2026.02.13</time>
+                  <span class="blog-card__tag">Tips</span>
+                </div>
+              </a>
+            </li>
+            <li class="blog-card">
+              <a class="blog-card__link" href="#">
+                <figure class="blog-card__thumb">
+                  <img src="/img/blog/blog06.webp" alt="" loading="lazy" />
+                </figure>
+                <h2 class="blog-card__title">映像制作の打ち合わせで確認すべきこと</h2>
+                <div class="blog-card__meta">
+                  <time class="blog-card__date" datetime="2026-02-12">2026.02.12</time>
+                  <span class="blog-card__tag">メディア</span>
+                </div>
+              </a>
+            </li>
+            <li class="blog-card">
+              <a class="blog-card__link" href="#">
+                <figure class="blog-card__thumb">
+                  <img src="/img/blog/blog07.webp" alt="" loading="lazy" />
+                </figure>
+                <h2 class="blog-card__title">新規サービス開始のお知らせ</h2>
+                <div class="blog-card__meta">
+                  <time class="blog-card__date" datetime="2026-02-11">2026.02.11</time>
+                  <span class="blog-card__tag">お知らせ</span>
+                </div>
+              </a>
+            </li>
+            <li class="blog-card">
+              <a class="blog-card__link" href="#">
+                <figure class="blog-card__thumb">
+                  <img src="/img/blog/blog08.webp" alt="" loading="lazy" />
+                </figure>
+                <h2 class="blog-card__title">PR映像制作におけるストーリーの大切さ</h2>
+                <div class="blog-card__meta">
+                  <time class="blog-card__date" datetime="2026-02-10">2026.02.10</time>
+                  <span class="blog-card__tag">ブログ</span>
+                </div>
+              </a>
+            </li>
+            <li class="blog-card">
+              <a class="blog-card__link" href="#">
+                <figure class="blog-card__thumb">
+                  <img src="/img/blog/blog02.webp" alt="" loading="lazy" />
+                </figure>
+                <h2 class="blog-card__title">写真撮影の当日準備チェックリスト</h2>
+                <div class="blog-card__meta">
+                  <time class="blog-card__date" datetime="2026-02-09">2026.02.09</time>
+                  <span class="blog-card__tag">Tips</span>
+                </div>
+              </a>
+            </li>
+            <li class="blog-card">
+              <a class="blog-card__link" href="#">
+                <figure class="blog-card__thumb">
+                  <img src="/img/blog/blog03.webp" alt="" loading="lazy" />
+                </figure>
+                <h2 class="blog-card__title">撮影機材紹介：使い分けのポイント</h2>
+                <div class="blog-card__meta">
+                  <time class="blog-card__date" datetime="2026-02-08">2026.02.08</time>
+                  <span class="blog-card__tag">メディア</span>
+                </div>
+              </a>
+            </li>
+            <li class="blog-card">
+              <a class="blog-card__link" href="#">
+                <figure class="blog-card__thumb">
+                  <img src="/img/blog/blog04.webp" alt="" loading="lazy" />
+                </figure>
+                <h2 class="blog-card__title">クライアント様の声をご紹介いただきました</h2>
+                <div class="blog-card__meta">
+                  <time class="blog-card__date" datetime="2026-02-07">2026.02.07</time>
+                  <span class="blog-card__tag">お知らせ</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+
+          <!-- ページネーション -->
+          <nav class="blog-pagination" aria-label="ページネーション">
+            <a class="blog-pagination__link is-current" href="#">1</a>
+            <a class="blog-pagination__link" href="#">2</a>
+            <a class="blog-pagination__link" href="#">3</a>
+            <a class="blog-pagination__link" href="#">4</a>
+            <a class="blog-pagination__link" href="#">5</a>
+            <a class="blog-pagination__link" href="#">6</a>
+            <a class="blog-pagination__link" href="#">7</a>
+            <a class="blog-pagination__link" href="#">8</a>
+            <a class="blog-pagination__link" href="#">9</a>
+            <a class="blog-pagination__link" href="#">10</a>
+            <a class="blog-pagination__next" href="#">NEXT</a>
+          </nav>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <nav class="site-footer__nav" aria-label="フッターナビ">
+          <ul class="site-footer__list">
+            <li><a class="site-footer__link" href="/">Top</a></li>
+            <li><a class="site-footer__link" href="/service.html">Service</a></li>
+            <li><a class="site-footer__link" href="/works.html">Works</a></li>
+            <li><a class="site-footer__link" href="/#philosophy">Price</a></li>
+            <li><a class="site-footer__link" href="/company.html">Company</a></li>
+            <li><a class="site-footer__link" href="/contact.html">Contact</a></li>
+          </ul>
+          <ul class="site-footer__list">
+            <li><a class="site-footer__link" href="/blog.html">Blog</a></li>
+            <li><a class="site-footer__link" href="/#news">News</a></li>
+          </ul>
+        </nav>
+        <div class="site-footer__divider" aria-hidden="true"></div>
+        <div class="site-footer__brand">
+          <a class="site-footer__logo" href="/" aria-label="ZERO ONE FILM">
+            <img src="/img/logo_white.png" alt="ZERO ONE FILM" />
+          </a>
+          <address class="site-footer__meta">
+            <p>神奈川県横浜市港北区高田西1-16-42</p>
+            <p class="site-footer__tel">
+              <span>Tel</span> <a href="tel:0455507383">045-550-7383</a>
+            </p>
+            <p>神奈川県公安委員会<br />第451450020303号</p>
+          </address>
+        </div>
+        <a class="film-page-to-top" href="#header" aria-label="ページ上部へ">
+          <span class="film-page-to-top__icon" aria-hidden="true"></span>
+          <span class="film-page-to-top__text">to top</span>
+        </a>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

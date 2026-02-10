@@ -12,6 +12,305 @@ $service-page-text: v.$color-text;
 $service-page-muted: rgba(0, 0, 0, 0.6);
 
 /* =========================================
+   Work カード共通コンポーネント（.c-work-grid / .c-work）
+   film-page, service-page, photo-page で利用
+========================================= */
+.film-page,
+.service-page,
+.photo-page,
+.sns-page {
+  .c-work-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(1.5rem, 4vw, 2rem);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include m.mq(md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .c-work {
+    list-style: none;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  /* 画像 */
+  .c-work__media {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  /* 本文 */
+  .c-work__body {
+    position: relative;
+    padding: 18px 18px 20px;
+  }
+
+  /* タイトル */
+  .c-work__title {
+    margin: 10px 0 10px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: #111;
+
+    &._blue {
+      color: #1265D2;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+  }
+
+  /* 価格バッジ */
+  .c-work__price {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #1a5cff;
+    background: rgba(26, 92, 255, 0.1);
+    white-space: nowrap;
+  }
+
+  .c-work__price-number {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a5cff;
+  }
+
+  /* 説明（上） */
+  .c-work__desc-top {
+    margin: 0 0 10px;
+    padding-bottom: 10px;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.75);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    font-weight: 700;
+
+    &._center {
+      text-align: center;
+    }
+  }
+
+  /* 説明（下） */
+  .c-work__desc {
+    margin: 0;
+    font-size: 0.8rem;
+    line-height: 1.75;
+    color: rgba(0, 0, 0, 0.65);
+  }
+
+  /* ラベル（右下・「10枚～」等）※film の price と別パターン */
+  .c-work__label {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #1a5cff;
+    background: rgba(26, 92, 255, 0.1);
+    white-space: nowrap;
+    border-radius: 6px;
+  }
+
+  .c-work__body:has(.c-work__label) {
+    padding-bottom: 2.5rem;
+  }
+
+  /* YouTubeリンク */
+  .c-work__link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px 16px;
+    font-size: 0.75rem;
+    color: #c4302b;
+    text-decoration: none;
+    word-break: break-all;
+    margin-top: auto;
+    justify-content: center;
+
+    &::before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      background: url("/img/icons/mdi_youtube.png") no-repeat center / contain;
+      flex-shrink: 0;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  /* =========================================
+     Solution 共通コンポーネント（.c-solution）
+     film-solution / photo-strength の共通化
+  ========================================== */
+  .c-solution {
+    padding-top: clamp(3rem, 8vw, 5rem);
+    padding-bottom: clamp(3rem, 8vw, 5rem);
+    position: relative;
+    background: url("/img/sub-page/sub-page-background.webp") center / 200px 200px repeat;
+  }
+
+  .c-solution__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .c-solution__item {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: clamp(1.5rem, 4vw, 2.5rem) 0;
+
+    &:not(:first-child) {
+      margin-top: 65px;
+    }
+
+    @include m.mq(md) {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+  }
+
+  .c-solution__item:first-child {
+    border-top: none;
+  }
+
+  .c-solution__thumb {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 230px;
+    aspect-ratio: 4.5 / 3;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      z-index: 1;
+      pointer-events: none;
+    }
+  }
+
+  .c-solution__no {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.05em;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    z-index: 2;
+  }
+
+  .c-solution__body {
+    max-width: 800px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.65);
+    padding: 2rem;
+    display: block;
+    margin-left: 30px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -32px;
+      width: 1.5px;
+      height: 100%;
+      background: #b4b4b4;
+    }
+  }
+
+  .c-solution__heading {
+    margin: 0 0 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $service-page-text;
+  }
+
+  .c-solution__sub-text {
+    margin: 0 0 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1C4D8D;
+  }
+
+  .c-solution__list {
+    margin-top: 0.75rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000;
+    padding-left: 30px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+      left: 10px;
+      width: 12px;
+      height: 12px;
+      background: url("/img/icons/square01.png") no-repeat center / contain;
+    }
+  }
+
+  .c-solution__text {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #000;
+  }
+}
+
+/* .font-bold：film/photo/sns 共通（c-solution 内で使用） */
+.film-page,
+.photo-page,
+.sns-page {
+  .font-bold {
+    font-weight: 700;
+    color: $service-page-text;
+  }
+}
+
+/* =========================================
    A. Service Hero
 ========================================= */
 .service-page {
@@ -324,3 +623,5 @@ body:has(.service-page) .site-footer__inner,
     background: $service-page-text;
   }
 }
+
+

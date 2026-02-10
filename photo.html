@@ -19,16 +19,16 @@
               <a href="/service.html" class="global-nav__link">Service</a>
             </li>
             <li class="global-nav__item">
-              <a href="/#works" class="global-nav__link">Works</a>
+              <a href="/works.html" class="global-nav__link">Works</a>
             </li>
             <li class="global-nav__item">
               <a href="/company.html" class="global-nav__link">Company</a>
             </li>
             <li class="global-nav__item">
-              <a href="/#blog" class="global-nav__link">Blog</a>
+              <a href="/blog.html" class="global-nav__link">Blog</a>
             </li>
             <li class="global-nav__item">
-              <a href="/#contact" class="global-nav__link">Contact</a>
+              <a href="/contact.html" class="global-nav__link">Contact</a>
             </li>
           </ul>
         </nav>
@@ -58,18 +58,18 @@
         aria-label="モバイルメニュー"
       >
         <div class="drawer__head">
-          <span class="drawer__title">MENU</span>
+          <span class="drawer__title"></span>
           <button class="drawer__close" type="button" aria-label="閉じる">
-            <span aria-hidden="true">×</span>
+            <span class="drawer__close-lines" aria-hidden="true"></span>
           </button>
         </div>
         <nav class="drawer__nav" aria-label="Mobile">
           <a href="/" class="drawer__link">Top</a>
           <a href="/service.html" class="drawer__link">Service</a>
-          <a href="/#works" class="drawer__link">Works</a>
+          <a href="/works.html" class="drawer__link">Works</a>
           <a href="/company.html" class="drawer__link">Company</a>
-          <a href="/#blog" class="drawer__link">Blog</a>
-          <a href="/#contact" class="drawer__link">Contact</a>
+          <a href="/blog.html" class="drawer__link">Blog</a>
+          <a href="/contact.html" class="drawer__link">Contact</a>
         </nav>
       </div>
     </div>
@@ -77,12 +77,15 @@
     <main class="photo-page">
       <div class="service-page__bg" aria-hidden="true"></div>
 
-      <!-- (1) HERO -->
-      <section class="photo-hero">
-        <div class="photo-hero__bg" aria-hidden="true"></div>
+      <!-- Film Hero -->
+      <section class="film-hero" style="background-image:url('/img/page-header/service-header02.webp')">
+        <div class="film-hero__bg" aria-hidden="true"></div>
         <div class="container">
-          <h1 class="photo-hero__title">写真撮影</h1>
-          <p class="photo-hero__lead">
+          <h1 class="film-hero__title">
+            <span class="film-hero__mark" aria-hidden="true"><i></i></span>
+            写真撮影
+          </h1>
+          <p class="film-hero__lead">
             映像制作で培った構図・ライティング・演出力を活かし、Web・SNS・広告に最適化した写真撮影を行います。
           </p>
         </div>
@@ -124,35 +127,38 @@
             <span class="c-section-title__line" aria-hidden="true"></span>
           </header>
           <p class="c-works__note">※金額はあくまで概算です。<br class="sp-only">ご要望に合わせて見積りさせていただきます。</p>
-          <ul class="photo-reference__grid">
-            <li class="photo-reference-card">
-              <div class="photo-reference-card__media">
+          <ul class="c-work-grid">
+            <li class="c-work">
+              <div class="c-work__media">
                 <img src="/img/sub-page/service-work04.webp" alt="企業・オフィス撮影" />
               </div>
-              <div class="photo-reference-card__body">
-                <h3 class="photo-reference-card__title">企業WEBサイト用</h3>
-                <p class="photo-reference-card__desc">会社の雰囲気とチームの表情を伝える撮影です。PR・採用・Web用にご利用いただけます。</p>
-                <span class="photo-reference-card__label">10枚～</span>
+              <div class="c-work__body">
+                <h3 class="c-work__title">企業WEBサイト用</h3>
+                <span class="c-work__price"><span class="c-work__price-number">10</span>万円～</span>
+                <p class="c-work__desc-top">顔が見える企業は、<br />選ばれる</p>
+                <p class="c-work__desc">サービスの裏側にいる“人”を可視化することで、初めての訪問者にも信頼感を与えたい時に最適。企業紹介・営業資料・採用コンテンツまで幅広く活用できます。</p>
               </div>
             </li>
-            <li class="photo-reference-card">
-              <div class="photo-reference-card__media">
-                <img src="/img/sub-page/service-work05.webp" alt="ウエディング前撮り" />
+            <li class="c-work">
+              <div class="c-work__media">
+                <img src="/img/sub-page/service-work05.webp" alt="施設写真撮影" />
               </div>
-              <div class="photo-reference-card__body">
-                <h3 class="photo-reference-card__title">ウエディング前撮り</h3>
-                <p class="photo-reference-card__desc">自然な二人の表情を残す前撮りプラン。衣裳・ロケーションのご希望に合わせてご提案します。</p>
-                <span class="photo-reference-card__label">10枚～</span>
+              <div class="c-work__body">
+                <h3 class="c-work__title">施設紹介写真</h3>
+                <span class="c-work__price"><span class="c-work__price-number">8</span>万円～</span>
+                <p class="c-work__desc-top">伝えたい概念を、<br />直感的に“理解できる形”へ</p>
+                <p class="c-work__desc">施設の広さ・清潔感・導線・雰囲気を視覚的に伝え、来訪前の不安を解消したい時に最適。Webサイトや案内ページで、安心感と利用イメージを具体的に持ってもらうことができます。</p>
               </div>
             </li>
-            <li class="photo-reference-card">
-              <div class="photo-reference-card__media">
-                <img src="/img/sub-page/service-work06.webp" alt="キッズ・ファミリー" />
+            <li class="c-work">
+              <div class="c-work__media">
+                <img src="/img/sub-page/service-work06.webp" alt="WEB用写真撮影" />
               </div>
-              <div class="photo-reference-card__body">
-                <h3 class="photo-reference-card__title">キッズ・ファミリー</h3>
-                <p class="photo-reference-card__desc">成長の記録と家族の思い出を一枚に。スタジオ・ロケーションどちらも対応可能です。</p>
-                <span class="photo-reference-card__label">10枚～</span>
+              <div class="c-work__body">
+                <h3 class="c-work__title">企業WEBサイト用</h3>
+                <span class="c-work__price"><span class="c-work__price-number">10</span>万円～</span>
+                <p class="c-work__desc-top">一瞬で伝わる“空気感”が、<br />信頼をつくる</p>
+                <p class="c-work__desc">サービスや企業の世界観・人の雰囲気を、言葉よりも早く伝えたい時に最適。WEBサイトや採用ページで、第一印象の質を高め、安心感と信頼感を直感的に届けます。</p>
               </div>
             </li>
           </ul>
@@ -160,47 +166,46 @@
       </section>
 
       <!-- (4) STRENGTH -->
-      <section class="photo-strength">
+      <section class="c-solution">
         <div class="container">
           <header class="c-section-title">
-            <h2 class="c-section-title__text">STRENGTH</h2>
-            <p class="section-title__sub">ZEROONEFILMの写真撮影の強み</p>
+            <h2 class="c-section-title__text">ZEROONEFILMの<br class="sp-only">写真撮影の強み</h2>
             <span class="c-section-title__line" aria-hidden="true"></span>
           </header>
-          <ul class="photo-strength__list">
-            <li class="photo-strength__item">
-              <div class="photo-strength__thumb">
-                <img src="/img/strength05.webp" alt="映像会社ならではの視点" width="240" height="160" />
-                <span class="photo-strength__no" aria-hidden="true">01</span>
+          <ul class="c-solution__items">
+            <li class="c-solution__item">
+              <div class="c-solution__thumb">
+                <img src="/img/strength05.webp" alt="映像会社ならではの視点" />
+                <span class="c-solution__no" aria-hidden="true">01</span>
               </div>
-              <div class="photo-strength__body">
-                <h3 class="photo-strength__heading">映像会社ならではの視点</h3>
-                <p class="photo-strength__text">
-                  動画と写真の両方を手がけるからこそ、構図・光・表情の「動きの一瞬」を意識した撮影ができます。PRや採用で使う写真も、映像と統一感のあるトーンでご提供します。
+              <div class="c-solution__body">
+                <h3 class="c-solution__heading">映像会社ならではの視点</h3>
+                <p class="c-solution__text">
+                  構図・ライティング・動線設計。映像制作のノウハウを写真にも落とし込み、**「次のカットが想像できる写真」**を生み出します。
                 </p>
               </div>
             </li>
-            <li class="photo-strength__item">
-              <div class="photo-strength__thumb">
-                <img src="/img/strength03.webp" alt="用途から逆算した撮影設計" width="240" height="160" />
-                <span class="photo-strength__no" aria-hidden="true">02</span>
+            <li class="c-solution__item">
+              <div class="c-solution__thumb">
+                <img src="/img/strength03.webp" alt="用途から逆算した撮影設計" />
+                <span class="c-solution__no" aria-hidden="true">02</span>
               </div>
-              <div class="photo-strength__body">
-                <h3 class="photo-strength__heading">用途から逆算した撮影設計</h3>
-                <p class="photo-strength__text">
-                  Web・SNS・印刷物・採用ページなど、どこでどう使うかを最初にヒアリングし、必要な枚数・トーン・構図を設計してから撮影します。「撮って終わり」にならない設計をご提案します。
+              <div class="c-solution__body">
+                <h3 class="c-solution__heading">用途から逆算した撮影設計</h3>
+                <p class="c-solution__text">
+                  Web、SNS、広告、パンフレット。使用シーンを想定した構図・比率・トーンで撮影。<br />「きれい」だけで終わらない、実務で使える写真を提供します。
                 </p>
               </div>
             </li>
-            <li class="photo-strength__item">
-              <div class="photo-strength__thumb">
-                <img src="/img/strength01.webp" alt="自然体を引き出すコミュニケーション" width="240" height="160" />
-                <span class="photo-strength__no" aria-hidden="true">03</span>
+            <li class="c-solution__item">
+              <div class="c-solution__thumb">
+                <img src="/img/strength01.webp" alt="自然体を引き出すコミュニケーション" />
+                <span class="c-solution__no" aria-hidden="true">03</span>
               </div>
-              <div class="photo-strength__body">
-                <h3 class="photo-strength__heading">自然体を引き出すコミュニケーション</h3>
-                <p class="photo-strength__text">
-                  堅い記念写真ではなく、その人らしさや会社の空気感が伝わる写真を。リラックスした雰囲気づくりと、ちょっとした声かけで、自然な表情や動きを引き出します。
+              <div class="c-solution__body">
+                <h3 class="c-solution__heading">自然体を引き出すコミュニケーション</h3>
+                <p class="c-solution__text">
+                  企業撮影でも、個人撮影でも、緊張をほぐし、その人らしさを引き出すことを大切にしています。      
                 </p>
               </div>
             </li>
@@ -218,7 +223,7 @@
           </header>
           <div class="photo-business__inner">
             <div class="photo-business__media">
-              <img src="/img/service01.webp" alt="企業・法人向け写真撮影" width="600" height="400" />
+              <img src="/img/sub-page/work12.webp" alt="企業・法人向け写真撮影" />
             </div>
             <div class="photo-business__content">
               <ul class="photo-business__checklist">
@@ -231,10 +236,9 @@
               <div class="photo-business__worries">
                 <p class="photo-business__worries-title">こんな方におすすめ</p>
                 <p class="photo-business__worries-text">
-                  ・写真の用途が多く、何を撮ればいいかわからない<br />
-                  ・既存の写真が古く、統一感がない<br />
-                  ・動画と写真を同じトーンで揃えたい
-                </p>
+                  写真の用途が多く、何を撮ればいいかわからない</p>
+                <p class="photo-business__worries-text">既存の写真が古く、統一感がない</p>
+                <p class="photo-business__worries-text">動画と写真を同じトーンで揃えたい</p>
               </div>
             </div>
           </div>
@@ -252,26 +256,25 @@
           <div class="photo-personal__block">
             <div class="photo-personal__inner">
               <div class="photo-personal__media">
-                <img src="/img/service02.webp" alt="ウエディング・前撮り" width="600" height="400" />
+                <img src="/img/strength02.jpg" alt="ウエディング・前撮り" />
               </div>
               <div class="photo-personal__content">
                 <span class="photo-personal__tag">ウエディング・前撮り</span>
-                <p class="photo-personal__text">
-                  結婚式の前撮りや当日スナップまで、二人の自然な笑顔と空気感を残します。衣裳・ロケーションのご希望に合わせてプランをご提案します。
-                </p>
+                <p class="photo-personal__text">かしこまりすぎない、その人たちらしいウェディング写真を。</p>
+                <p class="photo-personal__text">前撮り・ロケーション撮影も対応可能です。</p>
               </div>
             </div>
           </div>
           <div class="photo-personal__block">
             <div class="photo-personal__inner">
               <div class="photo-personal__media">
-                <img src="/img/service03.webp" alt="キッズ・ファミリー撮影" width="600" height="400" />
+                <img src="/img/sub-page/personal_photo.jpg" alt="キッズ・ファミリー撮影" />
               </div>
               <div class="photo-personal__content">
                 <span class="photo-personal__tag">キッズ・ファミリー撮影</span>
-                <p class="photo-personal__text">
-                  お子様の成長記録や家族の思い出を、スタジオやロケーションで撮影。無理のないスケジュールと、子どもも楽しめる雰囲気づくりを心がけています。
-                </p>
+                <p class="photo-personal__text">七五三、誕生日、家族イベントなど。</p>
+                <p class="photo-personal__text">「今しかない瞬間」を、自然な表情で残します。</p>
+                <p class="photo-personal__text">お子さまのペースに合わせ、無理のない撮影を心がけています。</p>
               </div>
             </div>
           </div>
@@ -286,7 +289,7 @@
             <span class="c-section-title__line" aria-hidden="true"></span>
           </header>
           <p class="photo-message__text">
-            写真は、企業の「顔」であり、個人の「思い出」です。映像と写真の両方を手がける私たちに、ぜひご相談ください。用途や予算に合わせたプランをご提案します。
+            写真撮影が初めての方も、「こんな写真が欲しい」と曖昧な状態でも大丈夫です。<br />用途や想いを伺いながら、今、必要な一枚を一緒に考えます。
           </p>
         </div>
       </section>
@@ -299,8 +302,9 @@
               お問合せはこちら
               <span class="page-card__arrow" aria-hidden="true"></span>
             </p>
-            <a href="/#contact" class="page-cta__btn">CONTACT</a>
+            <a href="/contact.html" class="page-cta__btn">CONTACT</a>
           </div>
+          <p class="page-cta__lead">一瞬に、物語を。</p>
           <p class="page-cta__note">
             企業撮影・個人撮影ともに対応しています。<br />
             イメージが固まっていなくても問題ありません。<br />
@@ -316,13 +320,13 @@
           <ul class="site-footer__list">
             <li><a class="site-footer__link" href="/">Top</a></li>
             <li><a class="site-footer__link" href="/service.html">Service</a></li>
-            <li><a class="site-footer__link" href="/#works">Works</a></li>
+            <li><a class="site-footer__link" href="/works.html">Works</a></li>
             <li><a class="site-footer__link" href="/#philosophy">Price</a></li>
             <li><a class="site-footer__link" href="/company.html">Company</a></li>
-            <li><a class="site-footer__link" href="/#contact">Contact</a></li>
+            <li><a class="site-footer__link" href="/contact.html">Contact</a></li>
           </ul>
           <ul class="site-footer__list">
-            <li><a class="site-footer__link" href="/#blog">Blog</a></li>
+            <li><a class="site-footer__link" href="/blog.html">Blog</a></li>
             <li><a class="site-footer__link" href="/#news">News</a></li>
           </ul>
         </nav>

@@ -1,0 +1,370 @@
+// =========================================
+// BLOG ページ専用スタイル
+// ルートクラス .blog-page 配下にスコープ
+// =========================================
+@use "../variables" as v;
+@use "../mixins" as m;
+
+$blog-text: v.$color-text;
+$blog-muted: rgba(0, 0, 0, 0.6);
+$blog-border: #e0e0e0;
+$blog-tab-active-bg: #a8c5e8;
+$blog-tab-active-border: #8ab5e0;
+$blog-tab-active-text: #fff;
+
+.blog-page {
+  position: relative;
+  overflow: hidden;
+
+  /* 背景レイヤー（film/photo と同じ思想） */
+  .service-page__bg {
+  }
+
+  /* コンテンツを背景より前面に */
+  > *:not(.service-page__bg) {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* =========================================
+     Hero（film-hero 使用時は _film-page のスタイルを流用）
+     以下は blog-hero 用（未使用時も互換のため残す）
+  ========================================== */
+  .blog-hero {
+    position: relative;
+    min-height: clamp(200px, 40vw, 320px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: calc(65px + clamp(1.5rem, 4vw, 2.5rem));
+    padding-bottom: clamp(2rem, 5vw, 3rem);
+
+    background-color: #f5f5f5;
+    background-image: url("/img/page-header/service-header06.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    .container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  .blog-hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  .blog-hero__title {
+    margin: 0 0 clamp(0.5rem, 1.5vw, 1rem);
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+    font-weight: 700;
+    color: $blog-text;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+  }
+
+  .blog-hero__lead {
+    margin: 0;
+    font-size: clamp(0.875rem, 1.8vw, 1rem);
+    font-weight: 400;
+    color: $blog-muted;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+  }
+
+  /* =========================================
+     Blog Index（検索 + タブ + 一覧 + ページネーション）
+  ========================================== */
+  .blog-index {
+    padding-top: clamp(2rem, 5vw, 3rem);
+    padding-bottom: clamp(5rem, 10vw, 7rem);
+    background: #fff;
+  }
+
+  /* 検索バー */
+  .blog-search {
+    --accent-color: #1265d2;
+    display: flex;
+    max-width: 580px;
+    margin: 0 auto clamp(2rem, 4vw, 2.5rem);
+    border: 1px solid $blog-border;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+    accent-color: var(--accent-color);
+
+    &:focus-within {
+      outline: 2px solid rgba(19, 102, 255, 0.5);
+      outline-offset: 2px;
+      border-color: #1265d2;
+    }
+  }
+
+  .blog-search__input {
+    flex: 1;
+    min-width: 0;
+    padding: clamp(0.75rem, 2vw, 1rem) 1rem;
+    border: none;
+    background: #fff;
+    font-size: 1rem;
+    color: $blog-text;
+
+    &::placeholder {
+      color: $blog-muted;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .blog-search__button {
+    padding: clamp(0.75rem, 2vw, 1rem) 1.25rem;
+    border: none;
+    border-left: 1px solid $blog-border;
+    background: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: $blog-text;
+    cursor: pointer;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease;
+
+    &:hover {
+      background: #f5f5f5;
+      color: #1265d2;
+    }
+  }
+
+  /* タグ（カテゴリ）タブ */
+  .blog-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    justify-content: flex-start;
+
+    @include m.mq-down(sm) {
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      padding-bottom: 0.25rem;
+      -webkit-overflow-scrolling: touch;
+
+      &::-webkit-scrollbar {
+        height: 4px;
+      }
+    }
+  }
+
+  .blog-tabs__tab {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid $blog-border;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: $blog-text;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease;
+
+    &:hover {
+      background: #f8f8f8;
+      border-color: darken($blog-border, 5%);
+    }
+
+    &.is-active {
+      background: $blog-tab-active-bg;
+      border-color: $blog-tab-active-border;
+      color: $blog-tab-active-text;
+    }
+  }
+
+  /* 記事一覧グリッド */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 4vw, 3rem) 0;
+    list-style: none;
+    margin: 0 0 clamp(3rem, 6vw, 4rem);
+    padding: 0;
+
+    @include m.mq(sm) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    @include m.mq(lg) {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: clamp(2rem, 4vw, 2.5rem);
+    }
+  }
+
+  .blog-card {
+    position: relative;
+    padding-bottom: clamp(1.5rem, 3vw, 2rem);
+    border-bottom: 1px solid $blog-border;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    @include m.mq(sm) {
+      &:nth-child(2n) {
+        padding-bottom: clamp(1.5rem, 3vw, 2rem);
+      }
+    }
+
+    @include m.mq(lg) {
+      &:nth-child(3n) {
+        padding-bottom: clamp(1.5rem, 3vw, 2rem);
+      }
+
+      &:nth-child(n + 4) {
+        padding-top: clamp(1.5rem, 3vw, 2rem);
+      }
+    }
+  }
+
+  .blog-card__link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .blog-card__thumb {
+    position: relative;
+    margin: 0 0 1rem;
+    overflow: hidden;
+    border-radius: 6px;
+    aspect-ratio: 16 / 9;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .blog-card__link:hover & img {
+      transform: scale(1.05);
+    }
+  }
+
+  .blog-card__title {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    font-weight: 600;
+    line-height: 1.5;
+    color: $blog-text;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    .blog-card__link:hover & {
+      color: #1265d2;
+    }
+  }
+
+  .blog-card__meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .blog-card__date {
+    font-size: 0.8rem;
+    color: $blog-muted;
+  }
+
+  .blog-card__tag {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid $blog-border;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: $blog-text;
+  }
+
+  /* ページネーション */
+  .blog-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
+  }
+
+  .blog-pagination__link,
+  .blog-pagination__next {
+    font-size: 0.9rem;
+    color: $blog-text;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #1265d2;
+    }
+  }
+
+  .blog-pagination__link.is-current {
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .blog-pagination__next {
+    margin-left: 0.5rem;
+    padding-left: 0.75rem;
+    border-left: 1px solid $blog-border;
+    position: relative;
+    padding-right: 1.25rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 6px;
+      height: 6px;
+      border-right: 2px solid currentColor;
+      border-top: 2px solid currentColor;
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+}
+
+/* ブログページ：ヘッダーメニューを #333333 に（薄いヒーロー背景のため） */
+@include m.mq(md) {
+  body.page-blog .global-header .global-nav__link {
+    color: #333333;
+
+    &::after {
+      background: #333333;
+    }
+  }
+
+  body.page-blog .global-header.is-scrolled .global-nav__link::after {
+    background: #333333;
+  }
+}

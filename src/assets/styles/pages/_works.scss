@@ -1,0 +1,208 @@
+// =========================================
+// WORKS 一覧ページ専用スタイル
+// ルートクラス .works-page 配下にスコープ
+// film-hero は既存スタイルを流用
+// =========================================
+@use "../variables" as v;
+@use "../mixins" as m;
+
+$works-border: #e0e0e0;
+$works-accent: #1a5cff;
+$works-text: v.$color-text;
+$works-muted: rgba(0, 0, 0, 0.65);
+
+.works-page {
+  position: relative;
+  overflow: hidden;
+
+  .service-page__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background-image:
+      url("/img/background/background-bom01.png"),
+      url("/img/background/background-bom01-flip.png"),
+      url("/img/background/mist01.webp"),
+      url("/img/background/background-bom01.png"),
+      url("/img/background/mist04.webp"),
+      url("/img/background/background-bom01-flip.png");
+
+    background-repeat: no-repeat;
+    background-position:
+      100% 3%,
+      0% 26%,
+      20% 40%,
+      100% 75%,
+      50% 89%,
+      -30% 98%;
+    background-size: 80vw, 50vw, 70vw, 80vw, 40vw, 65vw;
+
+    @media (max-width: 768px) {
+      background-position:
+        100% 9%,
+        0% 32%,
+        30% 44%,
+        110% 78.5%,
+        50% 85%,
+        0% 93.5%;
+      background-size: 130vw, 100vw, 120vw, 120vw, 120vw, 120vw;
+    }
+  }
+}
+
+/* =========================================
+   works-index（一覧・フィルタ・カード）
+========================================= */
+.works-index {
+  padding-top: clamp(2rem, 5vw, 3rem);
+  padding-bottom: clamp(3rem, 8vw, 5rem);
+}
+
+.works-index__filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  justify-content: center;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+}
+
+.works-index__filter-btn {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: $works-text;
+  background: #fff;
+  border: 1px solid $works-border;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+
+  &:hover {
+    border-color: $works-accent;
+    color: $works-accent;
+  }
+
+  &.is-active {
+    background: $works-accent;
+    border-color: $works-accent;
+    color: #fff;
+  }
+}
+
+.works-index__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 4vw, 2rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @include m.mq(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include m.mq(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.works-index__card {
+  margin: 0;
+}
+
+.works-index__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+
+    .works-index__thumb img {
+      transform: scale(1.06);
+    }
+  }
+}
+
+.works-index__thumb {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #eee;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.35s ease;
+  }
+}
+
+.works-index__body {
+  padding: 18px 18px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.works-index__category {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: $works-accent;
+  background: rgba(26, 92, 255, 0.1);
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.works-index__title {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #111;
+  line-height: 1.4;
+}
+
+.works-index__desc {
+  margin: 0 0 auto;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: $works-muted;
+}
+
+.works-index__date {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Worksページ：ヘッダーメニューを #333333 に（薄い背景のため） */
+@include m.mq(md) {
+  body.works-page .global-header .global-nav__link {
+    color: #333333;
+
+    &::after {
+      background: #333333;
+    }
+  }
+
+  body.works-page .global-header.is-scrolled .global-nav__link::after {
+    background: #333333;
+  }
+}

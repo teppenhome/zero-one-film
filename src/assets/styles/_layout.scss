@@ -65,6 +65,53 @@ $service-page-muted: rgba(0, 0, 0, 0.6);
   color: rgba(0, 0, 0, 0.6);
 }
 
+/* =========================================
+   Breadcrumb（下層ページ共通）
+========================================= */
+.breadcrumb {
+  padding-top: clamp(1.25rem, 3vw, 2rem);
+  padding-bottom: clamp(1.25rem, 3vw, 2rem);
+}
+
+.breadcrumb__list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.breadcrumb__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &:not(:last-child)::after {
+    content: "/";
+    color: rgba(0, 0, 0, 0.5);
+    margin-left: 0.25rem;
+  }
+}
+
+.breadcrumb__link {
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+
+  &:hover {
+    color: v.$color-text;
+  }
+}
+
+.breadcrumb__item[aria-current="page"] {
+  color: v.$color-text;
+  font-weight: 500;
+}
+
 .grid {
   display: grid;
   gap: v.$spacing-24;
@@ -211,6 +258,8 @@ $service-page-muted: rgba(0, 0, 0, 0.6);
   -webkit-backdrop-filter: blur(6px) saturate(120%);
   cursor: pointer;
   transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+  font-size: 0;
+  line-height: 0;
 
   &:active {
     transform: scale(0.98);
@@ -221,52 +270,71 @@ $service-page-muted: rgba(0, 0, 0, 0.6);
   }
 }
 
+/* 中央(50%,50%)基準で3本作る */
 .nav-toggle__lines {
   position: relative;
+  width: 18px;
+  height: 18px; /* 正方形にして中心基準を安定させる */
+  display: block;
+}
+
+/* 3本の線（真ん中は要素本体、上下は疑似要素） */
+.nav-toggle__lines,
+.nav-toggle__lines::before,
+.nav-toggle__lines::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
   width: 18px;
   height: 2px;
   background: #fff;
   border-radius: 2px;
-  display: block;
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 18px;
-    height: 2px;
-    background: #fff;
-    border-radius: 2px;
-    transition: transform 0.25s ease, top 0.25s ease, opacity 0.25s ease;
-  }
-
-  &::before { top: -6px; }
-  &::after  { top: 6px; }
+  transform: translate(-50%, -50%);
+  transition: transform 0.25s ease, opacity 0.25s ease, background 0.25s ease;
 }
 
-/* 開いてる時の× */
-.global-header.is-menu-open .nav-toggle__lines {
+/* 上下をY方向にずらす */
+.nav-toggle__lines::before {
+  transform: translate(-50%, calc(-50% - 6px));
+}
+.nav-toggle__lines::after {
+  transform: translate(-50%, calc(-50% + 6px));
+}
+
+/* 開いてる時：真ん中は透明、上下を回転して×へ（#header 基準で統一） */
+#header.is-menu-open .nav-toggle__lines {
   background: transparent;
-
-  &::before {
-    top: 0;
-    transform: rotate(45deg);
-  }
-  &::after {
-    top: 0;
-    transform: rotate(-45deg);
-  }
 }
+
+#header.is-menu-open .nav-toggle__lines::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#header.is-menu-open .nav-toggle__lines::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
 
 /* =============== */
-/* Drawer（ヘッダーと統一したブルー基調） */
+/* Drawer */
 /* =============== */
 .drawer {
   position: fixed;
   inset: 0;
   z-index: calc(v.$z-header + 1);
   isolation: isolate;
+
+  /* アニメ用（hiddenを外した瞬間の状態） */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+/* 開いた状態（JSで is-open 付与） */
+.drawer.is-open {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .drawer__backdrop {
@@ -288,6 +356,7 @@ $service-page-muted: rgba(0, 0, 0, 0.6);
   height: 100%;
   width: min(280px, 85vw);
   padding: 24px 20px;
+
   background: linear-gradient(
     to bottom,
     rgba(19, 102, 255, 0.98) 0%,
@@ -299,6 +368,14 @@ $service-page-muted: rgba(0, 0, 0, 0.6);
   box-shadow: -8px 0 32px rgba(0, 0, 0, 0.3);
   border-left: 1px solid rgba(255, 255, 255, 0.15);
   overflow-y: auto;
+
+  /* スライドイン */
+  transform: translateX(12px);
+  transition: transform 0.25s ease;
+}
+
+.drawer.is-open .drawer__panel {
+  transform: translateX(0);
 }
 
 .drawer__head {
@@ -306,6 +383,7 @@ $service-page-muted: rgba(0, 0, 0, 0.6);
   align-items: center;
   justify-content: space-between;
   margin-bottom: 28px;
+  margin-top: -8px;
 }
 
 .drawer__title {
@@ -315,6 +393,7 @@ $service-page-muted: rgba(0, 0, 0, 0.6);
   color: rgba(255, 255, 255, 0.9);
 }
 
+/* Closeボタンは文字×を捨てて線で作る */
 .drawer__close {
   display: inline-flex;
   align-items: center;
@@ -324,15 +403,43 @@ $service-page-muted: rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 999px;
   background: rgba(0, 0, 0, 0.2);
-  color: #fff;
-  font-size: 20px;
-  line-height: 1;
   cursor: pointer;
   transition: background 0.2s ease;
+  font-size: 0;
+  line-height: 0;
 
   &:hover {
     background: rgba(255, 255, 255, 0.15);
   }
+}
+
+/* 中央基準で×（2本） */
+.drawer__close-lines {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.drawer__close-lines::before,
+.drawer__close-lines::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 18px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transform-origin: center;
+}
+
+.drawer__close-lines::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.drawer__close-lines::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .drawer__nav {
@@ -345,8 +452,8 @@ $service-page-muted: rgba(0, 0, 0, 0.6);
   position: relative;
   display: block;
   padding: 14px 0;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1.8rem;
+  font-weight: 200;
   letter-spacing: 0.05em;
   color: #fff;
   text-decoration: none;
@@ -377,6 +484,33 @@ $service-page-muted: rgba(0, 0, 0, 0.6);
     opacity: 0.85;
   }
 }
+
+/* =========================
+   Drawer Nav Animation
+========================= */
+
+/* 初期状態：見えない */
+.drawer__link {
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+/* 開いたら表示 */
+.drawer.is-open .drawer__link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 上から順にディレイ */
+.drawer.is-open .drawer__link:nth-child(1) { transition-delay: 0.05s; }
+.drawer.is-open .drawer__link:nth-child(2) { transition-delay: 0.10s; }
+.drawer.is-open .drawer__link:nth-child(3) { transition-delay: 0.15s; }
+.drawer.is-open .drawer__link:nth-child(4) { transition-delay: 0.20s; }
+.drawer.is-open .drawer__link:nth-child(5) { transition-delay: 0.25s; }
+.drawer.is-open .drawer__link:nth-child(6) { transition-delay: 0.30s; }
 
 /* PCではドロワー不要 */
 @include m.mq(md) {
@@ -470,7 +604,7 @@ $service-page-muted: rgba(0, 0, 0, 0.6);
     display: inline-flex;
     align-items: center;
     gap: 0.25em;
-    margin: 0;
+    margin: 20px 0 0;
     font-size: clamp(0.95rem, 2vw, 1.1rem);
     font-weight: 500;
     letter-spacing: 0.08em;
@@ -524,7 +658,7 @@ $service-page-muted: rgba(0, 0, 0, 0.6);
   }
 
   .page-cta__note {
-    margin: 0;
+    margin: 20px 0 0;
     font-size: clamp(0.75rem, 1.5vw, 0.875rem);
     line-height: 1.6;
     letter-spacing: 0.04em;

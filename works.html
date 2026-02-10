@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Works | ZERO ONE FILM</title>
+  </head>
+  <body class="works-page page">
+    <header id="header" class="global-header">
+      <div class="container">
+        <a href="/" class="global-header__logo">
+          <img src="/img/logo_wide_gray.png" alt="ZERO ONE FILM" />
+        </a>
+
+        <nav class="global-nav" aria-label="Primary">
+          <ul class="global-nav__list">
+            <li class="global-nav__item">
+              <a href="/service.html" class="global-nav__link">Service</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="/works.html" class="global-nav__link">Works</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="/company.html" class="global-nav__link">Company</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="/blog.html" class="global-nav__link">Blog</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="/contact.html" class="global-nav__link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="nav-toggle__lines" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="drawer" id="mobile-menu" hidden>
+      <button
+        class="drawer__backdrop"
+        type="button"
+        aria-label="メニューを閉じる"
+      ></button>
+      <div
+        class="drawer__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-label="モバイルメニュー"
+      >
+        <div class="drawer__head">
+          <span class="drawer__title"></span>
+          <button class="drawer__close" type="button" aria-label="閉じる">
+            <span class="drawer__close-lines" aria-hidden="true"></span>
+          </button>
+        </div>
+        <nav class="drawer__nav" aria-label="Mobile">
+          <a href="/" class="drawer__link">Top</a>
+          <a href="/service.html" class="drawer__link">Service</a>
+          <a href="/works.html" class="drawer__link">Works</a>
+          <a href="/company.html" class="drawer__link">Company</a>
+          <a href="/blog.html" class="drawer__link">Blog</a>
+          <a href="/contact.html" class="drawer__link">Contact</a>
+        </nav>
+      </div>
+    </div>
+
+    <main class="works-page">
+
+      <!-- Film Hero -->
+      <section class="film-hero" style="background-image:url('/img/page-header/service-header06.webp')">
+        <div class="film-hero__bg" aria-hidden="true"></div>
+        <div class="container">
+          <h1 class="film-hero__title">
+            <span class="film-hero__mark" aria-hidden="true"><i></i></span>
+            Works
+          </h1>
+          <p class="film-hero__lead">
+            制作実績一覧
+          </p>
+        </div>
+      </section>
+
+      <!-- パンくず -->
+      <nav class="breadcrumb" aria-label="パンくず">
+        <div class="container">
+          <ol class="breadcrumb__list">
+            <li class="breadcrumb__item">
+              <a href="/" class="breadcrumb__link">TOP</a>
+            </li>
+            <li class="breadcrumb__item" aria-current="page">WORKS</li>
+          </ol>
+        </div>
+      </nav>
+
+      <!-- フィルタ -->
+      <section class="works-index">
+        <div class="container">
+          <div class="works-index__filter" role="group" aria-label="カテゴリで絞り込み">
+            <button type="button" class="works-index__filter-btn is-active" data-filter="all">All</button>
+            <button type="button" class="works-index__filter-btn" data-filter="film">Film</button>
+            <button type="button" class="works-index__filter-btn" data-filter="photo">Photo</button>
+            <button type="button" class="works-index__filter-btn" data-filter="sns">SNS</button>
+            <button type="button" class="works-index__filter-btn" data-filter="design">Design</button>
+          </div>
+
+          <!-- 一覧グリッド -->
+          <ul class="works-index__grid">
+            <li class="works-index__card" data-category="film">
+              <a href="/works-detail.html" class="works-index__link">
+                <div class="works-index__thumb">
+                  <img src="/img/works/work01.webp" alt="" />
+                </div>
+                <div class="works-index__body">
+                  <span class="works-index__category">映像</span>
+                  <h3 class="works-index__title">企業PR動画（サンプル）</h3>
+                  <p class="works-index__desc">企業紹介・プロモーション映像の制作実績です。</p>
+                  <time class="works-index__date" datetime="2024-01-15">2024.01</time>
+                </div>
+              </a>
+            </li>
+            <li class="works-index__card" data-category="photo">
+              <a href="/works-detail.html" class="works-index__link">
+                <div class="works-index__thumb">
+                  <img src="/img/works/work02.webp" alt="" />
+                </div>
+                <div class="works-index__body">
+                  <span class="works-index__category">写真</span>
+                  <h3 class="works-index__title">企業WEBサイト用写真</h3>
+                  <p class="works-index__desc">オフィス・人物撮影の制作実績です。</p>
+                  <time class="works-index__date" datetime="2024-02-01">2024.02</time>
+                </div>
+              </a>
+            </li>
+            <li class="works-index__card" data-category="sns">
+              <a href="/works-detail.html" class="works-index__link">
+                <div class="works-index__thumb">
+                  <img src="/img/works/work03.webp" alt="" />
+                </div>
+                <div class="works-index__body">
+                  <span class="works-index__category">SNS</span>
+                  <h3 class="works-index__title">SNS縦型映像</h3>
+                  <p class="works-index__desc">Instagram Reels・TikTok向け動画の実績です。</p>
+                  <time class="works-index__date" datetime="2024-03-10">2024.03</time>
+                </div>
+              </a>
+            </li>
+            <li class="works-index__card" data-category="design">
+              <a href="/works-detail.html" class="works-index__link">
+                <div class="works-index__thumb">
+                  <img src="/img/works/work04.webp" alt="" />
+                </div>
+                <div class="works-index__body">
+                  <span class="works-index__category">デザイン</span>
+                  <h3 class="works-index__title">ブランディング・ロゴ</h3>
+                  <p class="works-index__desc">ロゴ・グラフィックデザインの実績です。</p>
+                  <time class="works-index__date" datetime="2024-01-20">2024.01</time>
+                </div>
+              </a>
+            </li>
+            <li class="works-index__card" data-category="film">
+              <a href="/works-detail.html" class="works-index__link">
+                <div class="works-index__thumb">
+                  <img src="/img/works/work05.webp" alt="" />
+                </div>
+                <div class="works-index__body">
+                  <span class="works-index__category">映像</span>
+                  <h3 class="works-index__title">インタビュー動画</h3>
+                  <p class="works-index__desc">ユーザーインタビュー・ストーリー動画の実績です。</p>
+                  <time class="works-index__date" datetime="2024-04-05">2024.04</time>
+                </div>
+              </a>
+            </li>
+            <li class="works-index__card" data-category="photo">
+              <a href="/works-detail.html" class="works-index__link">
+                <div class="works-index__thumb">
+                  <img src="/img/works/work06.webp" alt="" />
+                </div>
+                <div class="works-index__body">
+                  <span class="works-index__category">写真</span>
+                  <h3 class="works-index__title">施設紹介写真</h3>
+                  <p class="works-index__desc">店舗・施設の空間撮影の実績です。</p>
+                  <time class="works-index__date" datetime="2024-02-15">2024.02</time>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="page-cta">
+        <div class="container">
+          <div class="page-cta__inner">
+            <p class="page-cta__lead">
+              お問合せはこちら
+              <span class="page-card__arrow" aria-hidden="true"></span>
+            </p>
+            <a href="/contact.html" class="page-cta__btn">CONTACT</a>
+          </div>
+          <p class="page-cta__note">
+            企業撮影・個人撮影ともに対応しています。<br />
+            イメージが固まっていなくても問題ありません。<br />
+            まずはお気軽にご相談ください。
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <nav class="site-footer__nav" aria-label="フッターナビ">
+          <ul class="site-footer__list">
+            <li><a class="site-footer__link" href="/">Top</a></li>
+            <li><a class="site-footer__link" href="/service.html">Service</a></li>
+            <li><a class="site-footer__link" href="/works.html">Works</a></li>
+            <li><a class="site-footer__link" href="/#philosophy">Price</a></li>
+            <li><a class="site-footer__link" href="/company.html">Company</a></li>
+            <li><a class="site-footer__link" href="/contact.html">Contact</a></li>
+          </ul>
+          <ul class="site-footer__list">
+            <li><a class="site-footer__link" href="/blog.html">Blog</a></li>
+            <li><a class="site-footer__link" href="/#news">News</a></li>
+          </ul>
+        </nav>
+        <div class="site-footer__divider" aria-hidden="true"></div>
+        <div class="site-footer__brand">
+          <a class="site-footer__logo" href="/" aria-label="ZERO ONE FILM">
+            <img src="/img/logo_white.png" alt="ZERO ONE FILM" />
+          </a>
+          <address class="site-footer__meta">
+            <p>神奈川県横浜市港北区高田西1-16-42</p>
+            <p class="site-footer__tel">
+              <span>Tel</span> <a href="tel:0455507383">045-550-7383</a>
+            </p>
+            <p>神奈川県公安委員会<br />第451450020303号</p>
+          </address>
+        </div>
+        <a class="film-page-to-top" href="#header" aria-label="ページ上部へ">
+          <span class="film-page-to-top__icon" aria-hidden="true"></span>
+          <span class="film-page-to-top__text">to top</span>
+        </a>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

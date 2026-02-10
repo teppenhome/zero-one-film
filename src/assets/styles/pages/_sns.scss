@@ -1,0 +1,413 @@
+// =========================================
+// SNS ページ専用スタイル
+// ルートクラス .sns-page 配下に100%スコープ
+// film.html / photo.html のデザイン・トーンを踏襲
+// =========================================
+@use "../variables" as v;
+@use "../mixins" as m;
+
+$sns-border: #e0e0e0;
+$sns-accent: #0066cc;
+$sns-text: v.$color-text;
+$sns-muted: rgba(0, 0, 0, 0.6);
+
+.sns-page {
+  position: relative;
+  overflow: hidden;
+
+  .service-page__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      url("/img/background/background-bom01.png"),
+      url("/img/background/background-bom01-flip.png"),
+      url("/img/background/mist01.webp"),
+      url("/img/background/background-bom01.png"),
+      url("/img/background/mist04.webp"),
+      url("/img/background/background-bom01-flip.png");
+    background-repeat: no-repeat;
+    background-position:
+      100% 3%,
+      0% 25%,
+      100% 33%,
+      100% 76%,
+      80% 93%,
+      -30% 100%;
+    background-size:
+      80vw,
+      50vw,
+      50vw,
+      50vw,
+      60vw,
+      65vw;
+
+    @media (max-width: 768px) {
+      background-position:
+        100% 9%,
+        0% 32%,
+        30% 44%,
+        110% 78.5%,
+        50% 85%,
+        0% 93.5%;
+      background-size:
+        130vw,
+        100vw,
+        120vw,
+        120vw,
+        120vw,
+        120vw;
+    }
+  }
+
+  /* =========================================
+     A. SNS Hero（film-hero / photo-hero 踏襲）
+  ========================================== */
+  .sns-hero {
+    position: relative;
+    min-height: clamp(200px, 40vw, 320px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding-top: calc(65px + clamp(1.5rem, 4vw, 2.5rem));
+    padding-bottom: clamp(2rem, 5vw, 3rem);
+    background-color: #f8f6f3;
+    background: #f8f6f3 url("/img/page-header/service-header03.webp") center / cover no-repeat;
+
+    @include m.mq(md) {
+      min-height: clamp(280px, 35vw, 380px);
+    }
+  }
+
+  .sns-hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.35);
+  }
+
+  .sns-hero .container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sns-hero__title {
+    margin: 0 0 clamp(0.5rem, 1.5vw, 1rem);
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+    font-weight: 700;
+    color: $sns-text;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+  }
+
+  .sns-hero__lead {
+    margin: 0;
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
+    font-weight: 400;
+    color: #000;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+  }
+
+  .sns-hero__title,
+  .sns-hero__lead {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 0.25em 0.5em;
+    line-height: 1.4;
+  }
+
+  /* =========================================
+     B. SNS縦型映像について（photo-about 踏襲）
+  ========================================== */
+  .sns-about {
+    margin-top: 40px;
+  }
+
+  .sns-about__inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: clamp(32px, 6vw, 56px);
+    text-align: center;
+    background-color: rgb(255, 255, 255, 0.5);
+
+    @media (max-width: 768px) {
+      padding: 20px;
+    }
+  }
+
+  .sns-about__text {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 2;
+    color: rgba(0, 0, 0);
+
+    @media (max-width: 768px) {
+      text-align: left;
+    }
+  }
+
+  /* =========================================
+     C. こんな方におすすめ（チェック付き横長ボックス）
+  ========================================== */
+  .sns-recommend {
+    padding-top: clamp(3rem, 8vw, 5rem);
+    padding-bottom: clamp(3rem, 8vw, 5rem);
+  }
+
+  .sns-recommend__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.75rem, 2vw, 1rem);
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sns-recommend__item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: clamp(0.875rem, 2vw, 1.25rem) clamp(1.25rem, 3vw, 1.5rem);
+    background: #f0f0f0;
+    border: 1px solid $sns-border;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    min-height: 56px;
+  }
+
+  .sns-recommend__check {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    background: url("/img/icons/square01.png") no-repeat center / contain;
+    transform: rotate(45deg);
+  }
+
+  .sns-recommend__text {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.65;
+    color: $sns-text;
+    letter-spacing: 0.02em;
+  }
+
+  /* =========================================
+     D. SNS縦型映像参考（c-work-grid 共通・余白のみ）
+  ========================================== */
+  .sns-reference {
+    padding-top: clamp(3rem, 8vw, 5rem);
+    padding-bottom: clamp(3rem, 8vw, 5rem);
+  }
+
+  .sns-reference .c-work-grid {
+    @media (min-width: 901px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (min-width: 521px) and (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 520px) {
+      grid-template-columns: 1fr;
+      gap: clamp(1rem, 3vw, 1.5rem);
+    }
+  }
+
+  .c-work__price_sns {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ebab35;
+    text-align: center;
+    margin-top: -5px;
+
+    .c-work__price-number_sns {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #ebab35;
+      text-align: center;
+      margin-right: 4px;
+    }
+  }
+
+  .c-work__price_sns_note {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #6d6d6d;
+    text-align: center;
+    margin-top: 2px;
+  }
+
+  /* =========================================
+     F. VIDEO CAN BE USED FOR（film-uses 踏襲）
+  ========================================== */
+  .sns-uses {
+    padding-top: clamp(3rem, 8vw, 5rem);
+    padding-bottom: clamp(3rem, 8vw, 5rem);
+  }
+
+  .sns-uses__lead {
+    margin: 4rem auto 3rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: $sns-text;
+    text-align: center;
+    width: fit-content;
+    padding: 1rem 1.5rem;
+    background-color: rgb(255, 255, 255, 0.5);
+  }
+
+  .sns-uses__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: clamp(22px, 3vw, 34px);
+    row-gap: clamp(40px, 6vw, 64px);
+    justify-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 clamp(24px, 5vw, 40px);
+
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (max-width: 520px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      row-gap: clamp(28px, 6vw, 40px);
+    }
+  }
+
+  .sns-use-card {
+    width: min(180px, 100%);
+    text-align: center;
+  }
+
+  .sns-use-card__icon {
+    position: relative;
+    width: 80%;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto 12px;
+    border: 5px solid #1265D2;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    background: rgba(26, 92, 255, 0.06);
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: var(--bg);
+      background-size: cover;
+      background-position: center;
+      opacity: 0.5;
+      transform: scale(1.02);
+    }
+
+    img {
+      position: relative;
+      z-index: 1;
+      width: 70px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+
+      &.large {
+        width: 100px;
+      }
+    }
+  }
+
+  .sns-use-card__text {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.78);
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  .sns-uses__note-text {
+    margin: 0 auto clamp(1rem, 2vw, 1.25rem);
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: $sns-muted;
+    text-align: center;
+    max-width: 560px;
+  }
+
+  .sns-uses__note {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem;
+    background: url("/img/sub-page/sub-page-background.webp") center / 200px 200px repeat;
+    border: 1px solid $sns-border;
+
+    p {
+      margin: 0;
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: #000;
+      text-align: center;
+      font-weight: 500;
+    }
+  }
+
+  /* =========================================
+     G. 安心・品質への取り組み
+  ========================================== */
+  .sns-quality {
+    padding-top: clamp(3rem, 8vw, 5rem);
+    padding-bottom: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+  }
+
+  .sns-quality__text {
+    width: fit-content;
+    margin: 0 auto;
+    max-width: 740px;
+    font-size: 1rem;
+    line-height: 2;
+    color: $sns-text;
+    background-color: rgb(255, 255, 255, 0.5);
+    padding: 1rem 1.5rem;
+
+    @media (max-width: 768px) {
+      text-align: left;
+      padding: 0;
+      font-size: 0.9375rem;
+    }
+  }
+}
+
+/* SNSページ：フッター to top 用（film/photo と同一） */
+body:has(.sns-page) .site-footer__inner {
+  position: relative;
+  padding-top: 2.5rem;
+}
+
+/* SNSページ：PC時のみヘッダーメニューを黒系に */
+@include m.mq(md) {
+  body.page-sns .global-header .global-nav__link {
+    color: $sns-text;
+    &::after {
+      background: $sns-text;
+    }
+  }
+  body.page-sns .global-header.is-scrolled .global-nav__link::after {
+    background: $sns-text;
+  }
+}

@@ -15,6 +15,9 @@ export default defineConfig({
         works: resolve(__dirname, "works.html"),
         contact: resolve(__dirname, "contact.html"),
         privacy: resolve(__dirname, "privacy.html"),
+        film: resolve(__dirname, "film.html"),
+        photo: resolve(__dirname, "photo.html"),
+        company: resolve(__dirname, "company.html")
       },
     },
   },
